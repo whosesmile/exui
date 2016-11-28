@@ -1,0 +1,353 @@
+@import "../base/fn";
+
+.list > .item {
+
+  // 文本框
+  input.input {
+    width: 100%;
+    border: none;
+    outline: none;
+    appearance: none;
+    background-color: transparent;
+    font-size: inherit;
+    color: inherit;
+    height: @listItemLineHeight;
+    line-height: @listItemLineHeight;
+
+    // hides the spin-button
+    &::-webkit-outer-spin-button, &::-webkit-inner-spin-button {
+      appearance: none;
+      margin: 0;
+    }
+  }
+  textarea.textarea {
+    width: 100%;
+    border: none;
+    outline: none;
+    resize: none;
+    color: inherit;
+    font-size: inherit;
+    line-height: inherit;
+  }
+  .textarea-counter {
+    text-align: right;
+    color: @textColorGray;
+  }
+
+  // 表单标签
+  > .label {
+    display: block;
+    margin-right: @listWidgetGap;
+    min-width: 32px;
+  }
+  > .label[ui-mode="48px"] {
+    min-width: 48px;
+  }
+  > .label[ui-mode="64px"] {
+    min-width: 64px;
+  }
+  > .label[ui-mode="80px"] {
+    min-width: 80px;
+  }
+  > .label[ui-mode="96px"] {
+    min-width: 96px;
+  }
+  > .label[ui-mode="112px"] {
+    min-width: 112px;
+  }
+
+  // 下拉选择
+  select.select {
+    width: 100%;
+    border: none;
+    outline: none;
+    appearance: none;
+    background-color: transparent;
+    font-size: inherit;
+    color: inherit;
+    height: @listItemHeight;
+    line-height: @listItemHeight;
+  }
+
+  // 模拟箭头
+  .select-arrow {
+    position: relative;
+
+    .select {
+      position: relative;
+      z-index: 1;
+      padding-left: @listItemGapH;
+      padding-right: 30px;
+    }
+    &:after {
+      content: " ";
+      .setArrow(bottom);
+      position: absolute;
+      top: 50%;
+      right: 18px;
+      margin-top: -8px;
+    }
+  }
+  &:not([ui-mode$="0px"]) .select {
+    margin-top: -@listItemGapV;
+    margin-bottom: -@listItemGapV;
+  }
+  &[ui-mode$="0px"] > .label {
+    margin-left: @listItemGapH;
+
+    + .text .select-arrow .select {
+      padding-left: 0;
+    }
+  }
+  > .label:first-child .select-arrow {
+    margin-left: -@listItemGapH;
+  }
+  > .text.select-arrow {
+    &:after {
+      right: 3px;
+    }
+  }
+  > .label .select-arrow {
+    &:before {
+      .setRightLine();
+    }
+  }
+
+  // 交互区 如验证码
+  > .interact {
+    position: relative;
+    box-sizing: content-box;
+    text-align: center;
+    margin-right: -@listItemGapH;
+    margin-top: -@listItemGapV;
+    margin-bottom: -@listItemGapV;
+    min-height: @listItemHeight;
+    width: 112px;
+
+    &:after {
+      .setLeftLine();
+    }
+  }
+  > .interact img.captcha {
+    display: block;
+    width: 100%;
+    height: @listItemHeight;
+  }
+  > .interact .button {
+    font-size: inherit;
+    border-radius: 0;
+    padding-left: 0;
+    padding-right: 0;
+
+    &:after {
+      content: none;
+    }
+    &:active {
+      background-color: @tapColor;
+    }
+  }
+
+  // 调整后置间距
+  > input.radio:last-child, > input.checkbox:last-child {
+    margin-right: 0;
+    margin-left: @listWidgetGap;
+  }
+}
+
+// 单选框
+input.radio {
+  position: relative;
+  border: none;
+  outline: none;
+  appearance: none;
+  background-color: transparent;
+  font-size: inherit;
+  color: inherit;
+  border-radius: 50%;
+  overflow: hidden;
+  vertical-align: middle;
+  margin-right: @listWidgetGap;
+  width: @inputChoiceSize;
+  height: @inputChoiceSize;
+
+  &:before {
+    content: ' ';
+    display: table;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: @inputChoiceBg;
+    border: 1px solid @inputChoiceDefaultColor;
+  }
+  &:after {
+    content: ' ';
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    width: @radioPointSize;
+    height: @radioPointSize;
+    margin-top: -@radioPointSize / 2;
+    margin-left: -@radioPointSize / 2;
+    background-color: @inputChoiceDefaultColor;
+  }
+  &.primary:before {
+    border: 1px solid @inputChoicePrimaryColor;
+  }
+  &.primary:after {
+    background-color: @inputChoicePrimaryColor;
+  }
+  &.success:before {
+    border: 1px solid @inputChoiceSuccessColor;
+  }
+  &.success:after {
+    background-color: @inputChoiceSuccessColor;
+  }
+  &:checked:after {
+    opacity: 1;
+  }
+  &[disabled] {
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+  &[disabled]:before {
+    border-color: @inputChoiceDisabledColor;
+  }
+  &[disabled]:checked:after {
+    background-color: @inputChoiceDisabledColor;
+  }
+}
+
+// 复选框
+input.checkbox {
+  position: relative;
+  border: none;
+  outline: none;
+  appearance: none;
+  background-color: transparent;
+  font-size: inherit;
+  color: inherit;
+  border-radius: 50%;
+  overflow: hidden;
+  vertical-align: middle;
+  margin-right: @listWidgetGap;
+  width: @inputChoiceSize;
+  height: @inputChoiceSize;
+
+  &:before {
+    content: ' ';
+    display: table;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: @inputChoiceBg;
+    border: 1px solid @inputChoiceDefaultColor;
+  }
+  &:after {
+    content: ' ';
+    opacity: 0;
+    position: absolute;
+    border-style: solid;
+    transform: rotate(-45deg);
+    border-width: 0 0 @checkboxPointBorderWidth @checkboxPointBorderWidth;
+    width: @checkboxPointWidth;
+    height: @checkboxPointHeight;
+    top: percentage(round((@inputChoiceSize - @checkboxPointHeight) / 2 / @inputChoiceSize - 0.04, 2));
+    left: percentage(round((@inputChoiceSize - @checkboxPointWidth) / 2 / @inputChoiceSize, 2));
+    border-color: @checkboxPointColor;
+  }
+  &:checked:before {
+    background-color: @inputChoiceDefaultColor;
+  }
+  &:checked:after {
+    opacity: 1;
+  }
+  &.primary:before {
+    border-color: @inputChoicePrimaryColor;
+  }
+  &.primary:checked:before {
+    background-color: @inputChoicePrimaryColor;
+  }
+  &.success:before {
+    border-color: @inputChoiceSuccessColor;
+  }
+  &.success:checked:before {
+    background-color: @inputChoiceSuccessColor;
+  }
+  &[disabled] {
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+  &[disabled]:before {
+    border-color: @inputChoiceDisabledColor;
+  }
+  &[disabled]:checked:before {
+    background-color: @inputChoiceDisabledColor;
+  }
+}
+
+// switch
+.switch {
+  position: relative;
+  display: table;
+  outline: none;
+  appearance: none;
+  width: @switchWidth;
+  height: @switchHeight;
+  border-radius: 16px;
+  border: 1px solid #DFDFDF;
+  background-color: #DFDFDF;
+  transition: background-color .1s, border .1s;
+
+  &.nesting {
+    margin-top: (@listItemLineHeight - @switchHeight)/2;
+    margin-bottom: (@listItemLineHeight - @switchHeight)/2;
+  }
+  &:before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: @switchWidth - 2;
+    height: @switchHeight - 2;
+    border-radius: (@switchHeight - 2) / 2;
+    background-color: #FDFDFD;
+    transition: transform .35s cubic-bezier(0.45, 1, 0.4, 1);
+  }
+  &:after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: @switchHeight - 2;
+    height: @switchHeight - 2;
+    border-radius: (@switchHeight - 2) / 2;
+    background-color: #FFFFFF;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    transition: transform .35s cubic-bezier(0.4, 0.4, 0.25, 1.35);
+  }
+  &:checked {
+    border-color: @textColorOrange;
+    background-color: @textColorOrange;
+
+    &.primary {
+      border-color: @textColorBlue;
+      background-color: @textColorBlue;
+    }
+    &.warning {
+      border-color: @textColorRed;
+      background-color: @textColorRed;
+    }
+    &.success {
+      border-color: @textColorGreen;
+      background-color: @textColorGreen;
+    }
+    &:before {
+      transform: scale(0);
+    }
+    &:after {
+      transform: translateX(@switchWidth - @switchHeight);
+    }
+  }
+}

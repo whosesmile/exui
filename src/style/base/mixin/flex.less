@@ -1,0 +1,14 @@
+.setFlex(@align:center, @item:0, @compact:0) {
+  display: block;
+  width: 100%;
+  display: flex;
+  align-items: @align;
+
+  & > .@{item} when not (@item = 0) {
+    display: block;
+    flex: 1;
+  }
+  &:not(.compact) > .item:not(:last-child) when not (@compact = 0) {
+    margin-right: @compact;
+  }
+}

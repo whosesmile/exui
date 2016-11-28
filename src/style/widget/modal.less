@@ -1,0 +1,87 @@
+@keyframes ex-modal-in {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.185);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+@keyframes ex-modal-out {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.815);
+  }
+}
+.modal-layer {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  visibility: hidden;
+  background-color: rgba(0, 0, 0, 0);
+  transition-property: background-color;
+  transition-duration: 400ms;
+
+  .modal {
+    position: fixed;
+    z-index: 5000;
+    width: 80%;
+    max-width: 300px;
+    top: 50%;
+    left: 50%;
+    // APP STATUS + BAR
+    margin-top: -58px;
+    background-color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    overflow: hidden;
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+
+    > .title {
+      padding: 20px 0 0;
+      font-size: 17px;
+      line-height: 1;
+      font-weight: 400;
+      -webkit-text-stroke: 0.2px;
+
+      + .content {
+        padding-top: 10px;
+      }
+    }
+    > .content {
+      padding: 20px 15px 15px;
+      word-wrap: break-word;
+      word-break: break-all;
+    }
+    > .footer {
+      position: relative;
+
+      &:after {
+        .setTopLine();
+      }
+    }
+  }
+  &.modal-layer-in {
+    visibility: visible;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  &.modal-layer-out {
+    visibility: visible;
+    background-color: rgba(0, 0, 0, 0);
+  }
+  .modal.modal-in {
+    animation: ex-modal-in ease .4s forwards;
+  }
+  .modal.modal-out {
+    animation: ex-modal-out ease .4s forwards;
+  }
+}

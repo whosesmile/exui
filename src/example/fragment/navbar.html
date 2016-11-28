@@ -1,0 +1,39 @@
+<div class="ex-page">
+  <div class="divider">默认风格</div>
+  
+  <div class="navbar">
+    <a class="item active" href="javascript:;">标签一</a>
+    <a class="item" href="javascript:;">标签二</a>
+    <a class="item" href="javascript:;">标签三</a>
+  </div>
+  
+  <div class="divider">橙色下划线</div>
+  
+  <div class="navbar underline driving">
+    <a class="item active" href="javascript:;">标签一</a>
+    <a class="item" href="javascript:;">标签二</a>
+    <a class="item" href="javascript:;">标签三</a>
+  </div>
+  
+  <div class="divider">蓝色下划线</div>
+  
+  <div class="navbar underline primary">
+    <a class="item active" href="javascript:;">标签一</a>
+    <a class="item" href="javascript:;">标签二</a>
+    <a class="item" href="javascript:;">标签三</a>
+  </div>
+  
+  <div class="divider">绿色下划线</div>
+  
+  <div class="navbar underline success">
+    <a class="item active" href="javascript:;">标签一</a>
+    <a class="item" href="javascript:;">标签二</a>
+    <a class="item" href="javascript:;">标签三</a>
+  </div>
+  
+</div>
+<script type="text/javascript">
+  $(document).off('click', '.navbar > .item').on('click', '.navbar > .item', function (e) {
+    $(this).addClass('active').siblings().removeClass('active');
+  });
+</script>

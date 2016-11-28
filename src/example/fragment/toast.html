@@ -1,0 +1,78 @@
+<div class="ex-page">
+  <div class="page-header">
+    <h4>Toast</h4>
+    <p class="text-gray text-sm">吐司</p>
+  </div>
+
+  <div class="vspace hspace">
+    <button class="button default" data-toast="#toast1">载入中</button>
+    <button class="button default" data-toast="#toast2">操作失败1</button>
+    <button class="button default" data-toast="#toast3">操作失败2</button>
+    <button class="button default" data-toast="#toast4">操作成功1</button>
+    <button class="button default" data-toast="#toast5">操作成功2</button>
+    <button class="button default" data-toast="#toast6">自定义图片</button>
+  </div>
+
+  <div id="toasts">
+
+    <div id="toast1" class="toast-layer">
+      <div class="toast">
+        <i class="icon waiting"></i>
+        <span class="text">载入中</span>
+      </div>
+    </div>
+
+    <div id="toast2" class="toast-layer">
+      <div class="toast">
+        <i class="icon">&#xe61d;</i>
+        <span class="text">操作失败</span>
+      </div>
+    </div>
+
+    <div id="toast3" class="toast-layer">
+      <div class="toast">
+        <i class="icon">&#xe616;</i>
+        <span class="text">操作失败</span>
+      </div>
+    </div>
+
+    <div id="toast4" class="toast-layer">
+      <div class="toast">
+        <i class="icon">&#xe61c;</i>
+        <span class="text">操作成功</span>
+      </div>
+    </div>
+
+    <div id="toast5" class="toast-layer">
+      <div class="toast">
+        <i class="icon">&#xe624;</i>
+        <span class="text">操作成功</span>
+      </div>
+    </div>
+
+    <div id="toast6" class="toast-layer">
+      <div class="toast">
+        <i class="icon"><img src="./images/icon_intro.png" /></i>
+        <span class="text">自定义图片</span>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="vspace">
+    <div class="text-center text-sm">
+      <a class="link" href="javascript:history.back();"><i class="icon">&#xe60e;</i>返回</a>
+    </div>
+  </footer>
+</div>
+<script type="text/javascript">
+  $(document).off('click', '.button[data-toast]').on('click', '.button[data-toast]', function() {
+    var selector = $(this).data('toast');
+    var toast = $(selector).addClass('toast-in');
+    setTimeout(function() {
+      toast.removeClass('toast-in').addClass('toast-out').on('animationend webkitAnimationEnd', function() {
+        $(this).removeClass('toast-out');
+      });
+    }, 2500);
+  });
+</script>

@@ -1,0 +1,74 @@
+@import "../base/fn";
+
+.navbar {
+  .setFlex(center, item);
+  width: 100%;
+  font-size: 15px;
+  position: relative;
+  text-align: center;
+  height: @navbarHeight;
+  background-color: @navbarBgColor;
+
+  &:before {
+    .setTopLine();
+    z-index: 10;
+  }
+  &:after {
+    .setBottomLine();
+  }
+  > .item {
+    position: relative;
+    color: inherit;
+    cursor: pointer;
+    line-height: @navbarHeight;
+
+    &.active, &:active {
+      background-color: @tapColor;
+    }
+    &:not(:first-child):after {
+      .setLeftLine();
+    }
+  }
+  &.underline {
+    > .item {
+      &:after {
+        content: none;
+      }
+      &.active {
+        background-color: transparent;
+
+        &:before {
+          content: ' ';
+          position: absolute;
+          z-index: 10;
+          width: 100%;
+          left: 0;
+          bottom: 0;
+          border-bottom-width: 2px;
+          border-bottom-style: solid;
+        }
+      }
+    }
+  }
+  &.driving > .item.active {
+    color: @textColorOrange;
+
+    &:before {
+      border-color: @textColorOrange;
+    }
+  }
+  &.primary > .item.active {
+    color: @textColorBlue;
+
+    &:before {
+      border-color: @textColorBlue;
+    }
+  }
+  &.success > .item.active {
+    color: @textColorGreen;
+
+    &:before {
+      border-color: @textColorGreen;
+    }
+  }
+}

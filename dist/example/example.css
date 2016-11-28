@@ -1,0 +1,102 @@
+html,
+body {
+  height: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+  font-family: -apple-system-font, "Helvetica Neue", Helvetica, sans-serif;
+  background-color: #f8f8f8;
+}
+ul {
+  list-style: none;
+}
+.page-header {
+  padding: 40px 40px 20px;
+}
+.page-header h1 {
+  font-size: 28px;
+  font-weight: normal;
+  margin-bottom: 15px;
+}
+.page-header .describe {
+  color: #999;
+  font-size: 14px;
+}
+.page-header p + p {
+  margin-top: 10px;
+}
+.ex-group {
+  overflow: hidden;
+  border-radius: 3px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+}
+.ex-group .list:first-child > .item:first-child {
+  font-size: 17px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.ex-group .list:first-child > .item:first-child .icon img {
+  display: block;
+  width: 30px;
+  height: 30px;
+}
+.ex-group .list:first-child > .item:first-child:before,
+.ex-group .list:first-child > .item:first-child:after {
+  content: none;
+}
+.ex-group .list:first-child + .list {
+  display: none;
+}
+.ex-group .list:first-child + .list > .item:first-child:before {
+  left: 15px;
+}
+.ex-group .list:first-child + .list > .item:last-child:after {
+  content: none;
+}
+.ex-group .list:first-child .text,
+.ex-group .list:first-child .icon {
+  transition: .3s;
+}
+.ex-group.active .list:first-child .text,
+.ex-group.active .list:first-child .icon {
+  opacity: 0.5;
+}
+.ex-group.active .list:first-child + .list {
+  display: block;
+}
+.container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
+}
+/* DEMO面板 */
+.ex-page {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
+  background-color: #f9f9f9;
+}
+.ex-page .page-header h4 {
+  font-size: 20px;
+  font-weight: normal;
+}
+.ex-page .page-header h4 + p {
+  margin-top: 5px;
+}
+.ex-page .flex .item .holder {
+  line-height: 35px;
+  background-color: #ebebeb;
+  color: #c0c0c0;
+  text-align: center;
+}
+.ex-page .tabbar:not(:last-child) {
+  position: relative;
+}

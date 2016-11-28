@@ -1,0 +1,80 @@
+<div class="ex-page">
+  
+  <div class="divider" ui-mode="20%">使用字体 (如果你有)</div>
+  
+  <div class="tabbar">
+    <div class="item active">
+      <i class="icon">&#xe61e;</i>
+      <span class="label">首页</span>
+    </div>
+    <div class="item">
+      <i class="icon">&#xe61e;</i>
+      <span class="label">管家</span>
+    </div>
+    <div class="item">
+      <i class="icon">&#xe61e;</i>
+      <span class="label">商城</span>
+    </div>
+    <div class="item">
+      <i class="icon">&#xe61e;</i>
+      <span class="label">我的</span>
+    </div>
+  </div>
+  
+  <div class="divider">使用图片</div>
+  
+  <div class="tabbar">
+    <div class="item active">
+      <i class="icon"><img src="./images/tabbar/ta-a.png" /></i>
+      <span class="label">首页</span>
+    </div>
+    <div class="item">
+      <i class="icon"><img src="./images/tabbar/tc.png" /></i>
+      <span class="label">管家</span>
+    </div>
+    <div class="item">
+      <i class="icon"><img src="./images/tabbar/tb.png" /></i>
+      <span class="label">商城</span>
+    </div>
+    <div class="item">
+      <i class="icon"><img src="./images/tabbar/td.png" /></i>
+      <span class="label">我的</span>
+    </div>
+  </div>
+  
+  <div class="divider" ui-mode="20%">以上为演示，正常为居底</div>
+  
+  <div class="tabbar">
+    <div class="item active">
+      <i class="icon"><img src="./images/tabbar/ta-a.png" /></i>
+      <span class="label">首页</span>
+    </div>
+    <div class="item">
+      <i class="icon"><img src="./images/tabbar/tc.png" /></i>
+      <span class="label">管家</span>
+    </div>
+    <div class="item">
+      <i class="icon"><img src="./images/tabbar/tb.png" /></i>
+      <span class="label">商城</span>
+    </div>
+    <div class="item">
+      <i class="icon"><img src="./images/tabbar/td.png" /></i>
+      <span class="label">我的</span>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  $(document).off('click', '.tabbar > .item').on('click', '.tabbar > .item', function () {
+    $(this).addClass('active').siblings().removeClass('active');
+    // replace image as active status
+    $(this).parent().find('.icon img').each(function(img) {
+      var src = $(this).attr('src');
+      if ($(this).closest('.item').is('.active')) {
+        $(this).attr('src', src.replace(/(-a)?\.png/, '-a.png'));
+      }
+      else {
+        $(this).attr('src', src.replace(/-a\.png/, '.png'));
+      }
+    });
+  });
+</script>

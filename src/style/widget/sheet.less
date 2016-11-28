@@ -1,0 +1,94 @@
+@keyframes ex-sheet-in {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes ex-sheet-out {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+.sheet-layer {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  visibility: hidden;
+  background-color: rgba(0, 0, 0, 0);
+  transition-property: background-color;
+  transition-duration: 400ms;
+
+  .sheet {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+    & > .menus {
+      margin: 10px;
+
+      &  > .item {
+        position: relative;
+        text-align: center;
+        line-height: 44px;
+        font-size: 18px;
+        background-color: #fff;
+
+        & > .button {
+          border-radius: 0;
+          font-size: 18px;
+
+          &:after {
+            content: none;
+          }
+        }
+        & > [class="button"] {
+          color: inherit;
+        }
+        &:first-child {
+          border-top-left-radius: 5px;
+          border-top-right-radius: 5px;
+        }
+        &:last-child {
+          border-bottom-left-radius: 5px;
+          border-bottom-right-radius: 5px;
+        }
+        &:not(.label):active {
+          background-color: @tapColor;
+        }
+        + .item:before {
+          .setTopLine();
+        }
+        &.label {
+          padding: 10px 15px;
+          line-height: 24px;
+          font-size: 14px;
+          color: @textColorGray;
+        }
+      }
+    }
+  }
+  &.sheet-layer-in {
+    visibility: visible;
+    background-color: rgba(0, 0, 0, 0.6);
+
+    .sheet {
+      animation: ex-sheet-in ease .3s forwards;
+    }
+  }
+  &.sheet-layer-out {
+    visibility: visible;
+    background-color: rgba(0, 0, 0, 0);
+
+    .sheet {
+      animation: ex-sheet-out ease .3s forwards;
+    }
+  }
+}

@@ -1,0 +1,109 @@
+html, body {
+  height: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+  font-family: -apple-system-font, "Helvetica Neue", Helvetica, sans-serif;
+  background-color: #f8f8f8;
+}
+ul {
+  list-style: none;
+}
+.page-header {
+  padding: 40px 40px 20px;
+
+  h1 {
+    font-size: 28px;
+    font-weight: normal;
+    margin-bottom: 15px;
+  }
+  .describe {
+    color: #999;
+    font-size: 14px;
+  }
+  p + p {
+    margin-top: 10px;
+  }
+}
+.ex-group {
+  overflow: hidden;
+  border-radius: 3px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+
+  .list:first-child > .item:first-child {
+    font-size: 17px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    .icon img {
+      display: block;
+      width: 30px;
+      height: 30px;
+    }
+    &:before, &:after {
+      content: none;
+    }
+  }
+  .list:first-child + .list {
+    display: none;
+
+    & > .item:first-child:before {
+      left: 15px;
+    }
+    & > .item:last-child:after {
+      content: none;
+    }
+  }
+  .list:first-child {
+    .text, .icon {
+      transition: .3s;
+    }
+  }
+  &.active .list:first-child {
+    .text, .icon {
+      opacity: 0.5;
+    }
+    & + .list {
+      display: block;
+    }
+  }
+}
+.container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
+}
+
+/* DEMO面板 */
+.ex-page {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
+  background-color: #f9f9f9;
+
+  .page-header h4 {
+    font-size: 20px;
+    font-weight: normal;
+
+    & + p {
+      margin-top: 5px;
+    }
+  }
+  .flex .item .holder {
+    line-height: 35px;
+    background-color: #ebebeb;
+    color: #c0c0c0;
+    text-align: center;
+  }
+  .tabbar:not(:last-child) {
+    position: relative;
+  }
+}

@@ -1,0 +1,42 @@
+.divider {
+  text-transform: uppercase;
+  position: relative;
+  height: auto;
+  overflow: hidden;
+  text-align: center;
+  margin: @dividerGapV @dividerGapH;
+  font-size: @dividerFontSize;
+}
+[class="divider"] {
+  color: @dividerTextColor;
+}
+.divider:after, .divider:before {
+  position: absolute;
+  content: ' ';
+  width: 35%;
+  top: 50%;
+  height: 0;
+  border-top: 1px solid @dividerTopBorderColor;
+  border-bottom: 1px solid @dividerBottomBorderColor;
+}
+.divider:after {
+  right: 0;
+}
+.divider:before {
+  left: 0;
+}
+.divider[ui-mode~="10%"]:after, .divider[ui-mode~="10%"]:before {
+  width: 10%;
+}
+.divider[ui-mode~="15%"]:after, .divider[ui-mode~="15%"]:before {
+  width: 15%;
+}
+.divider[ui-mode~="20%"]:after, .divider[ui-mode~="20%"]:before {
+  width: 20%;
+}
+.divider[ui-mode~="25%"]:after, .divider[ui-mode~="25%"]:before {
+  width: 25%;
+}
+.divider[ui-mode~="30%"]:after, .divider[ui-mode~="30%"]:before {
+  width: 30%;
+}

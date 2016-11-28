@@ -1,0 +1,103 @@
+<div class="ex-page">
+  <div class="page-header">
+    <h4>Bar</h4>
+    <p class="text-gray text-sm">横栏</p>
+  </div>
+  
+  <div class="bar">
+    <a class="button literal text-dark" href="javascript:;">
+      <i class="icon">&#xe60e;</i>
+    </a>
+    <h1 class="title"><b>顶部导航</b></h1>
+    <a class="button literal text-dark" href="javascript:;">
+      <i class="icon">&#xe618;</i>
+    </a>
+  </div>
+  
+  <div class="divider" ui-mode="20%">ICON+LABEL</div>
+  
+  <div class="bar">
+    <a class="button literal text-driving" href="javascript:;">
+      <i class="icon">&#xe60e;</i>
+      <span class="label">返回</span>
+    </a>
+    <h1 class="title"><b>顶部导航</b></h1>
+    <a class="button literal text-success" href="javascript:;">
+      <i class="icon">&#xe60a;</i>
+    </a>
+  </div>
+  
+  <div class="divider" ui-mode="20%">双侧ICON+LABEL</div>
+  
+  <div class="bar">
+    <a class="button literal text-primary" href="javascript:;">
+      <i class="icon">&#xe60e;</i>
+      <span class="label">返回</span>
+    </a>
+    <h1 class="title"><b>顶部导航</b></h1>
+    <a class="button literal text-primary" href="javascript:;">
+      <span class="label">下一步</span>
+      <i class="icon">&#xe61a;</i>
+    </a>
+  </div>
+  
+  <div class="divider" ui-mode="20%">多个ICON</div>
+  
+  <div class="bar">
+    <a class="button literal text-primary" href="javascript:;">
+      <i class="icon">&#xe60e;</i>
+    </a>
+    <a class="button literal text-primary" href="javascript:;">
+      <i class="icon">&#xe61f;</i>
+    </a>
+    <h1 class="title"><b>顶部导航</b></h1>
+    <a class="button literal text-primary" href="javascript:;">
+      <span class="label">下一步</span>
+      <i class="icon">&#xe61a;</i>
+    </a>
+  </div>
+  
+  <div class="divider" ui-mode="20%">多个LABEL</div>
+  
+  <div class="bar">
+    <a class="button literal text-primary" href="javascript:;">
+      <i class="icon">&#xe60e;</i>
+      <span class="label">返回</span>
+    </a>
+    <a class="button literal text-primary" href="javascript:;">
+      <span class="label">关闭</span>
+    </a>
+    <h1 class="title"><b>顶部导航</b></h1>
+    
+    <a class="button literal text-primary" href="javascript:;">
+      <span class="label">放弃</span>
+    </a>
+    <a class="button literal text-primary" href="javascript:;">
+      <span class="label">提交</span>
+      <i class="icon">&#xe61a;</i>
+    </a>
+  </div>
+  
+  <div class="divider" ui-mode="20%">复合按钮</div>
+  
+  <div class="bar">
+    <div class=" hspace text-driving text-sm">总价:￥120.93</div>
+    <div class="title">
+      <div class="button-group compact">
+        <button class="button driving square">加入购物车</button>
+        <button class="button driving square">立即提交</button>
+      </div>
+    </div>
+  </div>
+  
+  <footer class="vspace">
+    <div class="text-center text-sm">
+      <a class="link" href="javascript:history.back();"><i class="icon">&#xe60e;</i>返回</a>
+    </div>
+  </footer>
+</div>
+<script type="text/javascript">
+  $(document).off('click', '.navbar > .item').on('click', '.navbar > .item', function (e) {
+    $(this).addClass('active').siblings().removeClass('active');
+  });
+</script>

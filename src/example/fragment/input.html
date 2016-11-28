@@ -1,0 +1,344 @@
+<div class="ex-page">
+  <div class="page-header">
+    <h4>Input</h4>
+    <p class="text-gray text-sm">表单输入</p>
+  </div>
+  
+  <div class="list">
+    <div class="item-divider">文本框</div>
+    <div class="item">
+      <div class="text">
+        <input class="input" type="text" placeholder="文本输入框" />
+      </div>
+    </div>
+    <div class="item-divider">带ICON</div>
+    <div class="item">
+      <i class="icon text-primary">&#xe61e;</i>
+      <div class="text">
+        <input class="input" type="text" placeholder="请输入您的家庭住址" />
+      </div>
+    </div>
+    <div class="item-divider">文本域</div>
+    <div class="item">
+      <div class="text">
+        <textarea class="textarea" placeholder="文本域输入框"></textarea>
+        <div class="textarea-counter"><span>0</span>/200</div>
+      </div>
+    </div>
+    <div class="item-divider">LABEL宽度: ui-mode="[16px * 3,4,5,6,7]"</div>
+    <div class="item">
+      <label class="label" ui-mode="64px">姓名</label>
+      <div class="text">
+        <input class="input" type="text" placeholder="如果一组表单Label文字长度不定" />
+      </div>
+    </div>
+    <div class="item">
+      <label class="label" ui-mode="64px">手机号</label>
+      <div class="text">
+        <input class="input" type="text" placeholder="可以通过预设宽度来实现对齐效果" />
+      </div>
+    </div>
+    <div class="item">
+      <label class="label" ui-mode="64px">联系地址</label>
+      <div class="text">
+        <input class="input" type="text" placeholder="默认情况下Label宽度是自适应的" />
+      </div>
+    </div>
+    <div class="item-divider">选择 (推荐方案：点击箭头可以触发)</div>
+    <div class="item" ui-mode="0px">
+      <div class="text">
+        <div class="select-arrow">
+          <select class="select">
+            <option selected value="1">中国</option>
+            <option value="2">台湾</option>
+            <option value="3">香港</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="item" ui-mode="0px">
+      <label class="label">国家/地区</label>
+      <div class="text">
+        <div class="select-arrow">
+          <select class="select">
+            <option selected value="1">股票</option>
+            <option value="2">黄金</option>
+            <option value="3">美元</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="item-divider">选择 (常规方案)</div>
+    <div class="item">
+      <div class="text">
+        <select class="select">
+          <option selected value="1">中国</option>
+          <option value="2">台湾</option>
+          <option value="3">香港</option>
+        </select>
+      </div>
+      <i class="icon">&#xe60b;</i>
+    </div>
+    <div class="item">
+      <label class="label">国家/地区</label>
+      <div class="text">
+        <select class="select">
+          <option selected value="1">股票</option>
+          <option value="2">黄金</option>
+          <option value="3">美元</option>
+        </select>
+      </div>
+      <i class="icon">&#xe60b;</i>
+    </div>
+    <div class="item-divider">选择前置</div>
+    <div class="item" ui-mode="0px">
+      <label class="label" ui-mode="80px">
+        <div class="select-arrow">
+          <select class="select">
+            <option value="1">京</option>
+            <option value="2">津</option>
+            <option value="3">冀</option>
+            <option value="4">豫</option>
+          </select>
+        </div>
+      </label>
+      <div class="text">
+        <input class="input" type="tel" pattern="[0-9]*" placeholder="请输入您的车牌" />
+      </div>
+    </div>
+    <div class="item" ui-mode="0px">
+      <label class="label" ui-mode="80px">
+        <div class="select-arrow">
+          <select class="select">
+            <option value="1">+86</option>
+            <option value="2">+80</option>
+            <option value="3">+84</option>
+            <option value="4">+87</option>
+          </select>
+        </div>
+      </label>
+      <div class="text">
+        <input class="input" type="tel" pattern="[0-9]*" placeholder="请输入您的电话" />
+      </div>
+    </div>
+    <div class="item-divider">验证码</div>
+    <div class="item">
+      <label class="label">手机号</label>
+      <div class="text">
+        <input class="input" type="tel" pattern="[0-9]*" placeholder="请输入您的电话" />
+      </div>
+      <div class="interact">
+        <button class="button literal text-primary" type="button">发送验证码</button>
+      </div>
+    </div>
+    <div class="item">
+      <label class="label">验证码</label>
+      <div class="text">
+        <input class="input" type="number" pattern="[0-9]*" placeholder="请输入短信验证码" />
+      </div>
+      <div class="interact">
+        <button class="button literal text-primary" type="button" disabled>58秒后重发</button>
+      </div>
+    </div>
+    <div class="item">
+      <label class="label">验证码</label>
+      <div class="text">
+        <input class="input" type="text" placeholder="请输入图形验证码" />
+      </div>
+      <div class="interact">
+        <img class="captcha" src="./images/captcha.jpg" />
+      </div>
+    </div>
+    <div class="item-divider">表单组合</div>
+    <div class="item">
+      <label class="label">姓名</label>
+      <div class="text">
+        <input class="input" type="text" placeholder="请输入姓名" />
+      </div>
+    </div>
+    <div class="item">
+      <label class="label">数字</label>
+      <div class="text">
+        <input class="input" type="number" pattern="[0-9]*" placeholder="请输入QQ号"/>
+      </div>
+    </div>
+    <div class="item">
+      <label class="label">电话</label>
+      <div class="text">
+        <input class="input" type="tel" pattern="[0-9]*" placeholder="请输入您的电话" />
+      </div>
+    </div>
+    <div class="item">
+      <label class="label">日期</label>
+      <div class="text">
+        <input class="input" type="date" value="" />
+      </div>
+    </div>
+    <div class="item">
+      <label class="label">时间</label>
+      <div class="text">
+        <input class="input" type="datetime-local" value="" />
+      </div>
+    </div>
+    <div class="item-divider">红色</div>
+    <div class="item text-warning">
+      <label class="label">卡号</label>
+      <div class="text">
+        <input class="input" type="number" pattern="[0-9]*" placeholder="请输入卡号" value="666" />
+      </div>
+      <i class="icon text-xl">&#xe61d;</i>
+    </div>
+    <div class="item-divider">蓝色</div>
+    <div class="item text-primary">
+      <label class="label">身高</label>
+      <div class="text">
+        <input class="input" type="number" pattern="[0-9]*" placeholder="请输入身高" value="777" />
+      </div>
+      <i class="icon text-xl">&#xe61d;</i>
+    </div>
+    <div class="item-divider">绿色</div>
+    <div class="item text-success">
+      <label class="label">护照</label>
+      <div class="text">
+        <input class="input" type="number" pattern="[0-9]*" placeholder="请输入护照" value="888" />
+      </div>
+      <i class="icon text-xl">&#xe61d;</i>
+    </div>
+  </div>
+
+  <div class="list">
+    <div class="item-divider">单选列表(橙色 / 默认)</div>
+    <label class="item">
+      <input class="radio" type="radio" name="radio1" checked />
+      <div class="text">支付宝</div>
+    </label>
+    <label class="item">
+      <input class="radio" type="radio" name="radio1" />
+      <div class="text">微信支付</div>
+    </label>
+    <div class="item-divider">单选列表(蓝色)</div>
+    <label class="item">
+      <input class="radio primary" type="radio" name="radio2" checked />
+      <div class="text">支付宝</div>
+    </label>
+    <label class="item">
+      <input class="radio primary" type="radio" name="radio2" />
+      <div class="text">微信支付</div>
+    </label>
+    <div class="item-divider">单选列表(绿色)</div>
+    <label class="item">
+      <input class="radio success" type="radio" name="radio3" checked />
+      <div class="text">支付宝</div>
+    </label>
+    <label class="item">
+      <input class="radio success" type="radio" name="radio3" />
+      <div class="text">微信支付</div>
+    </label>
+    <div class="item-divider">单选列表(禁用)</div>
+    <label class="item">
+      <input class="radio" type="radio" name="radio4" checked disabled />
+      <div class="text">支付宝</div>
+    </label>
+    <label class="item">
+      <input class="radio" type="radio" name="radio4" disabled />
+      <div class="text">微信支付</div>
+    </label>
+    <div class="item-divider">单选列表(右侧排列)</div>
+    <label class="item">
+      <div class="text">支付宝</div>
+      <input class="radio" type="radio" name="radio5" checked />
+    </label>
+    <label class="item">
+      <div class="text">微信支付</div>
+      <input class="radio" type="radio" name="radio5" />
+    </label>
+    <div class="item-divider">复选列表(橙色 / 默认)</div>
+    <label class="item">
+      <input class="checkbox" type="checkbox" checked />
+      <div class="text">支付宝</div>
+    </label>
+    <label class="item">
+      <input class="checkbox" type="checkbox" />
+      <div class="text">微信支付</div>
+    </label>
+    <div class="item-divider">复选列表(蓝色)</div>
+    <label class="item">
+      <input class="checkbox primary" type="checkbox" checked />
+      <div class="text">支付宝</div>
+    </label>
+    <label class="item">
+      <input class="checkbox primary" type="checkbox" />
+      <div class="text">微信支付</div>
+    </label>
+    <div class="item-divider">复选列表(绿色)</div>
+    <label class="item">
+      <input class="checkbox success" type="checkbox" checked />
+      <div class="text">支付宝</div>
+    </label>
+    <label class="item">
+      <input class="checkbox success" type="checkbox" />
+      <div class="text">微信支付</div>
+    </label>
+    <div class="item-divider">复选列表(禁用)</div>
+    <label class="item">
+      <input class="checkbox" type="checkbox" checked disabled />
+      <div class="text">支付宝</div>
+    </label>
+    <label class="item">
+      <input class="checkbox" type="checkbox" disabled />
+      <div class="text">微信支付</div>
+    </label>
+    <div class="item-divider">复选列表(右侧排列)</div>
+    <label class="item">
+      <div class="text">支付宝</div>
+      <input class="checkbox" type="checkbox" checked />
+    </label>
+    <label class="item">
+      <div class="text">微信支付</div>
+      <input class="checkbox" type="checkbox" />
+    </label>
+    <div class="item-divider text-warning">颠倒: 单选框使用复选框外观</div>
+    <label class="item">
+      <input class="checkbox primary" type="radio" name="radio6" checked />
+      <div class="text">支付宝</div>
+    </label>
+    <label class="item">
+      <input class="checkbox primary" type="radio" name="radio6" />
+      <div class="text">微信支付</div>
+    </label>
+    <div class="item-divider text-warning">颠倒: 复选框使用单选框外观</div>
+    <label class="item">
+      <input class="radio success" type="checkbox" checked />
+      <div class="text">支付宝</div>
+    </label>
+    <label class="item">
+      <input class="radio success" type="checkbox" />
+      <div class="text">微信支付</div>
+    </label>
+  </div>
+  
+  <div class="agree">
+    <label>
+      <input class="checkbox success" type="checkbox" />
+      <span>阅读并同意<a class="link" href="javascript:;">《相关条款》</a></span>
+    </label>
+  </div>
+  
+  <div class="divider">协议居中</div>
+  <div class="agree">
+    <label class="center">
+      <input class="checkbox success" type="checkbox" />
+      <span>阅读并同意<a class="link" href="javascript:;">《相关条款》</a></span>
+    </label>
+  </div>
+  
+  <div class="vspace hspace">
+    <button class="button success">确定</button>
+  </div>
+  
+  <footer class="vspace">
+    <div class="text-center text-sm">
+      <a class="link" href="javascript:history.back();"><i class="icon">&#xe60e;</i>返回</a>
+    </div>
+  </footer>
+</div>

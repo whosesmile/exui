@@ -1,0 +1,46 @@
+@import "../base/fn";
+
+.tabbar {
+  .setFlex(center, item);
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  background-color: @tabbarBgColor;
+
+  &:before {
+    .setTopLine();
+  }
+  &:after {
+    .setBottomLine();
+  }
+  > .item {
+    cursor: pointer;
+    text-align: center;
+    line-height: 1;
+    padding: 6px 0 3px;
+    color: @tabTextColor;
+
+    &:not(.active):active {
+      opacity: 0.8;
+    }
+    &.active {
+      color: @textColorOrange;
+    }
+    .icon {
+      font-size: @tabIconSize;
+
+      img {
+        display: block;
+        margin: auto;
+        width: @tabIconSize;
+        height: @tabIconSize;
+      }
+      & + .label {
+        display: block;
+        margin-top: 5px;
+        font-size: @tabFontSize;
+      }
+    }
+  }
+}

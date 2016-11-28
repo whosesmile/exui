@@ -1,0 +1,2204 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1, minimum-scale=1" />
+    <title>ExUI</title>
+    <link rel="stylesheet" href="../style/exui.css" />
+    <link rel="stylesheet" href="./example.css" />
+  </head>
+  <body ontouchstart>
+    <div class="container" id="container">
+      <div class="page-header">
+        <h1>ExUI</h1>
+        <div class="describe">
+          <p>ExUI是整体结构抄袭了WeUI，同时借鉴Antui、Semantic、Ionic、Sui、Bootstrap衍生出来的定制UI。
+        </div>
+      </div>
+
+      <div class="vspace hspace">
+        <div class="ex-group">
+          <div class="list compact">
+            <a class="item" href="javascript:;">
+              <div class="text">布局</div>
+              <i class="icon">
+                <img width="30" src="./images/icon_nav_layout.png" />
+              </i>
+            </a>
+          </div>
+          <div class="list compact">
+            <a class="item" href="#flex">
+              <div class="text">Flex</div>
+              <i class="icon">&#xe61a;</i>
+            </a>
+            <a class="item" href="#grid">
+              <div class="text">Grid</div>
+              <i class="icon">&#xe61a;</i>
+            </a>
+            <a class="item" href="#list">
+              <div class="text">List</div>
+              <i class="icon">&#xe61a;</i>
+            </a>
+            <a class="item" href="#composite">
+              <div class="text">Composite</div>
+              <i class="icon">&#xe61a;</i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="vspace hspace">
+        <div class="ex-group">
+          <div class="list compact">
+            <a class="item" href="javascript:;">
+              <div class="text">表单</div>
+              <i class="icon">
+                <img width="30" src="./images/icon_nav_form.png" />
+              </i>
+            </a>
+          </div>
+          <div class="list compact">
+            <a class="item" href="#button">
+              <div class="text">Button</div>
+              <i class="icon">&#xe61a;</i>
+            </a>
+            <a class="item" href="#input">
+              <div class="text">Input</div>
+              <i class="icon">&#xe61a;</i>
+            </a>
+            <a class="item" href="#switch">
+              <div class="text">Switch</div>
+              <i class="icon">&#xe61a;</i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="vspace hspace">
+        <div class="ex-group">
+          <div class="list compact">
+            <a class="item" href="javascript:;">
+              <div class="text">导航</div>
+              <i class="icon">
+                <img width="30" src="./images/icon_nav_nav.png" />
+              </i>
+            </a>
+          </div>
+          <div class="list compact">
+            <a class="item" href="#bar">
+              <div class="text">Bar</div>
+              <i class="icon">&#xe61a;</i>
+            </a>
+            <a class="item" href="#navbar">
+              <div class="text">Navbar</div>
+              <i class="icon">&#xe61a;</i>
+            </a>
+            <a class="item" href="#tabbar">
+              <div class="text">Tabbar</div>
+              <i class="icon">&#xe61a;</i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="vspace hspace">
+        <div class="ex-group">
+          <div class="list compact">
+            <a class="item" href="javascript:;">
+              <div class="text">组件</div>
+              <i class="icon">
+                <img width="30" src="./images/icon_nav_special.png" />
+              </i>
+            </a>
+          </div>
+          <div class="list compact">
+            <a class="item" href="#article">
+              <div class="text">Article</div>
+              <i class="icon">&#xe61a;</i>
+            </a>
+            <a class="item" href="#footer">
+              <div class="text">Footer</div>
+              <i class="icon">&#xe61a;</i>
+            </a>
+            <a class="item" href="#loadmore">
+              <div class="text">Loadmore</div>
+              <i class="icon">&#xe61a;</i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="vspace hspace">
+        <div class="ex-group">
+          <div class="list compact">
+            <a class="item" href="javascript:;">
+              <div class="text">操作</div>
+              <i class="icon">
+                <img width="30" src="./images/icon_nav_feedback.png" />
+              </i>
+            </a>
+          </div>
+          <div class="list compact">
+            <a class="item" href="#toast">
+              <div class="text">Toast</div>
+              <i class="icon">&#xe61a;</i>
+            </a>
+            <a class="item" href="#modal">
+              <div class="text">Modal</div>
+              <i class="icon">&#xe61a;</i>
+            </a>
+            <a class="item" href="#sheet">
+              <div class="text">ActionSheet</div>
+              <i class="icon">&#xe61a;</i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <script src="./zepto.min.js"></script>
+    <script src="./example.js"></script>
+  </body>
+</html><script type="text/exui-templates" id="exui_article"><div class="ex-page">
+  <div class="page-header">
+    <h4>Article</h4>
+    <p class="text-gray text-sm">文章</p>
+  </div>
+  
+  <article class="article">
+    <h1>大标题</h1>
+    <section>
+      <h2 class="title">1. 章标题</h2>
+      <section>
+        <h3>1.1 节标题</h3>
+        <p>
+          我常以“人就这么一辈子”这句话来告诫自己并劝说朋友。这七个字，说来容易，听来简单，想起来却很深沉；它能使我在懦弱时变的勇敢，骄矜时变得谦虚，颓废时变得积极，痛苦时变得欢愉，对任何事拿得起也放得下，所以我称它为“当头棒喝”、“七字箴言”。
+        </p>
+        <p>
+          <img src="./images/750-2.jpg" alt="" />
+          <img src="./images/750-3.jpg" alt="" />
+        </p>
+      </section>
+      <section>
+        <h3>1.2 节标题</h3>
+        <p>
+          人不就这么一辈子吗？生不带来、死不带去的一辈子，春发、夏荣、秋收、冬藏，看来像是一年四季般短暂的一辈子。每当我为俗务劳形的时刻，想到那七个字，便忆起李白《春夜宴桃李园记》中“天地者，万物之逆旅，光阴者，百代之过客，浮生若梦，为欢几何”的句子，而在哀时光之须臾，感万物之行休中，把周遭的俗事抛开，将眼前的争逐看淡。我常想世间的劳苦愁烦、恩恩怨怨，如有不能化解的、不能消受的，不也驮过这短短几十年就烟消云散了吗？若是如此，又有什么好解不开的呢？
+        </p>
+      </section>
+    </section>
+    <section>
+      <h2 class="title">2. 章标题</h2>
+      <section>
+        <h3>2.1 节标题</h3>
+        <p>
+          人就这么一辈子，你可以积极地把握它；也可以淡然地面对它。想不开想想它，以求释然吧！精神颓废时想想它，以求感恩吧！因为不管怎样，你总是很幸运地拥有这一辈子，不能白来这一遭啊。
+        </p>
+        <p>
+          <img src="./images/750-1.jpg" alt="" />
+        </p>
+      </section>
+    </section>
+    <section>
+      <h2 class="title">3. 其他示范</h2>
+      <section>
+        <h3>3.1 表格</h3>
+        <table>
+          <tbody>
+            <tr>
+              <th>#</th>
+              <th>姓名</th>
+              <th>年龄</th>
+              <th>性别</th>
+            </tr>
+            <tr>
+              <td>1号</td>
+              <td>张三</td>
+              <td>32</td>
+              <td>男</td>
+            </tr>
+            <tr>
+              <td>2号</td>
+              <td>李四</td>
+              <td>27</td>
+              <td>女</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section>
+        <h3>3.2 DL列表</h3>
+        <dl>
+          <dt>吃货の菜谱</dt>
+          <dd>荷塘月色</dd>
+          <dd>酸菜炖粉条</dd>
+          <dd>煎炸小黄鱼</dd>
+        </dl>
+      </section>
+      <section>
+        <h3>3.3 UL以及OL列表</h3>
+        <ul>
+          <li>第一 老婆永远是正确的</li>
+          <li>第二 如果老婆有错，请参考第一条</li>
+        </ul>
+      </section>
+    </section>
+  </article>
+  
+  <footer class="vspace">
+    <div class="text-center text-sm">
+      <a class="link" href="javascript:history.back();"><i class="icon">&#xe60e;</i>返回</a>
+    </div>
+  </footer>
+</div></script>
+<script type="text/exui-templates" id="exui_bar"><div class="ex-page">
+  <div class="page-header">
+    <h4>Bar</h4>
+    <p class="text-gray text-sm">横栏</p>
+  </div>
+  
+  <div class="bar">
+    <a class="button literal text-dark" href="javascript:;">
+      <i class="icon">&#xe60e;</i>
+    </a>
+    <h1 class="title"><b>顶部导航</b></h1>
+    <a class="button literal text-dark" href="javascript:;">
+      <i class="icon">&#xe618;</i>
+    </a>
+  </div>
+  
+  <div class="divider" ui-mode="20%">ICON+LABEL</div>
+  
+  <div class="bar">
+    <a class="button literal text-driving" href="javascript:;">
+      <i class="icon">&#xe60e;</i>
+      <span class="label">返回</span>
+    </a>
+    <h1 class="title"><b>顶部导航</b></h1>
+    <a class="button literal text-success" href="javascript:;">
+      <i class="icon">&#xe60a;</i>
+    </a>
+  </div>
+  
+  <div class="divider" ui-mode="20%">双侧ICON+LABEL</div>
+  
+  <div class="bar">
+    <a class="button literal text-primary" href="javascript:;">
+      <i class="icon">&#xe60e;</i>
+      <span class="label">返回</span>
+    </a>
+    <h1 class="title"><b>顶部导航</b></h1>
+    <a class="button literal text-primary" href="javascript:;">
+      <span class="label">下一步</span>
+      <i class="icon">&#xe61a;</i>
+    </a>
+  </div>
+  
+  <div class="divider" ui-mode="20%">多个ICON</div>
+  
+  <div class="bar">
+    <a class="button literal text-primary" href="javascript:;">
+      <i class="icon">&#xe60e;</i>
+    </a>
+    <a class="button literal text-primary" href="javascript:;">
+      <i class="icon">&#xe61f;</i>
+    </a>
+    <h1 class="title"><b>顶部导航</b></h1>
+    <a class="button literal text-primary" href="javascript:;">
+      <span class="label">下一步</span>
+      <i class="icon">&#xe61a;</i>
+    </a>
+  </div>
+  
+  <div class="divider" ui-mode="20%">多个LABEL</div>
+  
+  <div class="bar">
+    <a class="button literal text-primary" href="javascript:;">
+      <i class="icon">&#xe60e;</i>
+      <span class="label">返回</span>
+    </a>
+    <a class="button literal text-primary" href="javascript:;">
+      <span class="label">关闭</span>
+    </a>
+    <h1 class="title"><b>顶部导航</b></h1>
+    
+    <a class="button literal text-primary" href="javascript:;">
+      <span class="label">放弃</span>
+    </a>
+    <a class="button literal text-primary" href="javascript:;">
+      <span class="label">提交</span>
+      <i class="icon">&#xe61a;</i>
+    </a>
+  </div>
+  
+  <div class="divider" ui-mode="20%">复合按钮</div>
+  
+  <div class="bar">
+    <div class=" hspace text-driving text-sm">总价:￥120.93</div>
+    <div class="title">
+      <div class="button-group compact">
+        <button class="button driving square">加入购物车</button>
+        <button class="button driving square">立即提交</button>
+      </div>
+    </div>
+  </div>
+  
+  <footer class="vspace">
+    <div class="text-center text-sm">
+      <a class="link" href="javascript:history.back();"><i class="icon">&#xe60e;</i>返回</a>
+    </div>
+  </footer>
+</div>
+<script type="text/javascript">
+  $(document).off('click', '.navbar > .item').on('click', '.navbar > .item', function (e) {
+    $(this).addClass('active').siblings().removeClass('active');
+  });
+</script></script>
+<script type="text/exui-templates" id="exui_button"><div class="ex-page">
+  <div class="page-header">
+    <h4>Button</h4>
+    <p class="text-gray text-sm">按钮</p>
+  </div>
+  <div class="vspace hspace">
+    
+    <button class="button primary">主按钮</button>
+    <button class="button primary" disabled>主按钮 禁用</button>
+    <button class="button default">次按钮</button>
+    <button class="button default disabled">次按钮 禁用</button>
+    <button class="button warning">警告按钮</button>
+    <button class="button warning disabled">警告按钮 禁用</button>
+    <button class="button success">成功按钮</button>
+    <button class="button success disabled">成功按钮 禁用</button>
+    <button class="button driving">引导按钮</button>
+    <button class="button driving disabled">引导按钮 禁用</button>
+    
+    <div class="vspace" ui-mode="50px">
+      <div class="divider" ui-mode="30%">以下为加载提示</div>
+    </div>
+    
+    <button class="button default"><i class="loading"></i>加载中</button>
+    <button class="button driving"><i class="loading"></i>载入中</button>
+    <button class="button primary"><i class="loading"></i>处理中</button>
+    <button class="button warning"><i class="loading"></i>请稍后</button>
+    <button class="button success"><i class="loading"></i>提交中</button>
+    
+    <div class="vspace" ui-mode="50px">
+      <div class="divider" ui-mode="30%">以下为添加ICON</div>
+    </div>
+    
+    <button class="button default"><i class="icon text-xl">&#xe61c;</i>提交成功</button>
+    <button class="button warning"><i class="icon text-xl">&#xe61d;</i>提交失败</button>
+    <button class="button primary"><i class="icon text-xl">&#xe618;</i>点击刷新</button>
+    <button class="button driving"><i class="icon text-xl">&#xe601;</i>请您确认</button>
+    <button class="button success"><i class="icon text-xl">&#xe61b;</i>点击分享</button>
+    <button class="button primary"><i class="icon text-xl"><img width="20" src="./images/icon_intro.png" /></i>内嵌图片</button>
+    
+    <div class="vspace" ui-mode="50px">
+      <div class="divider" ui-mode="30%">以下为镂空按钮</div>
+    </div>
+    
+    <button class="button plain-primary">主要按钮</button>
+    <button class="button plain-default">次要按钮</button>
+    <button class="button plain-warning">警告按钮</button>
+    <button class="button plain-success">成功按钮</button>
+    <button class="button plain-driving">促销按钮</button>
+    <button class="button plain-driving disabled">镂空按钮 禁用</button>
+    
+    <div class="vspace" ui-mode="50px">
+      <div class="divider" ui-mode="30%">以下为直角按钮</div>
+    </div>
+    
+    <button class="button warning square">直角按钮</button>
+    <button class="button primary square">直角按钮</button>
+    <button class="button plain-driving square">直角按钮</button>
+    <button class="button plain-success square">直角按钮</button>
+    
+    <div class="vspace" ui-mode="50px">
+      <div class="divider" ui-mode="30%">以下为内联按钮</div>
+    </div>
+
+    <div class="vspace text-center">
+      <button class="button primary inline">内联按钮</button>
+      <button class="button default inline">内联按钮</button>
+      <button class="button driving inline">内联按钮</button>
+
+      <div class="vspace text-warning text-sm">如果内联按钮之间有空格或换行，水平间距将不精准，推荐使用button-group来替换内联排版</div>
+    </div>
+
+    <div class="vspace" ui-mode="50px">
+      <div class="divider" ui-mode="30%">以下为小按钮</div>
+    </div>
+    
+    <div class="vspace text-center">
+      <button class="button primary sm">较小按钮</button>
+      <button class="button default sm">较小按钮</button>
+      <button class="button driving sm">较小按钮</button>
+    </div>
+    
+    <div class="vspace text-center">
+      <button class="button plain-primary sm">较小按钮</button>
+      <button class="button plain-default sm">较小按钮</button>
+      <button class="button plain-driving sm">较小按钮</button>
+    </div>
+    
+    <div class="vspace text-center">
+      <button class="button primary xs">特小按钮</button>
+      <button class="button default xs">特小按钮</button>
+      <button class="button success xs">特小按钮</button>
+    </div>
+    
+    <div class="vspace" ui-mode="50px">
+      <div class="divider" ui-mode="30%">以下为按钮组合</div>
+    </div>
+    
+    <div class="button-group vspace">
+      <button class="button primary">按钮组</button>
+      <button class="button warning">按钮组</button>
+      <button class="button success">按钮组</button>
+    </div>
+    
+    <div class="button-group compact vspace">
+      <button class="button primary">紧凑组</button>
+      <button class="button warning">紧凑组</button>
+      <button class="button success">紧凑组</button>
+    </div>
+    
+    <div class="button-group compact vspace">
+      <button class="button primary square">紧凑直角</button>
+      <button class="button warning square">紧凑直角</button>
+      <button class="button success square">紧凑直角</button>
+    </div>
+    
+    <div class="button-group vspace">
+      <button class="button plain-primary">按钮组</button>
+      <button class="button plain-warning">按钮组</button>
+      <button class="button plain-success">按钮组</button>
+    </div>
+    
+    <div class="button-group compact vspace">
+      <button class="button plain-primary">紧凑组</button>
+      <button class="button plain-primary">紧凑组</button>
+      <button class="button plain-primary">紧凑组</button>
+    </div>
+    
+    <div class="button-group compact vspace">
+      <button class="button plain-driving square">紧凑直角</button>
+      <button class="button plain-driving square">紧凑直角</button>
+      <button class="button plain-driving square">紧凑直角</button>
+    </div>
+    
+  </div>
+  
+  <footer class="vspace">
+    <div class="text-center text-sm">
+      <a class="link" href="javascript:history.back();"><i class="icon">&#xe60e;</i>返回</a>
+    </div>
+  </footer>
+</div></script>
+<script type="text/exui-templates" id="exui_composite"><div class="ex-page">
+  <div class="page-header">
+    <h4>Composite</h4>
+    <p class="text-gray text-sm">列表复合应用</p>
+  </div>
+  
+  <div class="list">
+    <div class="item">
+      <div class="text text-sm text-gray">文字组合</div>
+    </div>
+    <a class="item" href="javascript:;">
+      <div class="text">
+        <span>北疆饭店（正常）</span>
+        <div class="brief">菜式很齐全，味道也不错，环境很温馨，并且不用排队，完美。</div>
+      </div>
+    </a>
+    <a class="item" href="javascript:;">
+      <div class="text">
+        <h4>善在·金鼎轩（加粗）</h4>
+        <div class="brief">菜品真材实料，青菜掐头去尾做的非常精致；豆腐满满的原汁原味啊！</div>
+      </div>
+    </a>
+    <a class="item" href="javascript:;">
+      <div class="text text-sm text-link">查看更多</div>
+      <i class="icon">&#xe61a;</i>
+    </a>
+  </div>
+  
+  <div class="list">
+    <div class="item">
+      <div class="text text-sm text-gray">文字加注脚</div>
+    </div>
+    <a class="item" ui-mode="15px" href="javascript:;">
+      <div class="text">
+        <span>龙泉寺</span>
+        <div class="brief">行亦禅，坐亦禅，语默静动体自然。心若安，可步步生莲。心清一切明，心浊一切暗；心痴一切迷，心悟一切禅。</div>
+        <div class="brief">
+          <div class="text-group text-light">
+            <span class="item">禅修自然</span>
+            <span class="item">自我催眠</span>
+          </div>
+        </div>
+      </div>
+    </a>
+    <a class="item" ui-mode="15px" href="javascript:;">
+      <div class="text">
+        <h4>龙泉寺</h4>
+        <div class="brief">行亦禅，坐亦禅，语默静动体自然。心若安，可步步生莲。心清一切明，心浊一切暗；心痴一切迷，心悟一切禅。</div>
+        <div class="brief">
+          <div class="text-group text-light text-right">
+            <span class="item">禅修自然</span>
+            <span class="item">11月11日</span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  
+  <div class="list">
+    <div class="item">
+      <div class="text text-sm text-gray">小图文组合</div>
+    </div>
+    <a class="item" href="javascript:;">
+      <div class="avatar">
+        <img width="24" src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" />
+      </div>
+      <div class="text">标题文字</div>
+      <i class="icon">&#xe61a;</i>
+    </a>
+    <a class="item" href="javascript:;">
+      <div class="avatar">
+        <img width="24" src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" />
+      </div>
+      <div class="text">标题文字</div>
+      <i class="icon">&#xe61a;</i>
+    </a>
+    <a class="item" href="javascript:;">
+      <div class="text text-sm text-link">查看更多</div>
+      <i class="icon">&#xe61a;</i>
+    </a>
+  </div>
+  
+  <div class="list">
+    <div class="item">
+      <div class="text text-sm text-gray">单行文字图文组合</div>
+    </div>
+    <a class="item" ui-mode="15px" href="javascript:;">
+      <div class="avatar">
+        <img width="45" src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" />
+      </div>
+      <div class="text">
+        <span>北疆饭店</span>
+        <div class="brief text-ellipsis">菜式很齐全，味道也不错，环境很温馨，并且不用排队，完美。</div>
+      </div>
+    </a>
+    <a class="item" ui-mode="15px" href="javascript:;">
+      <div class="avatar">
+        <img width="45" src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" />
+      </div>
+      <div class="text">
+        <h4>善在·金鼎轩</h4>
+        <div class="brief text-ellipsis">菜品真材实料，青菜掐头去尾做的非常精致；豆腐满满的原汁原味啊！</div>
+      </div>
+    </a>
+    <a class="item" href="javascript:;">
+      <div class="text text-sm text-link">查看更多</div>
+      <i class="icon">&#xe61a;</i>
+    </a>
+  </div>
+  
+  <div class="list">
+    <div class="item">
+      <div class="text text-sm text-gray">双行文字图文组合</div>
+    </div>
+    <a class="item" ui-mode="15px" href="javascript:;">
+      <div class="avatar">
+        <img width="60" src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" />
+      </div>
+      <div class="text">
+        <span>北疆饭店</span>
+        <div class="brief">菜式很齐全，味道也不错，环境很温馨，并且不用排队，完美。</div>
+      </div>
+    </a>
+    <a class="item" ui-mode="15px" href="javascript:;">
+      <div class="avatar">
+        <img width="60" src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" />
+      </div>
+      <div class="text">
+        <h4>善在·金鼎轩</h4>
+        <div class="brief">菜品真材实料，青菜掐头去尾做的非常精致；豆腐满满的原汁原味啊！</div>
+      </div>
+    </a>
+    <a class="item" href="javascript:;">
+      <div class="text text-sm text-link">查看更多</div>
+      <i class="icon">&#xe61a;</i>
+    </a>
+  </div>
+  
+  <div class="list">
+    <a class="item" href="javascript:;">
+      <div class="text text-sm">天猫国际</div>
+      <div class="extra text-sm">待支付</div>
+    </a>
+    <a class="item" ui-mode="15px" href="javascript:;">
+      <div class="avatar">
+        <img width="60" src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" />
+      </div>
+      <div class="text">
+        <span>北疆饭店</span>
+        <div class="brief">菜式很齐全，味道也不错，环境很温馨，并且不用排队，完美。</div>
+      </div>
+    </a>
+    <div class="item">
+      <div class="text text-sm">人均:<span class="text-driving">￥88.0</span></div>
+      <div class="extra">
+        <div class="button-group">
+          <a class="button plain-driving sm" href="javascript:;">立即支付</a>
+          <a class="button default sm" href="javascript:;">查看详情</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="list">
+    <a class="item" href="javascript:;">
+      <div class="text text-sm">微信商城</div>
+      <div class="extra text-sm">已发货</div>
+    </a>
+    <a class="item" ui-mode="15px" href="javascript:;">
+      <div class="avatar">
+        <img width="60" src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" />
+      </div>
+      <div class="text">
+        <h4>善在·金鼎轩</h4>
+        <div class="brief">菜品真材实料，青菜掐头去尾做的非常精致；豆腐满满的原汁原味啊！</div>
+      </div>
+    </a>
+    <div class="item">
+      <div class="text text-sm">人均:<span class="text-driving">￥66.0</span></div>
+      <div class="extra">
+        <div class="button-group">
+          <a class="button plain-success sm" href="javascript:;">查看物流</a>
+          <a class="button default sm" href="javascript:;">查看详情</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="list">
+    <a class="item" href="javascript:;">
+      <div class="text text-sm">京东商城</div>
+      <div class="extra text-sm">已签收</div>
+    </a>
+    <a class="item" ui-mode="15px" href="javascript:;">
+      <div class="avatar">
+        <img width="60" src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" />
+      </div>
+      <div class="avatar">
+        <img width="60" src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" />
+      </div>
+      <div class="avatar">
+        <img width="60" src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" />
+      </div>
+      <div class="avatar">
+        <img width="60" src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" />
+      </div>
+    </a>
+    <div class="item">
+      <div class="text text-sm">总价:<span class="text-driving">￥123.0</span></div>
+      <div class="extra">
+        <div class="button-group">
+          <a class="button plain-primary sm" href="javascript:;">发表评价</a>
+          <a class="button default sm" href="javascript:;">查看详情</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="list">
+    <div class="item">
+      <div class="label text-gray">付款金额</div>
+      <div class="text text-right">￥869.00</div>
+    </div>
+    <div class="item">
+      <div class="text">
+        <p class="text-justify">
+          <span class="label">商品</span>
+          <span class="value text-right">飞利浦空气炸锅</span>
+        </p>
+        <p class="text-justify">
+          <span class="label">商家</span>
+          <span class="value text-right">飞利浦天猫旗舰店</span>
+        </p>
+        <p class="text-justify">
+          <span class="label">颜色分类</span>
+          <span class="value text-right">白色</span>
+        </p>
+      </div>
+    </div>
+    <a class="item thread" href="javascript:;">
+      <div class="text text-success text-center">付款</div>
+    </a>
+  </div>
+  
+  <div class="list">
+    <div class="item">
+      <div class="label text-gray">付款金额</div>
+      <div class="text text-right">￥869.00</div>
+    </div>
+    <div class="item">
+      <div class="text">
+        <p class="text-justify">
+          <span class="label">商品</span>
+          <span class="value text-right">飞利浦空气炸锅</span>
+        </p>
+        <p class="text-justify">
+          <span class="label">商家</span>
+          <span class="value text-right">飞利浦天猫旗舰店</span>
+        </p>
+        <p class="text-justify">
+          <span class="label">颜色分类</span>
+          <span class="value text-right">白色</span>
+        </p>
+      </div>
+    </div>
+    <div class="item thread" ui-mode="0px">
+      <div class="button-group compact nesting">
+        <a class="button square text-gray text-nm">取消</a>
+        <a class="button square text-success text-nm">确定</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="list">
+    <a class="item" ui-mode="15px" href="javascript:;">
+      <i class="icon text-xl text-darkgray">&#xe60d;</i>
+      <div class="text">
+        <p class="text-justify text-md">
+          <span>联系人: 杜拉拉</span>
+          <span class="value text-right">18612345678</span>
+        </p>
+        <div class="brief">北京市朝阳区人民群众公园</div>
+      </div>
+      <i class="icon">&#xe61a;</i>
+    </a>
+    <div class="item">
+      <div class="extra">
+        <div class="button-group">
+          <a class="button default sm"><i class="icon">&#xe627;</i>编辑</a>
+          <a class="button default sm"><i class="icon">&#xe629;</i>删除</a>
+        </div>
+      </div>
+      <label class="text text-right text-sm">
+        <input class="checkbox" type="radio" name="radio1" checked />设为默认
+      </label>
+    </div>
+  </div>
+
+  <div class="list">
+    <a class="item" ui-mode="15px" href="javascript:;">
+      <i class="icon text-xl text-darkgray">&#xe60d;</i>
+      <div class="text">
+        <p class="text-justify text-md">
+          <span>联系人: 特朗普</span>
+          <span class="value text-right">18812345678</span>
+        </p>
+        <div class="brief">美利坚众合国华盛顿白宫府</div>
+      </div>
+      <i class="icon">&#xe61a;</i>
+    </a>
+    <div class="item">
+      <div class="extra">
+        <div class="button-group">
+          <a class="button default sm"><i class="icon">&#xe627;</i>编辑</a>
+          <a class="button default sm"><i class="icon">&#xe629;</i>删除</a>
+        </div>
+      </div>
+      <label class="text text-right text-sm">
+        <input class="checkbox" type="radio" name="radio1" />设为默认
+      </label>
+    </div>
+  </div>
+  
+  <footer class="vspace">
+    <div class="text-center text-sm">
+      <a class="link" href="javascript:history.back();"><i class="icon">&#xe60e;</i>返回</a>
+    </div>
+  </footer>
+</div></script>
+<script type="text/exui-templates" id="exui_flex"><div class="ex-page">
+  <div class="page-header">
+    <h4>Flex</h4>
+    <p class="text-gray text-sm">Flex布局</p>
+  </div>
+
+  <div class="hspace">
+    <div class="divider" ui-mode="20%">默认水平间距10px</div>
+
+    <div class="vspace" ui-mode="10px">
+      <div class="flex">
+        <div class="item">
+          <div class="holder">exui</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="vspace" ui-mode="10px">
+      <div class="flex">
+        <div class="item">
+          <div class="holder">exui</div>
+        </div>
+        <div class="item">
+          <div class="holder">exui</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="vspace" ui-mode="10px">
+      <div class="flex">
+        <div class="item">
+          <div class="holder">exui</div>
+        </div>
+        <div class="item">
+          <div class="holder">exui</div>
+        </div>
+        <div class="item">
+          <div class="holder">exui</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="vspace" ui-mode="10px">
+      <div class="flex">
+        <div class="item">
+          <div class="holder">exui</div>
+        </div>
+        <div class="item">
+          <div class="holder">exui</div>
+        </div>
+        <div class="item">
+          <div class="holder">exui</div>
+        </div>
+        <div class="item">
+          <div class="holder">exui</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider" ui-mode="20%">紧凑无水平间距</div>
+    
+    <div class="vspace" ui-mode="10px">
+      <div class="flex compact">
+        <div class="item">
+          <div class="holder">exui</div>
+        </div>
+        <div class="item">
+          <div class="holder">exui</div>
+        </div>
+        <div class="item">
+          <div class="holder">exui</div>
+        </div>
+        <div class="item">
+          <div class="holder">exui</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <footer class="vspace">
+    <div class="text-center text-sm">
+      <a class="link" href="javascript:history.back();"><i class="icon">&#xe60e;</i>返回</a>
+    </div>
+  </footer>
+</div></script>
+<script type="text/exui-templates" id="exui_footer"><div class="ex-page">
+  <div class="page-header">
+    <h4>Footer</h4>
+    <p class="text-gray text-sm">页脚</p>
+  </div>
+  
+  <footer>
+    <div class="text-gray text-xs text-center">Copyright &copy; 2016-2017 Company</div>
+  </footer>
+  
+  <div class="vspace" ui-mode="50px">
+    <div class="divider">分割线</div>
+  </div>
+  
+  <footer>
+    <div class="text-center text-sm">
+      <a class="link" href="javascript:;">我是链接</a>
+    </div>
+    <div class="text-gray text-xs text-center">Copyright &copy; 2016-2017 Company</div>
+  </footer>
+  
+  <div class="vspace" ui-mode="50px">
+    <div class="divider">分割线</div>
+  </div>
+  
+  <footer class="vspace btm-fixed" ui-mode="10px">
+    <div class="text-group text-sm text-center">
+      <a class="link item" href="javascript:;">合作</a>
+      <a class="link item" href="javascript:;">加盟</a>
+      <a class="link item" href="javascript:;">关于</a>
+      <a class="link item" href="javascript:;">协议</a>
+    </div>
+    <div class="text-gray text-xs text-center">Copyright &copy; 2016-2017 Company</div>
+  </footer>
+
+  <footer class="vspace">
+    <div class="text-center text-sm">
+      <a class="link" href="javascript:history.back();"><i class="icon">&#xe60e;</i>返回</a>
+    </div>
+  </footer>
+</div></script>
+<script type="text/exui-templates" id="exui_grid"><div class="ex-page">
+  <div class="page-header">
+    <h4>Grid</h4>
+    <p class="text-gray text-sm">网格</p>
+  </div>
+
+  <div class="divider">两列Grid</div>
+
+  <div class="grid" ui-mode="2">
+    <a class="item" href="javascript:;">
+      <i class="icon">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" />
+      </i>
+      <div class="label">项目名称</div>
+    </a>
+    <a class="item" href="javascript:;">
+      <i class="icon">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" />
+      </i>
+      <div class="label">项目名称</div>
+    </a>
+    <a class="item" href="javascript:;">
+      <i class="icon">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" />
+      </i>
+      <div class="label">项目名称</div>
+    </a>
+    <a class="item" href="javascript:;">
+      <i class="icon">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" />
+      </i>
+      <div class="label">项目名称</div>
+    </a>
+  </div>
+
+  <div class="divider">三列 <i class="text-primary">(默认)</i></div>
+  
+  <div class="grid">
+    <a class="item" href="javascript:;">
+      <i class="icon">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" />
+      </i>
+      <div class="label">项目名称</div>
+    </a>
+    <a class="item" href="javascript:;">
+      <i class="icon">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" />
+      </i>
+      <div class="label">项目名称</div>
+    </a>
+    <a class="item" href="javascript:;">
+      <i class="icon">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" />
+      </i>
+      <div class="label">项目名称</div>
+    </a>
+    <a class="item" href="javascript:;">
+      <i class="icon">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" />
+      </i>
+      <div class="label">项目名称</div>
+    </a>
+    <a class="item" href="javascript:;">
+      <i class="icon">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" />
+      </i>
+      <div class="label">项目名称</div>
+    </a>
+    <a class="item" href="javascript:;">
+      <i class="icon">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" />
+      </i>
+      <div class="label">项目名称</div>
+    </a>
+  </div>
+
+  <div class="divider">可以使用字体</div>
+
+  <div class="grid">
+    <a class="item" href="javascript:;">
+      <i class="icon text-gray">&#xe624;</i>
+      <div class="label">我是字体</div>
+    </a>
+    <a class="item" href="javascript:;">
+      <i class="icon text-gray">
+        <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/PjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+PHN2ZyBjbGFzcz0iaWNvbiIgc3R5bGU9IiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9IjQ1NjUiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMzIiIGhlaWdodD0iMzIiPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbXV0+PC9zdHlsZT48L2RlZnM+PHBhdGggZD0iTTUxMS42NTEwNTMgNjMuNzIyM2MtMjQ3LjIyMjU5MSAwLTQ0Ny42MDIzMTggMjAwLjM5NzEyMy00NDcuNjAyMzE4IDQ0Ny42MDIzMTggMCAyNDcuMjA0MTcyIDIwMC4zNzg3MDMgNDQ3LjYwMjMxOCA0NDcuNjAyMzE4IDQ0Ny42MDIzMTggMjQ3LjE4NTc1MiAwIDQ0Ny42MDIzMTgtMjAwLjM5ODE0NiA0NDcuNjAyMzE4LTQ0Ny42MDIzMThDOTU5LjI1MzM3IDI2NC4xMTk0MjMgNzU4LjgzNjgwNSA2My43MjIzIDUxMS42NTEwNTMgNjMuNzIyM0w1MTEuNjUxMDUzIDYzLjcyMjN6TTUxMS42NTEwNTMgOTIxLjYyNDM1NWMtMjI2LjYwNTAxOCAwLTQxMC4zMDE3ODMtMTgzLjY5NTc0Mi00MTAuMzAxNzgzLTQxMC4yOTk3MzcgMC0yMjYuNjA3MDY0IDE4My42OTY3NjYtNDEwLjMwMTc4MyA0MTAuMzAxNzgzLTQxMC4zMDE3ODMgMjI2LjYwMzk5NCAwIDQxMC4yOTk3MzcgMTgzLjY5NDcxOSA0MTAuMjk5NzM3IDQxMC4zMDE3ODNDOTIxLjk1MDc4OSA3MzcuOTI5NjM2IDczOC4yNTUwNDcgOTIxLjYyNDM1NSA1MTEuNjUxMDUzIDkyMS42MjQzNTVMNTExLjY1MTA1MyA5MjEuNjI0MzU1ek00MjEuODk3ODg5IDQyMi43MzdjMCAzMC45MDc5NC0yNS4wNDIzNDkgNTUuOTQ5MjY2LTU1Ljk1MTMxMyA1NS45NDkyNjYtMzAuOTA1ODk0IDAtNTUuOTQ5MjY2LTI1LjA0MjM0OS01NS45NDkyNjYtNTUuOTQ5MjY2IDAtMzAuOTA3OTQgMjUuMDQzMzczLTU1Ljk1MTMxMyA1NS45NDkyNjYtNTUuOTUxMzEzQzM5Ni44NTQ1MTcgMzY2Ljc4NjcxMSA0MjEuODk3ODg5IDM5MS44MzAwODMgNDIxLjg5Nzg4OSA0MjIuNzM3TDQyMS44OTc4ODkgNDIyLjczN3pNNTg2LjI3NDYzNCA0NzQuMDI3MTU0Yy0wLjgyNjgzMSAwLTEuNjYxODQ5LTAuMDU1MjU5LTIuNTAxOTg0LTAuMTY3ODIyLTEwLjIwOTUyNi0xLjM3MDIwNy0xNy4zNzQ3MTYtMTAuNzU0OTQ4LTE2LjAwNjU1Ni0yMC45NjM0NTEgMC4yNDg2NjMtMS44NTgzMjQgMi43NTQ3NC0xOC42NDQ2MzkgMTMuODIzODQzLTM1LjY2NTI5MSAxMC44MTczNy0xNi42MzA3NzIgMzEuNzI5NjU1LTM2LjQ1NjMwNyA2OS45MzY4MzktMzYuNDU2MzA3IDM4LjIwNTEzNyAwIDU5LjExODQ0NiAxOS44MjU1MzQgNjkuOTM0NzkyIDM2LjQ1NzMzIDExLjA3MDEyNiAxNy4wMTk2MjkgMTMuNTc0MTU3IDMzLjgwNjk2NyAxMy44MjI4MiAzNS42NjQyNjhsLTM2Ljk3MDAwNiA0Ljk1NzkxOSAwLjAyMTQ4OSAwLjE0MTIxNmMtMC4wMTczOTYtMC4xMDg0Ny0xLjcyNTI5NC0xMS4wNDg2MzctOC43NjE1NDgtMjEuMzU0MzU0LTguNTI5MjU3LTEyLjQ5MjUyMi0yMC45NzU3My0xOC41NjQ4MjEtMzguMDQ3NTQ4LTE4LjU2NDgyMS0xNy40ODgzMDMgMC0zMC4xMzYzNjggNi4zNzYyMjEtMzguNjY4Njk1IDE5LjQ5Mjk2LTYuNTEzMzQ0IDEwLjAxNDA3NC04LjEwOTcwMiAyMC4xODc3ODUtOC4xMjMwMDUgMjAuMjg0OTk5QzYwMy40Nzk0ODEgNDY3LjIyMTE0NCA1OTUuNDcyMTEgNDc0LjAyNzE1NCA1ODYuMjc0NjM0IDQ3NC4wMjcxNTRMNTg2LjI3NDYzNCA0NzQuMDI3MTU0ek00OTkuNDcyNjg2IDc2MS41MTE3MjdjLTQ3LjgwOTg4OSAwLTk0LjQ4OTAyNC0xNy4xODQzODEtMTMwLjgzMDcyMS00OS44MTA0NTMtNy42NjQ1NjMtNi44ODE3MzQtOC4zMDAwMzctMTguNjcxMjQ1LTEuNDIwMzQ5LTI2LjMzNjgzMiA2Ljg4Mjc1Ny03LjY2MzU0IDE4LjY3MjI2OC04LjMwMDAzNyAyNi4zMzY4MzItMS40MjAzNDkgNDMuNTA4OTMzIDM5LjA2MDYyMSAxMDUuNDczMTkzIDUwLjczMjQ1MSAxNjEuNzEzMDc5IDMwLjQ2MTc3OSA1Ny4wOTMzMjMtMjAuNTgwNzM0IDk2LjYzODk5MS02OS42MzM5NCAxMDUuNzgxMjA4LTEzMS4yMjI2NDcgMS41MTI0NDctMTAuMTg3MDEzIDEwLjk4OTI4NS0xNy4yMjQyOSAyMS4xODc1NTUtMTUuNzA5Nzk3IDEwLjE4ODAzNyAxLjUxMjQ0NyAxNy4yMjAxOTcgMTAuOTk3NDcyIDE1LjcwODc3MyAyMS4xODc1NTUtMTEuMTkxOSA3NS4zOTYxNzctNTkuODAyMDE0IDEzNS41MjI1OC0xMzAuMDI5NDcyIDE2MC44MzUwODJDNTQ1LjUyMDQ0MSA3NTcuNTY5OTUyIDUyMi4zNjYwOTIgNzYxLjUxMTcyNyA0OTkuNDcyNjg2IDc2MS41MTE3MjdMNDk5LjQ3MjY4NiA3NjEuNTExNzI3eiIgcC1pZD0iNDU2NiIgZmlsbD0iIzMzMyI+PC9wYXRoPjwvc3ZnPg==" />
+      </i>
+      <div class="label">我是图片</div>
+    </a>
+    <a class="item" href="javascript:;">
+      <i class="icon text-gray">&#xe624;</i>
+      <div class="label">我是字体</div>
+    </a>
+    <a class="item" href="javascript:;">
+      <i class="icon text-gray">&#xe624;</i>
+      <div class="label">我是字体</div>
+    </a>
+    <a class="item" href="javascript:;">
+      <i class="icon text-gray">&#xe624;</i>
+      <div class="label">我是字体</div>
+    </a>
+    <a class="item" href="javascript:;">
+      <i class="icon text-gray">&#xe624;</i>
+      <div class="label">我是字体</div>
+    </a>
+  </div>
+
+  <div class="divider">四列Grid</div>
+  
+  <div class="grid" ui-mode="4">
+    <a class="item" href="javascript:;">
+      <i class="icon">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" />
+      </i>
+      <div class="label">项目名称</div>
+    </a>
+    <a class="item" href="javascript:;">
+      <i class="icon">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" />
+      </i>
+      <div class="label">项目名称</div>
+    </a>
+    <a class="item" href="javascript:;">
+      <i class="icon">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" />
+      </i>
+      <div class="label">项目名称</div>
+    </a>
+    <a class="item" href="javascript:;">
+      <i class="icon">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" />
+      </i>
+      <div class="label">项目名称</div>
+    </a>
+    <a class="item" href="javascript:;">
+      <i class="icon">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" />
+      </i>
+      <div class="label">项目名称</div>
+    </a>
+    <a class="item" href="javascript:;">
+      <i class="icon">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" />
+      </i>
+      <div class="label">项目名称</div>
+    </a>
+    <a class="item" href="javascript:;">
+      <i class="icon">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" />
+      </i>
+      <div class="label">项目名称</div>
+    </a>
+    <a class="item" href="javascript:;">
+      <i class="icon">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" />
+      </i>
+      <div class="label">项目名称</div>
+    </a>
+  </div>
+
+  <div class="divider">五列Grid</div>
+  
+  <div class="grid" ui-mode="5">
+    <a class="item" href="javascript:;">
+      <i class="icon">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" />
+      </i>
+      <div class="label">项目名称</div>
+    </a>
+    <a class="item" href="javascript:;">
+      <i class="icon">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" />
+      </i>
+      <div class="label">项目名称</div>
+    </a>
+    <a class="item" href="javascript:;">
+      <i class="icon">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" />
+      </i>
+      <div class="label">项目名称</div>
+    </a>
+    <a class="item" href="javascript:;">
+      <i class="icon">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" />
+      </i>
+      <div class="label">项目名称</div>
+    </a>
+    <a class="item" href="javascript:;">
+      <i class="icon">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" />
+      </i>
+      <div class="label">项目名称</div>
+    </a>
+    <a class="item" href="javascript:;">
+      <i class="icon">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" />
+      </i>
+      <div class="label">项目名称</div>
+    </a>
+    <a class="item" href="javascript:;">
+      <i class="icon">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" />
+      </i>
+      <div class="label">项目名称</div>
+    </a>
+    <a class="item" href="javascript:;">
+      <i class="icon">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" />
+      </i>
+      <div class="label">项目名称</div>
+    </a>
+    <a class="item" href="javascript:;">
+      <i class="icon">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" />
+      </i>
+      <div class="label">项目名称</div>
+    </a>
+    <a class="item" href="javascript:;">
+      <i class="icon">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" />
+      </i>
+      <div class="label">项目名称</div>
+    </a>
+  </div>
+  
+  <footer class="vspace">
+    <div class="text-center text-sm">
+      <a class="link" href="javascript:history.back();"><i class="icon">&#xe60e;</i>返回</a>
+    </div>
+  </footer>
+</div></script>
+<script type="text/exui-templates" id="exui_icons"><div class="page">
+    <div class="page__hd">
+        <h1 class="page__title">Icons</h1>
+        <p class="page__desc">图标</p>
+    </div>
+    <div class="page__bd page__bd_spacing">
+        <div class="icon-box">
+            <i class="weui-icon-success weui-icon_msg"></i>
+            <div class="icon-box__ctn">
+                <h3 class="icon-box__title">成功</h3>
+                <p class="icon-box__desc">用于表示操作顺利达成</p>
+            </div>
+        </div>
+        <div class="icon-box">
+            <i class="weui-icon-info weui-icon_msg"></i>
+            <div class="icon-box__ctn">
+                <h3 class="icon-box__title">提示</h3>
+                <p class="icon-box__desc">用于表示信息提示；也常用于缺乏条件的操作拦截，提示用户所需信息</p>
+            </div>
+        </div>
+        <div class="icon-box">
+            <i class="weui-icon-warn weui-icon_msg-primary"></i>
+            <div class="icon-box__ctn">
+                <h3 class="icon-box__title">普通警告</h3>
+                <p class="icon-box__desc">用于表示操作后将引起一定后果的情况</p>
+            </div>
+        </div>
+        <div class="icon-box">
+            <i class="weui-icon-warn weui-icon_msg"></i>
+            <div class="icon-box__ctn">
+                <h3 class="icon-box__title">强烈警告</h3>
+                <p class="icon-box__desc">用于表示操作后将引起严重的不可挽回的后果的情况</p>
+            </div>
+        </div>
+        <div class="icon-box">
+            <i class="weui-icon-waiting weui-icon_msg"></i>
+            <div class="icon-box__ctn">
+                <h3 class="icon-box__title">等待</h3>
+                <p class="icon-box__desc">用于表示等待</p>
+            </div>
+        </div>
+        <div class="icon_sp_area">
+            <i class="weui-icon-success"></i>
+            <i class="weui-icon-success-no-circle"></i>
+            <i class="weui-icon-circle"></i>
+            <i class="weui-icon-warn"></i>
+            <i class="weui-icon-download"></i>
+            <i class="weui-icon-info-circle"></i>
+            <i class="weui-icon-cancel"></i>
+            <i class="weui-icon-search"></i>
+        </div>
+    </div>
+    <div class="page__ft">
+        <a href="javascript:home()"><img src="./images/icon_footer_link.png" /></a>
+    </div>
+</div></script>
+<script type="text/exui-templates" id="exui_input"><div class="ex-page">
+  <div class="page-header">
+    <h4>Input</h4>
+    <p class="text-gray text-sm">表单输入</p>
+  </div>
+  
+  <div class="list">
+    <div class="item-divider">文本框</div>
+    <div class="item">
+      <div class="text">
+        <input class="input" type="text" placeholder="文本输入框" />
+      </div>
+    </div>
+    <div class="item-divider">带ICON</div>
+    <div class="item">
+      <i class="icon text-primary">&#xe61e;</i>
+      <div class="text">
+        <input class="input" type="text" placeholder="请输入您的家庭住址" />
+      </div>
+    </div>
+    <div class="item-divider">文本域</div>
+    <div class="item">
+      <div class="text">
+        <textarea class="textarea" placeholder="文本域输入框"></textarea>
+        <div class="textarea-counter"><span>0</span>/200</div>
+      </div>
+    </div>
+    <div class="item-divider">LABEL宽度: ui-mode="[16px * 3,4,5,6,7]"</div>
+    <div class="item">
+      <label class="label" ui-mode="64px">姓名</label>
+      <div class="text">
+        <input class="input" type="text" placeholder="如果一组表单Label文字长度不定" />
+      </div>
+    </div>
+    <div class="item">
+      <label class="label" ui-mode="64px">手机号</label>
+      <div class="text">
+        <input class="input" type="text" placeholder="可以通过预设宽度来实现对齐效果" />
+      </div>
+    </div>
+    <div class="item">
+      <label class="label" ui-mode="64px">联系地址</label>
+      <div class="text">
+        <input class="input" type="text" placeholder="默认情况下Label宽度是自适应的" />
+      </div>
+    </div>
+    <div class="item-divider">选择 (推荐方案：点击箭头可以触发)</div>
+    <div class="item" ui-mode="0px">
+      <div class="text">
+        <div class="select-arrow">
+          <select class="select">
+            <option selected value="1">中国</option>
+            <option value="2">台湾</option>
+            <option value="3">香港</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="item" ui-mode="0px">
+      <label class="label">国家/地区</label>
+      <div class="text">
+        <div class="select-arrow">
+          <select class="select">
+            <option selected value="1">股票</option>
+            <option value="2">黄金</option>
+            <option value="3">美元</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="item-divider">选择 (常规方案)</div>
+    <div class="item">
+      <div class="text">
+        <select class="select">
+          <option selected value="1">中国</option>
+          <option value="2">台湾</option>
+          <option value="3">香港</option>
+        </select>
+      </div>
+      <i class="icon">&#xe60b;</i>
+    </div>
+    <div class="item">
+      <label class="label">国家/地区</label>
+      <div class="text">
+        <select class="select">
+          <option selected value="1">股票</option>
+          <option value="2">黄金</option>
+          <option value="3">美元</option>
+        </select>
+      </div>
+      <i class="icon">&#xe60b;</i>
+    </div>
+    <div class="item-divider">选择前置</div>
+    <div class="item" ui-mode="0px">
+      <label class="label" ui-mode="80px">
+        <div class="select-arrow">
+          <select class="select">
+            <option value="1">京</option>
+            <option value="2">津</option>
+            <option value="3">冀</option>
+            <option value="4">豫</option>
+          </select>
+        </div>
+      </label>
+      <div class="text">
+        <input class="input" type="tel" pattern="[0-9]*" placeholder="请输入您的车牌" />
+      </div>
+    </div>
+    <div class="item" ui-mode="0px">
+      <label class="label" ui-mode="80px">
+        <div class="select-arrow">
+          <select class="select">
+            <option value="1">+86</option>
+            <option value="2">+80</option>
+            <option value="3">+84</option>
+            <option value="4">+87</option>
+          </select>
+        </div>
+      </label>
+      <div class="text">
+        <input class="input" type="tel" pattern="[0-9]*" placeholder="请输入您的电话" />
+      </div>
+    </div>
+    <div class="item-divider">验证码</div>
+    <div class="item">
+      <label class="label">手机号</label>
+      <div class="text">
+        <input class="input" type="tel" pattern="[0-9]*" placeholder="请输入您的电话" />
+      </div>
+      <div class="interact">
+        <button class="button literal text-primary" type="button">发送验证码</button>
+      </div>
+    </div>
+    <div class="item">
+      <label class="label">验证码</label>
+      <div class="text">
+        <input class="input" type="number" pattern="[0-9]*" placeholder="请输入短信验证码" />
+      </div>
+      <div class="interact">
+        <button class="button literal text-primary" type="button" disabled>58秒后重发</button>
+      </div>
+    </div>
+    <div class="item">
+      <label class="label">验证码</label>
+      <div class="text">
+        <input class="input" type="text" placeholder="请输入图形验证码" />
+      </div>
+      <div class="interact">
+        <img class="captcha" src="./images/captcha.jpg" />
+      </div>
+    </div>
+    <div class="item-divider">表单组合</div>
+    <div class="item">
+      <label class="label">姓名</label>
+      <div class="text">
+        <input class="input" type="text" placeholder="请输入姓名" />
+      </div>
+    </div>
+    <div class="item">
+      <label class="label">数字</label>
+      <div class="text">
+        <input class="input" type="number" pattern="[0-9]*" placeholder="请输入QQ号"/>
+      </div>
+    </div>
+    <div class="item">
+      <label class="label">电话</label>
+      <div class="text">
+        <input class="input" type="tel" pattern="[0-9]*" placeholder="请输入您的电话" />
+      </div>
+    </div>
+    <div class="item">
+      <label class="label">日期</label>
+      <div class="text">
+        <input class="input" type="date" value="" />
+      </div>
+    </div>
+    <div class="item">
+      <label class="label">时间</label>
+      <div class="text">
+        <input class="input" type="datetime-local" value="" />
+      </div>
+    </div>
+    <div class="item-divider">红色</div>
+    <div class="item text-warning">
+      <label class="label">卡号</label>
+      <div class="text">
+        <input class="input" type="number" pattern="[0-9]*" placeholder="请输入卡号" value="666" />
+      </div>
+      <i class="icon text-xl">&#xe61d;</i>
+    </div>
+    <div class="item-divider">蓝色</div>
+    <div class="item text-primary">
+      <label class="label">身高</label>
+      <div class="text">
+        <input class="input" type="number" pattern="[0-9]*" placeholder="请输入身高" value="777" />
+      </div>
+      <i class="icon text-xl">&#xe61d;</i>
+    </div>
+    <div class="item-divider">绿色</div>
+    <div class="item text-success">
+      <label class="label">护照</label>
+      <div class="text">
+        <input class="input" type="number" pattern="[0-9]*" placeholder="请输入护照" value="888" />
+      </div>
+      <i class="icon text-xl">&#xe61d;</i>
+    </div>
+  </div>
+
+  <div class="list">
+    <div class="item-divider">单选列表(橙色 / 默认)</div>
+    <label class="item">
+      <input class="radio" type="radio" name="radio1" checked />
+      <div class="text">支付宝</div>
+    </label>
+    <label class="item">
+      <input class="radio" type="radio" name="radio1" />
+      <div class="text">微信支付</div>
+    </label>
+    <div class="item-divider">单选列表(蓝色)</div>
+    <label class="item">
+      <input class="radio primary" type="radio" name="radio2" checked />
+      <div class="text">支付宝</div>
+    </label>
+    <label class="item">
+      <input class="radio primary" type="radio" name="radio2" />
+      <div class="text">微信支付</div>
+    </label>
+    <div class="item-divider">单选列表(绿色)</div>
+    <label class="item">
+      <input class="radio success" type="radio" name="radio3" checked />
+      <div class="text">支付宝</div>
+    </label>
+    <label class="item">
+      <input class="radio success" type="radio" name="radio3" />
+      <div class="text">微信支付</div>
+    </label>
+    <div class="item-divider">单选列表(禁用)</div>
+    <label class="item">
+      <input class="radio" type="radio" name="radio4" checked disabled />
+      <div class="text">支付宝</div>
+    </label>
+    <label class="item">
+      <input class="radio" type="radio" name="radio4" disabled />
+      <div class="text">微信支付</div>
+    </label>
+    <div class="item-divider">单选列表(右侧排列)</div>
+    <label class="item">
+      <div class="text">支付宝</div>
+      <input class="radio" type="radio" name="radio5" checked />
+    </label>
+    <label class="item">
+      <div class="text">微信支付</div>
+      <input class="radio" type="radio" name="radio5" />
+    </label>
+    <div class="item-divider">复选列表(橙色 / 默认)</div>
+    <label class="item">
+      <input class="checkbox" type="checkbox" checked />
+      <div class="text">支付宝</div>
+    </label>
+    <label class="item">
+      <input class="checkbox" type="checkbox" />
+      <div class="text">微信支付</div>
+    </label>
+    <div class="item-divider">复选列表(蓝色)</div>
+    <label class="item">
+      <input class="checkbox primary" type="checkbox" checked />
+      <div class="text">支付宝</div>
+    </label>
+    <label class="item">
+      <input class="checkbox primary" type="checkbox" />
+      <div class="text">微信支付</div>
+    </label>
+    <div class="item-divider">复选列表(绿色)</div>
+    <label class="item">
+      <input class="checkbox success" type="checkbox" checked />
+      <div class="text">支付宝</div>
+    </label>
+    <label class="item">
+      <input class="checkbox success" type="checkbox" />
+      <div class="text">微信支付</div>
+    </label>
+    <div class="item-divider">复选列表(禁用)</div>
+    <label class="item">
+      <input class="checkbox" type="checkbox" checked disabled />
+      <div class="text">支付宝</div>
+    </label>
+    <label class="item">
+      <input class="checkbox" type="checkbox" disabled />
+      <div class="text">微信支付</div>
+    </label>
+    <div class="item-divider">复选列表(右侧排列)</div>
+    <label class="item">
+      <div class="text">支付宝</div>
+      <input class="checkbox" type="checkbox" checked />
+    </label>
+    <label class="item">
+      <div class="text">微信支付</div>
+      <input class="checkbox" type="checkbox" />
+    </label>
+    <div class="item-divider text-warning">颠倒: 单选框使用复选框外观</div>
+    <label class="item">
+      <input class="checkbox primary" type="radio" name="radio6" checked />
+      <div class="text">支付宝</div>
+    </label>
+    <label class="item">
+      <input class="checkbox primary" type="radio" name="radio6" />
+      <div class="text">微信支付</div>
+    </label>
+    <div class="item-divider text-warning">颠倒: 复选框使用单选框外观</div>
+    <label class="item">
+      <input class="radio success" type="checkbox" checked />
+      <div class="text">支付宝</div>
+    </label>
+    <label class="item">
+      <input class="radio success" type="checkbox" />
+      <div class="text">微信支付</div>
+    </label>
+  </div>
+  
+  <div class="agree">
+    <label>
+      <input class="checkbox success" type="checkbox" />
+      <span>阅读并同意<a class="link" href="javascript:;">《相关条款》</a></span>
+    </label>
+  </div>
+  
+  <div class="divider">协议居中</div>
+  <div class="agree">
+    <label class="center">
+      <input class="checkbox success" type="checkbox" />
+      <span>阅读并同意<a class="link" href="javascript:;">《相关条款》</a></span>
+    </label>
+  </div>
+  
+  <div class="vspace hspace">
+    <button class="button success">确定</button>
+  </div>
+  
+  <footer class="vspace">
+    <div class="text-center text-sm">
+      <a class="link" href="javascript:history.back();"><i class="icon">&#xe60e;</i>返回</a>
+    </div>
+  </footer>
+</div></script>
+<script type="text/exui-templates" id="exui_list"><div class="ex-page">
+  <div class="page-header">
+    <h4>List</h4>
+    <p class="text-gray text-sm">列表</p>
+  </div>
+  
+  <div class="list">
+    <div class="item-divider">列表项</div>
+    <div class="item">
+      <div class="text">标题文字</div>
+    </div>
+    <div class="item">
+      <div class="text text-ellipsis">可通过添加 text-ellipsis 来获得省略模式。比如这个很长很长很长很长很长很长很长很长很长很长的文字内容</div>
+    </div>
+    <div class="item-divider">边框通栏列表项</div>
+    <div class="item thread">
+      <div class="text">列表项分割线是通栏的</div>
+    </div>
+    <div class="item thread">
+      <div class="text">列表项分割线是通栏的</div>
+    </div>
+    <div class="item thread">
+      <div class="text">列表项分割线是通栏的</div>
+    </div>
+    <div class="item-divider">带说明列表项</div>
+    <div class="item">
+      <div class="text">标题文字</div>
+      <div class="extra">其他信息</div>
+    </div>
+    <div class="item">
+      <div class="text">标题文字</div>
+      <div class="extra">其他信息</div>
+    </div>
+    <div class="item-divider">左侧ICON</div>
+    <div class="item">
+      <i class="icon">&#xe61e;</i>
+      <div class="text">标题文字</div>
+    </div>
+    <div class="item">
+      <i class="icon">&#xe61e;</i>
+      <div class="text">标题文字</div>
+    </div>
+    <div class="item-divider">右侧ICON</div>
+    <a class="item" href="javascript:;">
+      <div class="text">标题文字</div>
+      <i class="icon">&#xe60a;</i>
+    </a>
+    <a class="item" href="javascript:;">
+      <div class="text">标题文字</div>
+      <i class="icon">&#xe60a;</i>
+    </a>
+    <div class="item-divider">说明和跳转示意</div>
+    <a class="item" href="javascript:;">
+      <div class="text">标题文字</div>
+      <div class="extra">其他信息</div>
+      <i class="icon">&#xe61a;</i>
+    </a>
+    <a class="item" href="javascript:;">
+      <div class="text">标题文字</div>
+      <div class="extra">其他信息</div>
+      <i class="icon">&#xe61a;</i>
+    </a>
+    <div class="item-divider">带左右ICON以及说明列表项</div>
+    <a class="item" href="javascript:;">
+      <i class="icon">&#xe61e;</i>
+      <div class="text">标题文字</div>
+      <div class="extra">其他信息</div>
+      <i class="icon">&#xe61a;</i>
+    </a>
+    <a class="item" href="javascript:;">
+      <i class="icon">&#xe61e;</i>
+      <div class="text">标题文字</div>
+      <div class="extra">其他信息</div>
+      <i class="icon">&#xe61a;</i>
+    </a>
+    <div class="item-divider">左侧带图标的列表项</div>
+    <a class="item" href="javascript:;">
+      <div class="avatar">
+        <img width="16" src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" />
+      </div>
+      <div class="text">标题文字</div>
+      <div class="extra">16px</div>
+      <i class="icon">&#xe61a;</i>
+    </a>
+    <a class="item" href="javascript:;">
+      <div class="avatar">
+        <img width="24" src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" />
+      </div>
+      <div class="text">标题文字</div>
+      <div class="extra">24px</div>
+      <i class="icon">&#xe61a;</i>
+    </a>
+    <a class="item" href="javascript:;">
+      <div class="avatar">
+        <img width="32" src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" />
+      </div>
+      <div class="text">标题文字</div>
+      <div class="extra">32px</div>
+      <i class="icon">&#xe61a;</i>
+    </a>
+    <a class="item" href="javascript:;">
+      <div class="avatar">
+        <img width="48" src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" />
+      </div>
+      <div class="text">标题文字</div>
+      <div class="extra">可以自由设置</div>
+      <i class="icon">&#xe61a;</i>
+    </a>
+    <div class="item-divider">补充信息</div>
+    <div class="item">
+      <div class="text">
+        普通标题
+        <div class="brief">这里是一些补充文字信息，它也许很长很长很长很长很长很长很长很长</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="text">
+        <h4>加粗标题</h4>
+        <div class="brief">这里是一些补充文字信息，它也许很长很长很长很长很长很长很长很长</div>
+      </div>
+    </div>
+    <div class="item-divider">揉在一起</div>
+    <div class="item">
+      <div class="text">
+        星座3栋
+        <div class="brief text-ellipsis">面积60平米、卫生费、管理费、公摊费合计为物业费</div>
+      </div>
+      <div class="extra">
+        <p class="text-orange text-sm">本期物业费: ￥500</p>
+      </div>
+    </div>
+    <div class="item">
+      <span class="text">
+        星座3栋
+        <div class="brief text-ellipsis">面积60平米、卫生费、管理费、公摊费合计为物业费</div>
+      </span>
+      <span class="extra">
+        <p class="text-light text-xs">账户余额：￥800</p>
+        <p class="text-orange text-sm">本期缴纳：￥500</p>
+      </span>
+    </div>
+    <a class="item" href="javascript:;">
+      <div class="avatar">
+        <img width="46" src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" />
+      </div>
+      <div class="text">
+        <h4>少年时光</h4>
+        <div class="brief text-ellipsis">少年时光，用大把时间彷徨，只用几个瞬间来成长</div>
+      </div>
+      <i class="icon">&#xe61a;</i>
+    </a>
+    <a class="item" href="javascript:;">
+      <div class="avatar">
+        <img width="46" src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" />
+      </div>
+      <div class="text">
+        <h4>总是不安，只好强悍</h4>
+        <div class="brief">其实恰相反，平静往往才是最有穿透效果的力量。每个人都会跌倒，然后，爬起来，自我成长。</div>
+      </div>
+      <i class="icon">&#xe61a;</i>
+    </a>
+  </div>
+  
+  <footer class="vspace">
+    <div class="text-center text-sm">
+      <a class="link" href="javascript:history.back();"><i class="icon">&#xe60e;</i>返回</a>
+    </div>
+  </footer>
+</div></script>
+<script type="text/exui-templates" id="exui_loadmore"><div class="ex-page">
+  <div class="page-header">
+    <h4>Loadmore</h4>
+    <p class="text-gray text-sm">加载更多</p>
+  </div>
+  
+  <!-- 默认风格 -->
+  <div class="loadmore">
+    <i class="loading"></i>
+    <span class="tips">正在加载</span>
+  </div>
+  
+  <!-- 自定义颜色 -->
+  <div class="loadmore">
+    <i class="loading"></i>
+    <span class="tips text-gray">正在加载</span>
+  </div>
+  
+  <!-- 揉在一起 -->
+  <div class="divider">
+    <div class="loadmore">
+      <i class="loading"></i>
+      <span class="tips">正在加载</span>
+    </div>
+  </div>
+  
+  <footer class="vspace">
+    <div class="text-center text-sm">
+      <a class="link" href="javascript:history.back();"><i class="icon">&#xe60e;</i>返回</a>
+    </div>
+  </footer>
+</div></script>
+<script type="text/exui-templates" id="exui_modal"><div class="ex-page">
+  <div class="page-header">
+    <h4>Modal</h4>
+    <p class="text-gray text-sm">对话框</p>
+  </div>
+
+  <div class="vspace hspace">
+    <button class="button default" data-modal="#modalAlert1">Alert: 带标题</button>
+    <button class="button default" data-modal="#modalAlert2">Alert: 无标题</button>
+    <button class="button default" data-modal="#modalConfirm1">Confirm: 带标题</button>
+    <button class="button default" data-modal="#modalConfirm2">Confirm: 无标题</button>
+    <button class="button default" data-modal="#modalConfirm3">Confirm: 弹窗嵌套</button>
+  </div>
+
+  <div id="modals">
+
+    <div id="modalAlert1" class="modal-layer">
+      <div class="modal">
+        <h3 class="title">温馨提示</h3>
+        <div class="content">本商品销售范围不支持您所在的社区或库存不足</div>
+        <footer class="footer">
+          <div class="button-group nesting compact">
+            <a class="button square text-primary text-strong submit">确定</a>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <div id="modalAlert2" class="modal-layer">
+      <div class="modal">
+        <div class="content">本商品销售范围不支持您所在的社区或库存不足</div>
+        <footer class="footer">
+          <div class="button-group nesting compact">
+            <a class="button square text-primary text-strong submit">知道了</a>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <div id="modalConfirm1" class="modal-layer">
+      <div class="modal">
+        <h3 class="title">温馨提示</h3>
+        <div class="content">本商品销售范围不支持您所在的社区或库存不足</div>
+        <footer class="footer">
+          <div class="button-group compact nesting">
+            <a class="button square text-primary cancel">取消</a>
+            <a class="button square text-primary text-strong submit">确定</a>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <div id="modalConfirm2" class="modal-layer">
+      <div class="modal">
+        <div class="content">本商品销售范围不支持您所在的社区或库存不足</div>
+        <footer class="footer">
+          <div class="button-group compact nesting">
+            <a class="button square text-primary cancel">放弃</a>
+            <a class="button square text-primary text-strong submit">去完善</a>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <div id="modalConfirm3" class="modal-layer">
+      <div class="modal" data-nested="true">
+        <h3 class="title">温馨提示</h3>
+        <div class="content">这是一个弹窗嵌套实现范例，用于展示弹窗层叠状况</div>
+        <footer class="footer">
+          <div class="button-group compact nesting">
+            <a class="button square text-primary cancel">取消</a>
+            <a class="button square text-primary text-strong submit">查看</a>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="vspace">
+    <div class="text-center text-sm">
+      <a class="link" href="javascript:history.back();"><i class="icon">&#xe60e;</i>返回</a>
+    </div>
+  </footer>
+</div>
+<script type="text/javascript">
+
+  function buildModal(selector) {
+    var frag = $(selector).html();
+    return $(frag);
+  }
+
+  $(document).off('click', 'button[data-modal]').on('click', 'button[data-modal]', function() {
+    var selector = $(this).data('modal');
+    var modal = buildModal(selector).addClass('modal-in');
+    $('<div class="modal-layer modal-layer-in" />').append(modal).appendTo('body');
+  });
+
+  $(document).off('click', '.modal > .footer .button').on('click', '.modal > .footer .button', function() {
+    var button = $(this);
+    var modal = button.closest('.modal');
+    var layer = modal.parent();
+    modal.removeClass('modal-in').addClass('modal-out').on('animationend webkitAnimationEnd', function() {
+      $(this).remove();
+    });
+    
+    // 弹窗嵌套
+    if (modal.data('nested')) {
+      layer.append($($('#modalAlert1').html()).addClass('modal-in'));  
+    }
+    // 无嵌套关闭
+    else {
+      layer.removeClass('modal-layer-in').addClass('modal-layer-out').on('transitionend webkitTransitionEnd', function() {
+        $(this).remove();
+      });
+    }
+  });
+</script></script>
+<script type="text/exui-templates" id="exui_navbar"><div class="ex-page">
+  <div class="divider">默认风格</div>
+  
+  <div class="navbar">
+    <a class="item active" href="javascript:;">标签一</a>
+    <a class="item" href="javascript:;">标签二</a>
+    <a class="item" href="javascript:;">标签三</a>
+  </div>
+  
+  <div class="divider">橙色下划线</div>
+  
+  <div class="navbar underline driving">
+    <a class="item active" href="javascript:;">标签一</a>
+    <a class="item" href="javascript:;">标签二</a>
+    <a class="item" href="javascript:;">标签三</a>
+  </div>
+  
+  <div class="divider">蓝色下划线</div>
+  
+  <div class="navbar underline primary">
+    <a class="item active" href="javascript:;">标签一</a>
+    <a class="item" href="javascript:;">标签二</a>
+    <a class="item" href="javascript:;">标签三</a>
+  </div>
+  
+  <div class="divider">绿色下划线</div>
+  
+  <div class="navbar underline success">
+    <a class="item active" href="javascript:;">标签一</a>
+    <a class="item" href="javascript:;">标签二</a>
+    <a class="item" href="javascript:;">标签三</a>
+  </div>
+  
+</div>
+<script type="text/javascript">
+  $(document).off('click', '.navbar > .item').on('click', '.navbar > .item', function (e) {
+    $(this).addClass('active').siblings().removeClass('active');
+  });
+</script></script>
+<script type="text/exui-templates" id="exui_sheet"><div class="ex-page" style="overflow: hidden;">
+  <div class="page-header">
+    <h4>ActionSheet</h4>
+    <p class="text-gray text-sm">弹出式菜单</p>
+  </div>
+
+  <div class="vspace hspace">
+    <button class="button default" data-sheet="#sheet1">弹出式菜单1</button>
+    <button class="button default" data-sheet="#sheet2">弹出式菜单2</button>
+    <button class="button default" data-sheet="#sheet3">弹出式菜单3</button>
+  </div>
+  
+  <div id="sheet1" class="sheet-layer">
+    <div class="sheet">
+      <div class="menus">
+        <div class="item">操作选项</div>
+        <div class="item">操作选项</div>
+        <div class="item">操作选项</div>
+      </div>
+      <div class="menus">
+        <div class="item" data-dismiss="true">取消</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="sheet2" class="sheet-layer">
+    <div class="sheet">
+      <div class="menus">
+        <div class="item label">请选择</div>
+        <div class="item text-driving">Apple Pay</div>
+        <div class="item text-primary">支付宝</div>
+        <div class="item text-success">微信支付</div>
+      </div>
+      <div class="menus">
+        <div class="item text-gray" data-dismiss="true">取消</div>
+      </div>
+    </div>
+  </div>
+  
+  <div id="sheet3" class="sheet-layer">
+    <div class="sheet">
+      <div class="menus">
+        <div class="item label">
+          <h4>我是标题</h4>
+          这里可以补充描述信息
+        </div>
+        <div class="item text-warning">满仓</div>
+        <div class="item text-success">空仓</div>
+      </div>
+      <div class="menus">
+        <div class="item text-gray" data-dismiss="true">取消</div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="vspace">
+    <div class="text-center text-sm">
+      <a class="link" href="javascript:history.back();"><i class="icon">&#xe60e;</i>返回</a>
+    </div>
+  </footer>
+</div>
+
+<script type="text/javascript">
+  $(document).off('click', '.button[data-sheet]').on('click', '.button[data-sheet]', function() {
+    var selctor = $(this).data('sheet');
+    $(selctor).addClass('sheet-layer-in');
+  });
+  $(document).off('click', '.sheet-layer [data-dismiss]').on('click', '.sheet-layer [data-dismiss]', function() {
+    $(this).closest('.sheet-layer').removeClass('sheet-layer-in').addClass('sheet-layer-out').on('animationend webkitAnimationEnd', function() {
+      $(this).removeClass('sheet-layer-out');
+    });
+  });
+</script></script>
+<script type="text/exui-templates" id="exui_switch"><div class="ex-page">
+  <div class="page-header">
+    <h4>Switch</h4>
+    <p class="text-gray text-sm">开关效果</p>
+  </div>
+  
+  <div class="list">
+    <div class="item-divider">( 添加nesting，以便保持item的高度 )</div>
+    <div class="item">
+      <div class="text">橙色开关</div>
+      <input class="switch nesting" type="checkbox" checked />
+    </div>
+    <div class="item">
+      <div class="text">蓝色开关</div>
+      <input class="switch nesting primary" type="checkbox" checked />
+    </div>
+    <div class="item-divider">开关效果 ( 不添加nesting，item高度会撑高 )</div>
+    <div class="item">
+      <div class="text">红色开关</div>
+      <input class="switch warning" type="checkbox" checked />
+    </div>
+    <div class="item">
+      <div class="text">绿色开关</div>
+      <input class="switch success" type="checkbox" checked />
+    </div>
+  </div>
+  
+  <footer class="vspace">
+    <div class="text-center text-sm">
+      <a class="link" href="javascript:history.back();"><i class="icon">&#xe60e;</i>返回</a>
+    </div>
+  </footer>
+</div></script>
+<script type="text/exui-templates" id="exui_tabbar"><div class="ex-page">
+  
+  <div class="divider" ui-mode="20%">使用字体 (如果你有)</div>
+  
+  <div class="tabbar">
+    <div class="item active">
+      <i class="icon">&#xe61e;</i>
+      <span class="label">首页</span>
+    </div>
+    <div class="item">
+      <i class="icon">&#xe61e;</i>
+      <span class="label">管家</span>
+    </div>
+    <div class="item">
+      <i class="icon">&#xe61e;</i>
+      <span class="label">商城</span>
+    </div>
+    <div class="item">
+      <i class="icon">&#xe61e;</i>
+      <span class="label">我的</span>
+    </div>
+  </div>
+  
+  <div class="divider">使用图片</div>
+  
+  <div class="tabbar">
+    <div class="item active">
+      <i class="icon"><img src="./images/tabbar/ta-a.png" /></i>
+      <span class="label">首页</span>
+    </div>
+    <div class="item">
+      <i class="icon"><img src="./images/tabbar/tc.png" /></i>
+      <span class="label">管家</span>
+    </div>
+    <div class="item">
+      <i class="icon"><img src="./images/tabbar/tb.png" /></i>
+      <span class="label">商城</span>
+    </div>
+    <div class="item">
+      <i class="icon"><img src="./images/tabbar/td.png" /></i>
+      <span class="label">我的</span>
+    </div>
+  </div>
+  
+  <div class="divider" ui-mode="20%">以上为演示，正常为居底</div>
+  
+  <div class="tabbar">
+    <div class="item active">
+      <i class="icon"><img src="./images/tabbar/ta-a.png" /></i>
+      <span class="label">首页</span>
+    </div>
+    <div class="item">
+      <i class="icon"><img src="./images/tabbar/tc.png" /></i>
+      <span class="label">管家</span>
+    </div>
+    <div class="item">
+      <i class="icon"><img src="./images/tabbar/tb.png" /></i>
+      <span class="label">商城</span>
+    </div>
+    <div class="item">
+      <i class="icon"><img src="./images/tabbar/td.png" /></i>
+      <span class="label">我的</span>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  $(document).off('click', '.tabbar > .item').on('click', '.tabbar > .item', function () {
+    $(this).addClass('active').siblings().removeClass('active');
+    // replace image as active status
+    $(this).parent().find('.icon img').each(function(img) {
+      var src = $(this).attr('src');
+      if ($(this).closest('.item').is('.active')) {
+        $(this).attr('src', src.replace(/(-a)?\.png/, '-a.png'));
+      }
+      else {
+        $(this).attr('src', src.replace(/-a\.png/, '.png'));
+      }
+    });
+  });
+</script></script>
+<script type="text/exui-templates" id="exui_toast"><div class="ex-page">
+  <div class="page-header">
+    <h4>Toast</h4>
+    <p class="text-gray text-sm">吐司</p>
+  </div>
+
+  <div class="vspace hspace">
+    <button class="button default" data-toast="#toast1">载入中</button>
+    <button class="button default" data-toast="#toast2">操作失败1</button>
+    <button class="button default" data-toast="#toast3">操作失败2</button>
+    <button class="button default" data-toast="#toast4">操作成功1</button>
+    <button class="button default" data-toast="#toast5">操作成功2</button>
+    <button class="button default" data-toast="#toast6">自定义图片</button>
+  </div>
+
+  <div id="toasts">
+
+    <div id="toast1" class="toast-layer">
+      <div class="toast">
+        <i class="icon waiting"></i>
+        <span class="text">载入中</span>
+      </div>
+    </div>
+
+    <div id="toast2" class="toast-layer">
+      <div class="toast">
+        <i class="icon">&#xe61d;</i>
+        <span class="text">操作失败</span>
+      </div>
+    </div>
+
+    <div id="toast3" class="toast-layer">
+      <div class="toast">
+        <i class="icon">&#xe616;</i>
+        <span class="text">操作失败</span>
+      </div>
+    </div>
+
+    <div id="toast4" class="toast-layer">
+      <div class="toast">
+        <i class="icon">&#xe61c;</i>
+        <span class="text">操作成功</span>
+      </div>
+    </div>
+
+    <div id="toast5" class="toast-layer">
+      <div class="toast">
+        <i class="icon">&#xe624;</i>
+        <span class="text">操作成功</span>
+      </div>
+    </div>
+
+    <div id="toast6" class="toast-layer">
+      <div class="toast">
+        <i class="icon"><img src="./images/icon_intro.png" /></i>
+        <span class="text">自定义图片</span>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="vspace">
+    <div class="text-center text-sm">
+      <a class="link" href="javascript:history.back();"><i class="icon">&#xe60e;</i>返回</a>
+    </div>
+  </footer>
+</div>
+<script type="text/javascript">
+  $(document).off('click', '.button[data-toast]').on('click', '.button[data-toast]', function() {
+    var selector = $(this).data('toast');
+    var toast = $(selector).addClass('toast-in');
+    setTimeout(function() {
+      toast.removeClass('toast-in').addClass('toast-out').on('animationend webkitAnimationEnd', function() {
+        $(this).removeClass('toast-out');
+      });
+    }, 2500);
+  });
+</script></script>

@@ -1,0 +1,120 @@
+@import "../base/fn";
+
+.list {
+  position: relative;
+  margin-top: @listGap;
+  margin-bottom: @listGap;
+  font-size: @listFontSize;
+  line-height: @listItemLineHeight;
+
+  &.compact {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  > .item {
+    .setFlex();
+    position: relative;
+    text-align: left;
+    overflow: hidden;
+    background-color: @listItemBg;
+    min-height: @listItemHeight;
+    padding: @listItemGapV @listItemGapH;
+
+    &:before {
+      .setTopLine(@listBorderColor);
+      left: @listItemGapH;
+    }
+    &.thread:before, &:first-child:before {
+      left: 0;
+    }
+    &:last-child {
+      &:after {
+        .setBottomLine(@listBorderColor);
+      }
+    }
+    > .text {
+      display: block;
+      flex: 1;
+      overflow: hidden;
+
+      > .brief {
+        margin-top: @listItemBriefGap;
+        color: @listItemBriefColor;
+        font-size: @listItemBriefFontSize;
+        line-height: @listItemBriefLineHeight;
+
+        + .brief {
+          margin-top: @listItemGapV;
+        }
+      }
+    }
+    > .extra {
+      text-align: right;
+      color: @textColorGray;
+    }
+    + .item-divider:before {
+      .setTopLine(@listBorderColor);
+    }
+    > .icon:first-child {
+      min-width: 1rem;
+      margin-right: @listWidgetGap;
+    }
+    > .icon:last-child {
+      min-width: 1rem;
+      margin-left: @listWidgetGap;
+    }
+    // 图像
+    .avatar {
+      &:not(:last-child) {
+        margin-right: @listWidgetGap;
+      }
+      img {
+        display: block;
+      }
+    }
+    // 调整间距
+    &[ui-mode^="0px"] {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+    &[ui-mode$="0px"] {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    &[ui-mode^="15px"] {
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+    &[ui-mode$="15px"] {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+  // 仅默认设置为灰色 这样写可以继承父元素设置的颜色
+  > [class="item"] > [class="icon"]:last-child {
+    color: @textColorGray;
+  }
+  > .item[href], > label.item {
+    .setTapColor();
+    color: inherit;
+
+    &:active {
+      background-color: @tapColor;
+    }
+  }
+  > .item-divider {
+    position: relative;
+    padding: @listItemGapV / 1.25 @listItemGapH;
+    font-size: @listItemDividerFontSize;
+
+    + .item:before {
+      left: 0;
+    }
+    + .item-divider:before {
+      .setTopLine(@listBorderColor);
+    }
+  }
+  > [class="item-divider"] {
+    color: @textColorGray;
+  }
+}

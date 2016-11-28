@@ -1,0 +1,85 @@
+@import "../base/fn";
+
+// 接受协议 对其Radio和Checkbox
+.agree {
+  display: block;
+  margin: @listItemGapH;
+
+  > label {
+    display: table;
+  }
+  > label.center {
+    margin: auto;
+  }
+  input.radio, input.check {
+    top: -2px;
+  }
+}
+// 文字并列 竖线分割
+.text-group {
+  display: table;
+  width: 100%;
+  margin: 0 auto;
+
+  > .item {
+    position: relative;
+    margin: 0 8px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+    &:not(:first-child):before {
+      .setLeftLine();
+      left: -8px;
+      top: 15%;
+      bottom: 15%;
+    }
+  }
+}
+// 文字两端 标题对其
+.text-justify {
+  .setFlex(center, value);
+
+  .label {
+    margin-right: @listItemGapH;
+    color: @textColorGray;
+    min-width: 4em;
+    color: @textColorGray;
+    text-align: justify;
+    text-align-last: justify;
+  }
+  + .text-justify {
+    margin-top: 6px;
+  }
+}
+// 悬挂顶部
+.top-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%
+}
+// 悬挂底部
+.btm-fixed {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%
+}
+// 左浮动
+.pull-left {
+  float: left;
+}
+// 右浮动
+.pull-right {
+  float: right;
+}
+// 清除浮动
+.clearfix:after {
+  content: '\0200';
+  visibility: hidden;
+  clear: both;
+  display: block;
+  font-size: 0;
+  height: 0;
+}
