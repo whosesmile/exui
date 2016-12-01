@@ -1,0 +1,25 @@
+<div class="ex-page">
+  <div class="feedback">
+    <div class="mark">
+      <img width="220" height="220" src="./images/feedback/1.png" alt="空白" />
+    </div>
+    <h3 class="title">提示文案</h3>
+    <div class="describe">业务自定义其他文案，长度随意，业务自定义其他文案，长度随意，也可以<a class="link" href="javascript:;">添加链接</a></div>
+
+    <div class="vspace hspace">
+      <a class="button plain-primary turn-mark">切换图片</a>
+      <a class="button default" href="javascript:history.back();">辅助操作</a>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  // 预设置了9张图
+  (function () {
+    var index = 1;
+    $(document).off('click', '.turn-mark').on('click', '.turn-mark', function () {
+      index = ++index > 9 ? 1 : index;
+      $('.feedback .mark img').attr('src', './images/feedback/' + index +'.png');
+    });
+  })();
+</script>

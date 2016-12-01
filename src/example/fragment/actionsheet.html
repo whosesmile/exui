@@ -11,7 +11,7 @@
   </div>
   
   <div id="sheet1" class="sheet-layer">
-    <div class="sheet">
+    <div class="actionsheet">
       <div class="menus">
         <div class="item">操作选项</div>
         <div class="item">操作选项</div>
@@ -24,7 +24,7 @@
   </div>
 
   <div id="sheet2" class="sheet-layer">
-    <div class="sheet">
+    <div class="actionsheet">
       <div class="menus">
         <div class="item label">请选择</div>
         <div class="item text-driving">Apple Pay</div>
@@ -38,7 +38,7 @@
   </div>
   
   <div id="sheet3" class="sheet-layer">
-    <div class="sheet">
+    <div class="actionsheet">
       <div class="menus">
         <div class="item label">
           <h4>我是标题</h4>
@@ -65,7 +65,7 @@
     var selctor = $(this).data('sheet');
     $(selctor).addClass('sheet-layer-in');
   });
-  $(document).off('click', '.sheet-layer [data-dismiss]').on('click', '.sheet-layer [data-dismiss]', function() {
+  $(document).off('click', '.sheet-layer [data-dismiss="true"]').on('click', '.sheet-layer [data-dismiss="true"]', function() {
     $(this).closest('.sheet-layer').removeClass('sheet-layer-in').addClass('sheet-layer-out').on('animationend webkitAnimationEnd', function() {
       $(this).removeClass('sheet-layer-out');
     });

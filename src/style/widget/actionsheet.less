@@ -1,19 +1,3 @@
-@keyframes ex-sheet-in {
-  0% {
-    transform: translateY(100%);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-@keyframes ex-sheet-out {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(100%);
-  }
-}
 .sheet-layer {
   position: fixed;
   z-index: 1000;
@@ -26,7 +10,7 @@
   transition-property: background-color;
   transition-duration: 400ms;
 
-  .sheet {
+  .actionsheet {
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -60,8 +44,12 @@
           border-bottom-left-radius: 5px;
           border-bottom-right-radius: 5px;
         }
-        &:not(.label):active {
-          background-color: @tapColor;
+        &:not(.label) {
+          cursor: pointer;
+
+          &:active {
+            background-color: @tapColor;
+          }
         }
         + .item:before {
           .setTopLine();
@@ -79,16 +67,16 @@
     visibility: visible;
     background-color: rgba(0, 0, 0, 0.6);
 
-    .sheet {
-      animation: ex-sheet-in ease .3s forwards;
+    .actionsheet {
+      animation: ex-kf-slide-in-up ease .3s forwards;
     }
   }
   &.sheet-layer-out {
     visibility: visible;
     background-color: rgba(0, 0, 0, 0);
 
-    .sheet {
-      animation: ex-sheet-out ease .3s forwards;
+    .actionsheet {
+      animation: ex-kf-slide-in-down ease .3s forwards;
     }
   }
 }

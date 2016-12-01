@@ -1,0 +1,96 @@
+.picker-layer {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  visibility: hidden;
+  background-color: rgba(0, 0, 0, 0);
+  transition-property: background-color;
+  transition-duration: 400ms;
+
+  .picker {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #fff;
+
+    & > .header {
+      position: relative;
+      height: 44px;
+      background-color: @navbarBgColor;
+      .setFlex();
+
+      .title {
+        flex: 1;
+        font-weight: 400;
+        text-align: center;
+      }
+      .menu {
+        padding: 10px 15px;
+      }
+      &:after {
+        .setBottomLine();
+      }
+    }
+    & > .content {
+      position: relative;
+      overflow: hidden;
+      height: 238px;
+      .setFlex();
+      justify-content: center;
+
+      .group {
+        position: relative;
+        height: 100%;
+        flex: 1;
+
+        &:after {
+          content: ' ';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: linear-gradient(#eee, #eee), linear-gradient(#eee, #eee), linear-gradient(0, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.6)), linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.6));
+          background-size: 100% 1px, 100% 1px, 100% 102px, 100% 102px;
+          background-position: 0 102px, 0 136px, bottom, top;
+          background-repeat: no-repeat;
+          transform: translateZ(0);
+        }
+        .roller {
+          width: 100%;
+
+          .item {
+            height: 34px;
+            line-height: 34px;
+            text-align: center;
+            .ellipsis(100%);
+
+            &.disabled {
+              color: #999;
+              pointer-events: none;
+            }
+          }
+        }
+      }
+    }
+  }
+  &.picker-layer-in {
+    visibility: visible;
+    background-color: rgba(0, 0, 0, 0.6);
+
+    .picker {
+      animation: ex-kf-slide-in-up ease .3s forwards;
+    }
+  }
+  &.picker-layer-out {
+    visibility: visible;
+    background-color: rgba(0, 0, 0, 0);
+
+    .picker {
+      animation: ex-kf-slide-in-down ease .3s forwards;
+    }
+  }
+}

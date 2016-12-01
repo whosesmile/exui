@@ -68,10 +68,10 @@
 <script type="text/javascript">
   $(document).off('click', '.button[data-toast]').on('click', '.button[data-toast]', function() {
     var selector = $(this).data('toast');
-    var toast = $(selector).addClass('toast-in');
+    var toast = $(selector).addClass('toast-layer-in');
     setTimeout(function() {
-      toast.removeClass('toast-in').addClass('toast-out').on('animationend webkitAnimationEnd', function() {
-        $(this).removeClass('toast-out');
+      toast.removeClass('toast-layer-in').addClass('toast-layer-out').on('animationend webkitAnimationEnd', function() {
+        $(this).removeClass('toast-layer-out');
       });
     }, 2500);
   });

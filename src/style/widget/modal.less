@@ -1,23 +1,3 @@
-@keyframes ex-modal-in {
-  0% {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(1.185);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-  }
-}
-@keyframes ex-modal-out {
-  0% {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-  }
-  100% {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0.815);
-  }
-}
 .modal-layer {
   position: fixed;
   z-index: 1000;
@@ -79,9 +59,9 @@
     background-color: rgba(0, 0, 0, 0);
   }
   .modal.modal-in {
-    animation: ex-modal-in ease .4s forwards;
+    animation: ex-kf-blow-in ease .4s forwards;
   }
   .modal.modal-out {
-    animation: ex-modal-out ease .4s forwards;
+    animation: ex-kf-blow-out ease .4s forwards;
   }
 }

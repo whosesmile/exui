@@ -41,15 +41,15 @@ Router.prototype = {
     var page = $('#exui_' + name)
     if (page.length) {
       var view = $(page.html()).appendTo('body');
-      return view.addClass('ex-slide-in').on('animationend webkitAnimationEnd', function () {
-        view.removeClass('ex-slide-in');
+      return view.addClass('ex-view-in').on('animationend webkitAnimationEnd', function () {
+        view.removeClass('ex-view-in');
       });
     }
   },
 
   destroyView: function (route) {
     if (route && route.view) {
-      route.view.addClass('ex-slide-out').on('animationend webkitAnimationEnd', function () {
+      route.view.addClass('ex-view-out').on('animationend webkitAnimationEnd', function () {
         $(this).remove();
       });
     }
