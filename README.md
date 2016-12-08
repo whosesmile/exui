@@ -23,7 +23,7 @@ ExUI 是一套借鉴多套UI库衍生出来的重复车轮，整体结构抄袭�
 
 扫码体验：
 
-![http://exui.legend.life](http://github.com/whosesmile/exui/raw/master/dist/example/images/exui-qrcode.png)  
+![http://exui.legend.life](https://raw.githubusercontent.com/whosesmile/exui/master/dist/example/images/exui-qrcode.png)  
 
 链接预览：
 [http://exui.legend.life](http://exui.legend.life)
