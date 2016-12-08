@@ -9,6 +9,7 @@
   text-align: center;
   text-decoration: none;
   vertical-align: middle;
+  white-space: nowrap;
   border: none;
   outline: 0;
   width: 100%;
@@ -144,6 +145,22 @@
     &.disabled, &[disabled] {
       color: @buttonDrivingDisabledFontColor;
       background-color: @buttonDrivingDisabledBg;
+    }
+  }
+  &.guiding {
+    color: @buttonGuidingFontColor;
+    background-color: @buttonGuidingBg;
+
+    &:visited {
+      color: @buttonGuidingFontColor;
+    }
+    &:active {
+      color: @buttonGuidingActiveFontColor;
+      background-color: @buttonGuidingActiveBg;
+    }
+    &.disabled, &[disabled] {
+      color: @buttonGuidingDisabledFontColor;
+      background-color: @buttonGuidingDisabledBg;
     }
   }
   &[class*="plain-"] {

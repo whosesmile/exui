@@ -1,11 +1,10 @@
 @import "../base/fn";
 
 .bar {
-  .setFlex(center, title);
+  .setFlex(center, text);
   width: 100%;
   font-size: 17px;
   position: relative;
-  text-align: center;
   height: @barHeight;
   background-color: @navbarBgColor;
 
@@ -16,8 +15,11 @@
     .setBottomLine();
   }
   > .title {
+    display: block;
+    flex: 1;
     font-size: inherit;
     font-weight: normal;
+    text-align: center;
     height: 100%;
 
     b {
@@ -27,38 +29,37 @@
       right: 70px;
       bottom: 0;
       font-weight: normal;
-      -webkit-text-stroke-width: 0.1px;
       line-height: @barHeight;
       .ellipsis();
     }
   }
-  > .button {
-    display: inline-block;
+  > .menu {
+    .setFlex();
     width: auto;
     padding-left: 10px;
     padding-right: 10px;
     margin-top: 0 !important;
     margin-left: 0 !important;
     z-index: 10;
+    font-size: 16px;
 
-    .label {
-      float: left;
-      font-size: 16px;
+    & > .icon {
+      min-width: 16px;
+
+      & + .label {
+        margin-left: 3px;
+      }
     }
-    & + .button > .label {
+    & > .label + .icon {
+      margin-left: 3px;
+    }
+    & + .menu > .label {
       margin-left: -10px;
     }
-    > .icon {
-      &:first-child {
-        float: left;
-      }
-      &:last-child {
-        float: right;
-      }
-      & + .label {
-        margin-left: 0;
-      }
-    }
+
+    /*> .icon + .label {
+      margin-left: 0;
+    }*/
     &:active {
       opacity: 0.5;
     }
