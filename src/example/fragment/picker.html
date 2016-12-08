@@ -10,9 +10,9 @@
     <button class="button default" data-picker="#picker3">时间选择器</button>
   </div>
   
-  <div id="pickers">
+  <div style="display: none">
 
-    <div id="picker1" class="picker-layer" data-dismiss="true">
+    <div id="picker1">
       <div class="picker">
         <div class="header">
           <a class="menu text-gray" data-dismiss="true">关闭</a>
@@ -38,7 +38,7 @@
       </div>
     </div>
 
-    <div id="picker2" class="picker-layer" data-dismiss="true">
+    <div id="picker2">
       <div class="picker">
         <div class="header">
           <a class="menu text-gray" data-dismiss="true">关闭</a>
@@ -88,7 +88,7 @@
       </div>
     </div>
 
-    <div id="picker3" class="picker-layer" data-dismiss="true">
+    <div id="picker3">
       <div class="picker">
         <div class="header">
           <a class="menu text-gray" data-dismiss="true">关闭</a>
@@ -174,10 +174,9 @@
 
   </div>
   
-  
-  <footer class="vspace">
+  <footer class="vspace btm-fixed">
     <div class="text-center text-sm">
-      <a class="link" href="javascript:history.back();"><i class="icon">&#xe60e;</i>返回</a>
+      <a class="link" href="javascript:history.back();"><img width="90" src="./images/footer.png" /></a>
     </div>
   </footer>
 </div>
@@ -185,14 +184,8 @@
 <script type="text/javascript">
   $(document).off('click', '.button[data-picker]').on('click', '.button[data-picker]', function() {
     var selector = $(this).data('picker');
-    $(selector).addClass('picker-layer-in');
-  });
-  $(document).off('click', '.picker-layer').on('click', '.picker-layer', function(e) {
-    if ($(e.target).is('[data-dismiss="true"]')) {
-      var picker = $(this).closest('.picker-layer');
-      picker.removeClass('picker-layer-in').addClass('picker-layer-out').on('animationend webkitAnimationEnd', function() {
-        $(this).removeClass('picker-layer-out');
-      });
-    }
+    widgetManager.show($(selector).html(), {
+      dismiss: true
+    });
   });
 </script>

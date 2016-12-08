@@ -12,7 +12,7 @@
       <div class="page-header">
         <h1>ExUI</h1>
         <div class="describe">
-          <p>ExUI是整体结构抄袭了WeUI，同时借鉴Antui、Semantic、Ionic、Sui、Bootstrap衍生出来的定制UI。
+          <p>ExUI是整体结构抄袭了WeUI，同时借鉴了Antui、Semantic-ui、Ionic、Sui、Bootstrap等框架的优点合成的衍生品。</p>
         </div>
       </div>
 
@@ -22,7 +22,7 @@
             <a class="item" href="javascript:;">
               <div class="text">布局</div>
               <i class="icon">
-                <img width="30" src="./images/icon_nav_layout.png" />
+                <img width="30" src="./images/nav-layout.png" />
               </i>
             </a>
           </div>
@@ -53,7 +53,7 @@
             <a class="item" href="javascript:;">
               <div class="text">表单</div>
               <i class="icon">
-                <img width="30" src="./images/icon_nav_form.png" />
+                <img width="30" src="./images/nav-form.png" />
               </i>
             </a>
           </div>
@@ -62,12 +62,16 @@
               <div class="text">Button</div>
               <i class="icon">&#xe61a;</i>
             </a>
-            <a class="item" href="#input">
-              <div class="text">Input</div>
+            <a class="item" href="#form">
+              <div class="text">Form</div>
               <i class="icon">&#xe61a;</i>
             </a>
             <a class="item" href="#switch">
               <div class="text">Switch</div>
+              <i class="icon">&#xe61a;</i>
+            </a>
+            <a class="item" href="#search">
+              <div class="text">Search</div>
               <i class="icon">&#xe61a;</i>
             </a>
           </div>
@@ -80,7 +84,7 @@
             <a class="item" href="javascript:;">
               <div class="text">组件</div>
               <i class="icon">
-                <img width="30" src="./images/icon_nav_special.png" />
+                <img width="30" src="./images/nav-special.png" />
               </i>
             </a>
           </div>
@@ -93,12 +97,20 @@
               <div class="text">Badge</div>
               <i class="icon">&#xe61a;</i>
             </a>
+            <a class="item" href="#icons">
+              <div class="text">Icons</div>
+              <i class="icon">&#xe61a;</i>
+            </a>
             <a class="item" href="#footer">
               <div class="text">Footer</div>
               <i class="icon">&#xe61a;</i>
             </a>
             <a class="item" href="#loadmore">
               <div class="text">Loadmore</div>
+              <i class="icon">&#xe61a;</i>
+            </a>
+            <a class="item" href="#progress">
+              <div class="text">Progress</div>
               <i class="icon">&#xe61a;</i>
             </a>
           </div>
@@ -111,7 +123,7 @@
             <a class="item" href="javascript:;">
               <div class="text">导航</div>
               <i class="icon">
-                <img width="30" src="./images/icon_nav_nav.png" />
+                <img width="30" src="./images/nav-bar.png" />
               </i>
             </a>
           </div>
@@ -138,7 +150,7 @@
             <a class="item" href="javascript:;">
               <div class="text">操作</div>
               <i class="icon">
-                <img width="30" src="./images/icon_nav_feedback.png" />
+                <img width="30" src="./images/nav-feedback.png" />
               </i>
             </a>
           </div>
@@ -167,6 +179,11 @@
         </div>
       </div>
 
+      <footer class="vspace">
+        <div class="text-center text-sm">
+          <a class="link" href="javascript:history.back();"><img width="90" src="./images/footer.png" /></a>
+        </div>
+      </footer>
     </div>
     <script src="./zepto.min.js"></script>
     <script src="./example.js"></script>
@@ -176,71 +193,73 @@
     <h4>ActionSheet</h4>
     <p class="text-gray text-sm">弹出式菜单</p>
   </div>
-
+  
   <div class="vspace hspace">
-    <button class="button default" data-sheet="#sheet1">弹出式菜单1</button>
-    <button class="button default" data-sheet="#sheet2">弹出式菜单2</button>
-    <button class="button default" data-sheet="#sheet3">弹出式菜单3</button>
+    <button class="button default" data-sheet="#sheet1">标准菜单</button>
+    <button class="button default" data-sheet="#sheet2">标题菜单</button>
+    <button class="button default" data-sheet="#sheet3">标题+描述</button>
   </div>
   
-  <div id="sheet1" class="sheet-layer">
-    <div class="actionsheet">
-      <div class="menus">
-        <div class="item">操作选项</div>
-        <div class="item">操作选项</div>
-        <div class="item">操作选项</div>
-      </div>
-      <div class="menus">
-        <div class="item" data-dismiss="true">取消</div>
-      </div>
-    </div>
-  </div>
-
-  <div id="sheet2" class="sheet-layer">
-    <div class="actionsheet">
-      <div class="menus">
-        <div class="item label">请选择</div>
-        <div class="item text-driving">Apple Pay</div>
-        <div class="item text-primary">支付宝</div>
-        <div class="item text-success">微信支付</div>
-      </div>
-      <div class="menus">
-        <div class="item text-gray" data-dismiss="true">取消</div>
-      </div>
-    </div>
-  </div>
-  
-  <div id="sheet3" class="sheet-layer">
-    <div class="actionsheet">
-      <div class="menus">
-        <div class="item label">
-          <h4>我是标题</h4>
-          这里可以补充描述信息
+  <div style="display: none">
+    <div id="sheet1">
+      <div class="actionsheet">
+        <div class="menus">
+          <div class="item text-primary">操作选项</div>
+          <div class="item text-primary">操作选项</div>
         </div>
-        <div class="item text-warning">满仓</div>
-        <div class="item text-success">空仓</div>
+        <div class="menus">
+          <div class="item text-gray" data-dismiss="true">取消</div>
+        </div>
       </div>
-      <div class="menus">
-        <div class="item text-gray" data-dismiss="true">取消</div>
+    </div>
+    
+    <div id="sheet2">
+      <div class="actionsheet">
+        <div class="menus">
+          <div class="item label">请选择</div>
+          <div class="item text-driving">Apple Pay</div>
+          <div class="item text-primary">支付宝</div>
+          <div class="item text-success">微信支付</div>
+        </div>
+        <div class="menus">
+          <div class="item text-gray" data-dismiss="true">取消</div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="sheet3">
+      <div class="actionsheet">
+        <div class="menus">
+          <div class="item label">
+            <h4>我是标题</h4>
+            这里可以补充描述信息
+          </div>
+          <div class="item">
+            <button class="button plain-success">空仓</button>
+          </div>
+          <div class="item">
+            <button class="button plain-driving">满仓</button>
+          </div>
+        </div>
+        <div class="menus">
+          <div class="item text-gray" data-dismiss="true">取消</div>
+        </div>
       </div>
     </div>
   </div>
-
-  <footer class="vspace">
+  
+  <footer class="vspace btm-fixed">
     <div class="text-center text-sm">
-      <a class="link" href="javascript:history.back();"><i class="icon">&#xe60e;</i>返回</a>
+      <a class="link" href="javascript:history.back();"><img width="90" src="./images/footer.png" /></a>
     </div>
   </footer>
 </div>
 
 <script type="text/javascript">
   $(document).off('click', '.button[data-sheet]').on('click', '.button[data-sheet]', function() {
-    var selctor = $(this).data('sheet');
-    $(selctor).addClass('sheet-layer-in');
-  });
-  $(document).off('click', '.sheet-layer [data-dismiss="true"]').on('click', '.sheet-layer [data-dismiss="true"]', function() {
-    $(this).closest('.sheet-layer').removeClass('sheet-layer-in').addClass('sheet-layer-out').on('animationend webkitAnimationEnd', function() {
-      $(this).removeClass('sheet-layer-out');
+    var selector = $(this).data('sheet');
+    widgetManager.show($(selector).html(), {
+      dismiss: true,
     });
   });
 </script></script>
@@ -267,7 +286,7 @@
       <section>
         <h3>1.2 节标题</h3>
         <p>
-          人不就这么一辈子吗？生不带来、死不带去的一辈子，春发、夏荣、秋收、冬藏，看来像是一年四季般短暂的一辈子。每当我为俗务劳形的时刻，想到那七个字，便忆起李白《春夜宴桃李园记》中“天地者，万物之逆旅，光阴者，百代之过客，浮生若梦，为欢几何”的句子，而在哀时光之须臾，感万物之行休中，把周遭的俗事抛开，将眼前的争逐看淡。我常想世间的劳苦愁烦、恩恩怨怨，如有不能化解的、不能消受的，不也驮过这短短几十年就烟消云散了吗？若是如此，又有什么好解不开的呢？
+          人不就这么一辈子吗？生不带来、死不带去的一辈子，春发、夏荣、秋收、冬藏，看来像是一年四季般短暂的一辈子。每当我为俗务劳形的时刻，想到那七个字，便忆起李白<a href="javascript:;">《春夜宴桃李园记》</a>中“天地者，万物之逆旅，光阴者，百代之过客，浮生若梦，为欢几何”的句子，而在哀时光之须臾，感万物之行休中，把周遭的俗事抛开，将眼前的争逐看淡。我常想世间的劳苦愁烦、恩恩怨怨，如有不能化解的、不能消受的，不也驮过这短短几十年就烟消云散了吗？若是如此，又有什么好解不开的呢？
         </p>
       </section>
     </section>
@@ -276,7 +295,7 @@
       <section>
         <h3>2.1 节标题</h3>
         <p>
-          人就这么一辈子，你可以积极地把握它；也可以淡然地面对它。想不开想想它，以求释然吧！精神颓废时想想它，以求感恩吧！因为不管怎样，你总是很幸运地拥有这一辈子，不能白来这一遭啊。
+          <a href="javascript:;">人就这么一辈子</a>，你可以积极地把握它；也可以淡然地面对它。想不开想想它，以求释然吧！精神颓废时想想它，以求感恩吧！因为不管怎样，你总是很幸运地拥有这一辈子，不能白来这一遭啊。
         </p>
         <p>
           <img src="./images/750-1.jpg" alt="" />
@@ -331,7 +350,7 @@
   
   <footer class="vspace">
     <div class="text-center text-sm">
-      <a class="link" href="javascript:history.back();"><i class="icon">&#xe60e;</i>返回</a>
+      <a class="link" href="javascript:history.back();"><img width="90" src="./images/footer.png" /></a>
     </div>
   </footer>
 </div></script>
@@ -377,7 +396,7 @@
     <a class="item" href="javascript:;">
       <div class="avatar">
         <img width="48" src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" />
-        <i class="badge" style="position: absolute; top: -4px;right: -4px;">3</i>
+        <i class="badge" style="position: absolute; top: -4px;right: -4px;">99+</i>
       </div>
       <div class="text">
         标题文字
@@ -389,7 +408,7 @@
   
   <footer class="vspace">
     <div class="text-center text-sm">
-      <a class="link" href="javascript:history.back();"><i class="icon">&#xe60e;</i>返回</a>
+      <a class="link" href="javascript:history.back();"><img width="90" src="./images/footer.png" /></a>
     </div>
   </footer>
 </div></script>
@@ -487,7 +506,7 @@
   
   <footer class="vspace">
     <div class="text-center text-sm">
-      <a class="link" href="javascript:history.back();"><i class="icon">&#xe60e;</i>返回</a>
+      <a class="link" href="javascript:history.back();"><img width="90" src="./images/footer.png" /></a>
     </div>
   </footer>
 </div>
@@ -533,7 +552,8 @@
     <button class="button primary"><i class="icon text-xl">&#xe618;</i>点击刷新</button>
     <button class="button driving"><i class="icon text-xl">&#xe601;</i>请您确认</button>
     <button class="button success"><i class="icon text-xl">&#xe61b;</i>点击分享</button>
-    <button class="button primary"><i class="icon text-xl"><img width="20" src="./images/icon_intro.png" /></i>内嵌图片</button>
+    <button class="button success justify"><i class="icon text-xl">&#xe61b;</i>点击分享</button>
+    <button class="button primary"><i class="icon text-xl"><img width="20" src="./images/question.png" /></i>内嵌图片</button>
     
     <div class="vspace" ui-mode="50px">
       <div class="divider" ui-mode="30%">以下为镂空按钮</div>
@@ -633,7 +653,7 @@
   
   <footer class="vspace">
     <div class="text-center text-sm">
-      <a class="link" href="javascript:history.back();"><i class="icon">&#xe60e;</i>返回</a>
+      <a class="link" href="javascript:history.back();"><img width="90" src="./images/footer.png" /></a>
     </div>
   </footer>
 </div></script>
@@ -962,7 +982,7 @@
   
   <footer class="vspace">
     <div class="text-center text-sm">
-      <a class="link" href="javascript:history.back();"><i class="icon">&#xe60e;</i>返回</a>
+      <a class="link" href="javascript:history.back();"><img width="90" src="./images/footer.png" /></a>
     </div>
   </footer>
 </div></script>
@@ -1046,9 +1066,9 @@
     <a class="button default" href="#nothing">空白提示</a>
   </div>
 
-  <footer class="vspace">
+  <footer class="vspace btm-fixed">
     <div class="text-center text-sm">
-      <a class="link" href="javascript:history.back();"><i class="icon">&#xe60e;</i>返回</a>
+      <a class="link" href="javascript:history.back();"><img width="90" src="./images/footer.png" /></a>
     </div>
   </footer>
 </div></script>
@@ -1131,9 +1151,9 @@
     </div>
   </div>
   
-  <footer class="vspace">
+  <footer class="vspace btm-fixed">
     <div class="text-center text-sm">
-      <a class="link" href="javascript:history.back();"><i class="icon">&#xe60e;</i>返回</a>
+      <a class="link" href="javascript:history.back();"><img width="90" src="./images/footer.png" /></a>
     </div>
   </footer>
 </div></script>
@@ -1162,7 +1182,7 @@
     <div class="divider">分割线</div>
   </div>
   
-  <footer class="vspace btm-fixed" ui-mode="10px">
+  <footer class="vspace" ui-mode="10px">
     <div class="text-group text-sm text-center">
       <a class="link item" href="javascript:;">合作</a>
       <a class="link item" href="javascript:;">加盟</a>
@@ -1172,9 +1192,366 @@
     <div class="text-gray text-xs text-center">Copyright &copy; 2016-2017 Company</div>
   </footer>
 
+  <footer class="vspace btm-fixed">
+    <div class="text-center text-sm">
+      <a class="link" href="javascript:history.back();"><img width="90" src="./images/footer.png" /></a>
+    </div>
+  </footer>
+</div></script>
+<script type="text/exui-templates" id="exui_form"><div class="ex-page">
+  <div class="page-header">
+    <h4>Form</h4>
+    <p class="text-gray text-sm">表单输入</p>
+  </div>
+  
+  <div class="list">
+    <div class="item-divider">文本框</div>
+    <label class="item">
+      <div class="text">
+        <input class="input" type="text" placeholder="文本输入框" />
+      </div>
+    </label>
+    <div class="item-divider">带ICON</div>
+    <label class="item">
+      <i class="icon text-primary">&#xe61e;</i>
+      <div class="text">
+        <input class="input" type="text" placeholder="请输入您的家庭住址" />
+      </div>
+    </label>
+    <div class="item-divider">文本域</div>
+    <label class="item">
+      <div class="text">
+        <textarea class="textarea" placeholder="文本域输入框"></textarea>
+        <div class="textarea-counter"><span>0</span>/200</div>
+      </div>
+    </label>
+    <div class="item-divider">LABEL宽度: ui-mode="[16px * 3,4,5,6,7]"</div>
+    <label class="item">
+      <span class="label" ui-mode="64px">姓名</span>
+      <div class="text">
+        <input class="input" type="text" placeholder="如果一组表单Label文字长度不定" />
+      </div>
+    </label>
+    <label class="item">
+      <span class="label" ui-mode="64px">手机号</span>
+      <div class="text">
+        <input class="input" type="text" placeholder="可以通过预设宽度来实现对齐效果" />
+      </div>
+    </label>
+    <label class="item">
+      <span class="label" ui-mode="64px">联系地址</span>
+      <div class="text">
+        <input class="input" type="text" placeholder="默认情况下Label宽度是自适应的" />
+      </div>
+    </label>
+    <div class="item-divider">选择 <i class="text-success">(推荐方案：点击箭头可以触发)</i></div>
+    <label class="item" ui-mode="0px">
+      <div class="text">
+        <div class="select-arrow">
+          <select class="select">
+            <option selected value="1">中国</option>
+            <option value="2">台湾</option>
+            <option value="3">香港</option>
+          </select>
+        </div>
+      </div>
+    </label>
+    <label class="item" ui-mode="0px">
+      <span class="label">国家/地区</span>
+      <div class="text">
+        <div class="select-arrow">
+          <select class="select">
+            <option selected value="1">股票</option>
+            <option value="2">黄金</option>
+            <option value="3">美元</option>
+          </select>
+        </div>
+      </div>
+    </label>
+    <div class="item-divider">选择 (靠右对齐)</div>
+    <label class="item" ui-mode="0px">
+      <span class="label">国家/地区</span>
+      <div class="text">
+        <div class="select-arrow">
+          <select class="select" dir="rtl">
+            <option selected value="1">股票</option>
+            <option value="2">黄金</option>
+            <option value="3">美元</option>
+          </select>
+        </div>
+      </div>
+    </label>
+    <div class="item-divider">选择 (常规方案)</div>
+    <label class="item">
+      <div class="text">
+        <select class="select">
+          <option selected value="1">中国</option>
+          <option value="2">台湾</option>
+          <option value="3">香港</option>
+        </select>
+      </div>
+      <i class="icon">&#xe60b;</i>
+    </label>
+    <label class="item">
+      <span class="label">国家/地区</span>
+      <div class="text">
+        <select class="select">
+          <option selected value="1">股票</option>
+          <option value="2">黄金</option>
+          <option value="3">美元</option>
+        </select>
+      </div>
+      <i class="icon">&#xe60b;</i>
+    </label>
+    <div class="item-divider">选择前置</div>
+    <label class="item" ui-mode="0px">
+      <span class="label" ui-mode="80px">
+        <div class="select-arrow">
+          <select class="select">
+            <option value="1">京</option>
+            <option value="2">津</option>
+            <option value="3">冀</option>
+            <option value="4">豫</option>
+          </select>
+        </div>
+      </span>
+      <div class="text">
+        <input class="input" type="tel" pattern="[0-9]*" placeholder="请输入您的车牌" />
+      </div>
+    </label>
+    <label class="item" ui-mode="0px">
+      <span class="label" ui-mode="80px">
+        <div class="select-arrow">
+          <select class="select">
+            <option value="1">+86</option>
+            <option value="2">+80</option>
+            <option value="3">+84</option>
+            <option value="4">+87</option>
+          </select>
+        </div>
+      </span>
+      <div class="text">
+        <input class="input" type="tel" pattern="[0-9]*" placeholder="请输入您的电话" />
+      </div>
+    </label>
+    <div class="item-divider">验证码</div>
+    <label class="item">
+      <span class="label">手机号</span>
+      <div class="text">
+        <input class="input" type="tel" pattern="[0-9]*" placeholder="请输入您的电话" />
+      </div>
+      <div class="interact">
+        <button class="button literal text-primary" type="button">发送验证码</button>
+      </div>
+    </label>
+    <label class="item">
+      <span class="label">验证码</span>
+      <div class="text">
+        <input class="input" type="number" pattern="[0-9]*" placeholder="请输入短信验证码" />
+      </div>
+      <div class="interact">
+        <button class="button literal text-primary" type="button" disabled>58秒后重发</button>
+      </div>
+    </label>
+    <label class="item">
+      <span class="label">验证码</span>
+      <div class="text">
+        <input class="input" type="text" placeholder="请输入图形验证码" />
+      </div>
+      <div class="interact">
+        <img class="captcha" src="./images/captcha.jpg" />
+      </div>
+    </label>
+    <div class="item-divider">表单组合</div>
+    <label class="item">
+      <span class="label">姓名</span>
+      <div class="text">
+        <input class="input" type="text" placeholder="请输入姓名" />
+      </div>
+    </label>
+    <label class="item">
+      <span class="label">数字</span>
+      <div class="text">
+        <input class="input" type="number" pattern="[0-9]*" placeholder="请输入QQ号"/>
+      </div>
+    </label>
+    <label class="item">
+      <span class="label">电话</span>
+      <div class="text">
+        <input class="input" type="tel" pattern="[0-9]*" placeholder="请输入您的电话" />
+      </div>
+    </label>
+    <label class="item">
+      <span class="label">日期</span>
+      <div class="text">
+        <input class="input" type="date" value="" />
+      </div>
+    </label>
+    <label class="item">
+      <span class="label">时间</span>
+      <div class="text">
+        <input class="input" type="datetime-local" value="" />
+      </div>
+    </label>
+    <div class="item-divider">红色</div>
+    <label class="item text-warning">
+      <span class="label">卡号</span>
+      <div class="text">
+        <input class="input" type="number" pattern="[0-9]*" placeholder="请输入卡号" value="666" />
+      </div>
+      <i class="icon text-xl">&#xe61d;</i>
+    </label>
+    <div class="item-divider">蓝色</div>
+    <label class="item text-primary">
+      <span class="label">身高</span>
+      <div class="text">
+        <input class="input" type="number" pattern="[0-9]*" placeholder="请输入身高" value="777" />
+      </div>
+      <i class="icon text-xl">&#xe61d;</i>
+    </label>
+    <div class="item-divider">绿色</div>
+    <label class="item text-success">
+      <span class="label">护照</span>
+      <div class="text">
+        <input class="input" type="number" pattern="[0-9]*" placeholder="请输入护照" value="888" />
+      </div>
+      <i class="icon text-xl">&#xe61d;</i>
+    </label>
+  </div>
+
+  <div class="list">
+    <div class="item-divider">单选列表(橙色 / 默认)</div>
+    <label class="item tapable">
+      <input class="radio" type="radio" name="radio1" checked />
+      <div class="text">支付宝</div>
+    </label>
+    <label class="item tapable">
+      <input class="radio" type="radio" name="radio1" />
+      <div class="text">微信支付</div>
+    </label>
+    <div class="item-divider">单选列表(蓝色)</div>
+    <label class="item tapable">
+      <input class="radio primary" type="radio" name="radio2" checked />
+      <div class="text">支付宝</div>
+    </label>
+    <label class="item tapable">
+      <input class="radio primary" type="radio" name="radio2" />
+      <div class="text">微信支付</div>
+    </label>
+    <div class="item-divider">单选列表(绿色)</div>
+    <label class="item tapable">
+      <input class="radio success" type="radio" name="radio3" checked />
+      <div class="text">支付宝</div>
+    </label>
+    <label class="item tapable">
+      <input class="radio success" type="radio" name="radio3" />
+      <div class="text">微信支付</div>
+    </label>
+    <div class="item-divider">单选列表(禁用)</div>
+    <label class="item">
+      <input class="radio" type="radio" name="radio4" checked disabled />
+      <div class="text">支付宝</div>
+    </label>
+    <label class="item">
+      <input class="radio" type="radio" name="radio4" disabled />
+      <div class="text">微信支付</div>
+    </label>
+    <div class="item-divider">单选列表(右侧排列)</div>
+    <label class="item tapable">
+      <div class="text">支付宝</div>
+      <input class="radio" type="radio" name="radio5" checked />
+    </label>
+    <label class="item tapable">
+      <div class="text">微信支付</div>
+      <input class="radio" type="radio" name="radio5" />
+    </label>
+    <div class="item-divider">复选列表(橙色 / 默认)</div>
+    <label class="item tapable">
+      <input class="checkbox" type="checkbox" checked />
+      <div class="text">支付宝</div>
+    </label>
+    <label class="item tapable">
+      <input class="checkbox" type="checkbox" />
+      <div class="text">微信支付</div>
+    </label>
+    <div class="item-divider">复选列表(蓝色)</div>
+    <label class="item tapable">
+      <input class="checkbox primary" type="checkbox" checked />
+      <div class="text">支付宝</div>
+    </label>
+    <label class="item tapable">
+      <input class="checkbox primary" type="checkbox" />
+      <div class="text">微信支付</div>
+    </label>
+    <div class="item-divider">复选列表(绿色)</div>
+    <label class="item tapable">
+      <input class="checkbox success" type="checkbox" checked />
+      <div class="text">支付宝</div>
+    </label>
+    <label class="item tapable">
+      <input class="checkbox success" type="checkbox" />
+      <div class="text">微信支付</div>
+    </label>
+    <div class="item-divider">复选列表(禁用)</div>
+    <label class="item">
+      <input class="checkbox" type="checkbox" checked disabled />
+      <div class="text">支付宝</div>
+    </label>
+    <label class="item">
+      <input class="checkbox" type="checkbox" disabled />
+      <div class="text">微信支付</div>
+    </label>
+    <div class="item-divider">复选列表(右侧排列)</div>
+    <label class="item tapable">
+      <div class="text">支付宝</div>
+      <input class="checkbox" type="checkbox" checked />
+    </label>
+    <label class="item tapable">
+      <div class="text">微信支付</div>
+      <input class="checkbox" type="checkbox" />
+    </label>
+    <div class="item-divider text-warning">颠倒: 单选框使用复选框外观</div>
+    <label class="item tapable">
+      <input class="checkbox primary" type="radio" name="radio6" checked />
+      <div class="text">支付宝</div>
+    </label>
+    <label class="item tapable">
+      <input class="checkbox primary" type="radio" name="radio6" />
+      <div class="text">微信支付</div>
+    </label>
+    <div class="item-divider text-warning">颠倒: 复选框使用单选框外观</div>
+    <label class="item tapable">
+      <input class="radio success" type="checkbox" checked />
+      <div class="text">支付宝</div>
+    </label>
+    <label class="item tapable">
+      <input class="radio success" type="checkbox" />
+      <div class="text">微信支付</div>
+    </label>
+  </div>
+  
+  <div class="agree">
+    <label>
+      <input class="checkbox success" type="checkbox" />
+      <span>阅读并同意<a class="link" href="javascript:;">《相关条款》</a></span>
+    </label>
+  </div>
+  
+  <div class="divider">协议居中</div>
+  <div class="agree">
+    <label class="center">
+      <input class="checkbox success" type="checkbox" />
+      <span>阅读并同意<a class="link" href="javascript:;">《相关条款》</a></span>
+    </label>
+  </div>
+  
+  <div class="vspace hspace">
+    <button class="button success">确定</button>
+  </div>
+  
   <footer class="vspace">
     <div class="text-center text-sm">
-      <a class="link" href="javascript:history.back();"><i class="icon">&#xe60e;</i>返回</a>
+      <a class="link" href="javascript:history.back();"><img width="90" src="./images/footer.png" /></a>
     </div>
   </footer>
 </div></script>
@@ -1405,407 +1782,120 @@
   
   <footer class="vspace">
     <div class="text-center text-sm">
-      <a class="link" href="javascript:history.back();"><i class="icon">&#xe60e;</i>返回</a>
+      <a class="link" href="javascript:history.back();"><img width="90" src="./images/footer.png" /></a>
     </div>
   </footer>
 </div></script>
-<script type="text/exui-templates" id="exui_icons"><div class="page">
-    <div class="page__hd">
-        <h1 class="page__title">Icons</h1>
-        <p class="page__desc">图标</p>
-    </div>
-    <div class="page__bd page__bd_spacing">
-        <div class="icon-box">
-            <i class="weui-icon-success weui-icon_msg"></i>
-            <div class="icon-box__ctn">
-                <h3 class="icon-box__title">成功</h3>
-                <p class="icon-box__desc">用于表示操作顺利达成</p>
-            </div>
-        </div>
-        <div class="icon-box">
-            <i class="weui-icon-info weui-icon_msg"></i>
-            <div class="icon-box__ctn">
-                <h3 class="icon-box__title">提示</h3>
-                <p class="icon-box__desc">用于表示信息提示；也常用于缺乏条件的操作拦截，提示用户所需信息</p>
-            </div>
-        </div>
-        <div class="icon-box">
-            <i class="weui-icon-warn weui-icon_msg-primary"></i>
-            <div class="icon-box__ctn">
-                <h3 class="icon-box__title">普通警告</h3>
-                <p class="icon-box__desc">用于表示操作后将引起一定后果的情况</p>
-            </div>
-        </div>
-        <div class="icon-box">
-            <i class="weui-icon-warn weui-icon_msg"></i>
-            <div class="icon-box__ctn">
-                <h3 class="icon-box__title">强烈警告</h3>
-                <p class="icon-box__desc">用于表示操作后将引起严重的不可挽回的后果的情况</p>
-            </div>
-        </div>
-        <div class="icon-box">
-            <i class="weui-icon-waiting weui-icon_msg"></i>
-            <div class="icon-box__ctn">
-                <h3 class="icon-box__title">等待</h3>
-                <p class="icon-box__desc">用于表示等待</p>
-            </div>
-        </div>
-        <div class="icon_sp_area">
-            <i class="weui-icon-success"></i>
-            <i class="weui-icon-success-no-circle"></i>
-            <i class="weui-icon-circle"></i>
-            <i class="weui-icon-warn"></i>
-            <i class="weui-icon-download"></i>
-            <i class="weui-icon-info-circle"></i>
-            <i class="weui-icon-cancel"></i>
-            <i class="weui-icon-search"></i>
-        </div>
-    </div>
-    <div class="page__ft">
-        <a href="javascript:home()"><img src="./images/icon_footer_link.png" /></a>
-    </div>
-</div></script>
-<script type="text/exui-templates" id="exui_input"><div class="ex-page">
+<script type="text/exui-templates" id="exui_icons"><div class="ex-page">
   <div class="page-header">
-    <h4>Input</h4>
-    <p class="text-gray text-sm">表单输入</p>
-  </div>
-  
-  <div class="list">
-    <div class="item-divider">文本框</div>
-    <div class="item">
-      <div class="text">
-        <input class="input" type="text" placeholder="文本输入框" />
-      </div>
-    </div>
-    <div class="item-divider">带ICON</div>
-    <div class="item">
-      <i class="icon text-primary">&#xe61e;</i>
-      <div class="text">
-        <input class="input" type="text" placeholder="请输入您的家庭住址" />
-      </div>
-    </div>
-    <div class="item-divider">文本域</div>
-    <div class="item">
-      <div class="text">
-        <textarea class="textarea" placeholder="文本域输入框"></textarea>
-        <div class="textarea-counter"><span>0</span>/200</div>
-      </div>
-    </div>
-    <div class="item-divider">LABEL宽度: ui-mode="[16px * 3,4,5,6,7]"</div>
-    <div class="item">
-      <label class="label" ui-mode="64px">姓名</label>
-      <div class="text">
-        <input class="input" type="text" placeholder="如果一组表单Label文字长度不定" />
-      </div>
-    </div>
-    <div class="item">
-      <label class="label" ui-mode="64px">手机号</label>
-      <div class="text">
-        <input class="input" type="text" placeholder="可以通过预设宽度来实现对齐效果" />
-      </div>
-    </div>
-    <div class="item">
-      <label class="label" ui-mode="64px">联系地址</label>
-      <div class="text">
-        <input class="input" type="text" placeholder="默认情况下Label宽度是自适应的" />
-      </div>
-    </div>
-    <div class="item-divider">选择 (推荐方案：点击箭头可以触发)</div>
-    <div class="item" ui-mode="0px">
-      <div class="text">
-        <div class="select-arrow">
-          <select class="select">
-            <option selected value="1">中国</option>
-            <option value="2">台湾</option>
-            <option value="3">香港</option>
-          </select>
-        </div>
-      </div>
-    </div>
-    <div class="item" ui-mode="0px">
-      <label class="label">国家/地区</label>
-      <div class="text">
-        <div class="select-arrow">
-          <select class="select">
-            <option selected value="1">股票</option>
-            <option value="2">黄金</option>
-            <option value="3">美元</option>
-          </select>
-        </div>
-      </div>
-    </div>
-    <div class="item-divider">选择 (常规方案)</div>
-    <div class="item">
-      <div class="text">
-        <select class="select">
-          <option selected value="1">中国</option>
-          <option value="2">台湾</option>
-          <option value="3">香港</option>
-        </select>
-      </div>
-      <i class="icon">&#xe60b;</i>
-    </div>
-    <div class="item">
-      <label class="label">国家/地区</label>
-      <div class="text">
-        <select class="select">
-          <option selected value="1">股票</option>
-          <option value="2">黄金</option>
-          <option value="3">美元</option>
-        </select>
-      </div>
-      <i class="icon">&#xe60b;</i>
-    </div>
-    <div class="item-divider">选择前置</div>
-    <div class="item" ui-mode="0px">
-      <label class="label" ui-mode="80px">
-        <div class="select-arrow">
-          <select class="select">
-            <option value="1">京</option>
-            <option value="2">津</option>
-            <option value="3">冀</option>
-            <option value="4">豫</option>
-          </select>
-        </div>
-      </label>
-      <div class="text">
-        <input class="input" type="tel" pattern="[0-9]*" placeholder="请输入您的车牌" />
-      </div>
-    </div>
-    <div class="item" ui-mode="0px">
-      <label class="label" ui-mode="80px">
-        <div class="select-arrow">
-          <select class="select">
-            <option value="1">+86</option>
-            <option value="2">+80</option>
-            <option value="3">+84</option>
-            <option value="4">+87</option>
-          </select>
-        </div>
-      </label>
-      <div class="text">
-        <input class="input" type="tel" pattern="[0-9]*" placeholder="请输入您的电话" />
-      </div>
-    </div>
-    <div class="item-divider">验证码</div>
-    <div class="item">
-      <label class="label">手机号</label>
-      <div class="text">
-        <input class="input" type="tel" pattern="[0-9]*" placeholder="请输入您的电话" />
-      </div>
-      <div class="interact">
-        <button class="button literal text-primary" type="button">发送验证码</button>
-      </div>
-    </div>
-    <div class="item">
-      <label class="label">验证码</label>
-      <div class="text">
-        <input class="input" type="number" pattern="[0-9]*" placeholder="请输入短信验证码" />
-      </div>
-      <div class="interact">
-        <button class="button literal text-primary" type="button" disabled>58秒后重发</button>
-      </div>
-    </div>
-    <div class="item">
-      <label class="label">验证码</label>
-      <div class="text">
-        <input class="input" type="text" placeholder="请输入图形验证码" />
-      </div>
-      <div class="interact">
-        <img class="captcha" src="./images/captcha.jpg" />
-      </div>
-    </div>
-    <div class="item-divider">表单组合</div>
-    <div class="item">
-      <label class="label">姓名</label>
-      <div class="text">
-        <input class="input" type="text" placeholder="请输入姓名" />
-      </div>
-    </div>
-    <div class="item">
-      <label class="label">数字</label>
-      <div class="text">
-        <input class="input" type="number" pattern="[0-9]*" placeholder="请输入QQ号"/>
-      </div>
-    </div>
-    <div class="item">
-      <label class="label">电话</label>
-      <div class="text">
-        <input class="input" type="tel" pattern="[0-9]*" placeholder="请输入您的电话" />
-      </div>
-    </div>
-    <div class="item">
-      <label class="label">日期</label>
-      <div class="text">
-        <input class="input" type="date" value="" />
-      </div>
-    </div>
-    <div class="item">
-      <label class="label">时间</label>
-      <div class="text">
-        <input class="input" type="datetime-local" value="" />
-      </div>
-    </div>
-    <div class="item-divider">红色</div>
-    <div class="item text-warning">
-      <label class="label">卡号</label>
-      <div class="text">
-        <input class="input" type="number" pattern="[0-9]*" placeholder="请输入卡号" value="666" />
-      </div>
-      <i class="icon text-xl">&#xe61d;</i>
-    </div>
-    <div class="item-divider">蓝色</div>
-    <div class="item text-primary">
-      <label class="label">身高</label>
-      <div class="text">
-        <input class="input" type="number" pattern="[0-9]*" placeholder="请输入身高" value="777" />
-      </div>
-      <i class="icon text-xl">&#xe61d;</i>
-    </div>
-    <div class="item-divider">绿色</div>
-    <div class="item text-success">
-      <label class="label">护照</label>
-      <div class="text">
-        <input class="input" type="number" pattern="[0-9]*" placeholder="请输入护照" value="888" />
-      </div>
-      <i class="icon text-xl">&#xe61d;</i>
-    </div>
+    <h4>Icons</h4>
+    <p class="text-gray text-sm">
+      <a class="link" target="_blank" href="http://www.iconfont.cn/plus/collections/detail?cid=2428">内置图标字体 (点击查看)</a>
+    </p>
   </div>
 
-  <div class="list">
-    <div class="item-divider">单选列表(橙色 / 默认)</div>
-    <label class="item">
-      <input class="radio" type="radio" name="radio1" checked />
-      <div class="text">支付宝</div>
-    </label>
-    <label class="item">
-      <input class="radio" type="radio" name="radio1" />
-      <div class="text">微信支付</div>
-    </label>
-    <div class="item-divider">单选列表(蓝色)</div>
-    <label class="item">
-      <input class="radio primary" type="radio" name="radio2" checked />
-      <div class="text">支付宝</div>
-    </label>
-    <label class="item">
-      <input class="radio primary" type="radio" name="radio2" />
-      <div class="text">微信支付</div>
-    </label>
-    <div class="item-divider">单选列表(绿色)</div>
-    <label class="item">
-      <input class="radio success" type="radio" name="radio3" checked />
-      <div class="text">支付宝</div>
-    </label>
-    <label class="item">
-      <input class="radio success" type="radio" name="radio3" />
-      <div class="text">微信支付</div>
-    </label>
-    <div class="item-divider">单选列表(禁用)</div>
-    <label class="item">
-      <input class="radio" type="radio" name="radio4" checked disabled />
-      <div class="text">支付宝</div>
-    </label>
-    <label class="item">
-      <input class="radio" type="radio" name="radio4" disabled />
-      <div class="text">微信支付</div>
-    </label>
-    <div class="item-divider">单选列表(右侧排列)</div>
-    <label class="item">
-      <div class="text">支付宝</div>
-      <input class="radio" type="radio" name="radio5" checked />
-    </label>
-    <label class="item">
-      <div class="text">微信支付</div>
-      <input class="radio" type="radio" name="radio5" />
-    </label>
-    <div class="item-divider">复选列表(橙色 / 默认)</div>
-    <label class="item">
-      <input class="checkbox" type="checkbox" checked />
-      <div class="text">支付宝</div>
-    </label>
-    <label class="item">
-      <input class="checkbox" type="checkbox" />
-      <div class="text">微信支付</div>
-    </label>
-    <div class="item-divider">复选列表(蓝色)</div>
-    <label class="item">
-      <input class="checkbox primary" type="checkbox" checked />
-      <div class="text">支付宝</div>
-    </label>
-    <label class="item">
-      <input class="checkbox primary" type="checkbox" />
-      <div class="text">微信支付</div>
-    </label>
-    <div class="item-divider">复选列表(绿色)</div>
-    <label class="item">
-      <input class="checkbox success" type="checkbox" checked />
-      <div class="text">支付宝</div>
-    </label>
-    <label class="item">
-      <input class="checkbox success" type="checkbox" />
-      <div class="text">微信支付</div>
-    </label>
-    <div class="item-divider">复选列表(禁用)</div>
-    <label class="item">
-      <input class="checkbox" type="checkbox" checked disabled />
-      <div class="text">支付宝</div>
-    </label>
-    <label class="item">
-      <input class="checkbox" type="checkbox" disabled />
-      <div class="text">微信支付</div>
-    </label>
-    <div class="item-divider">复选列表(右侧排列)</div>
-    <label class="item">
-      <div class="text">支付宝</div>
-      <input class="checkbox" type="checkbox" checked />
-    </label>
-    <label class="item">
-      <div class="text">微信支付</div>
-      <input class="checkbox" type="checkbox" />
-    </label>
-    <div class="item-divider text-warning">颠倒: 单选框使用复选框外观</div>
-    <label class="item">
-      <input class="checkbox primary" type="radio" name="radio6" checked />
-      <div class="text">支付宝</div>
-    </label>
-    <label class="item">
-      <input class="checkbox primary" type="radio" name="radio6" />
-      <div class="text">微信支付</div>
-    </label>
-    <div class="item-divider text-warning">颠倒: 复选框使用单选框外观</div>
-    <label class="item">
-      <input class="radio success" type="checkbox" checked />
-      <div class="text">支付宝</div>
-    </label>
-    <label class="item">
-      <input class="radio success" type="checkbox" />
-      <div class="text">微信支付</div>
-    </label>
-  </div>
-  
-  <div class="agree">
-    <label>
-      <input class="checkbox success" type="checkbox" />
-      <span>阅读并同意<a class="link" href="javascript:;">《相关条款》</a></span>
-    </label>
-  </div>
-  
-  <div class="divider">协议居中</div>
-  <div class="agree">
-    <label class="center">
-      <input class="checkbox success" type="checkbox" />
-      <span>阅读并同意<a class="link" href="javascript:;">《相关条款》</a></span>
-    </label>
-  </div>
-  
-  <div class="vspace hspace">
-    <button class="button success">确定</button>
+  <div class="grid">
+    <a class="item">
+      <i class="icon text-darkgray">&#xe696;</i>
+      <div class="label">&amp;#xe696;</div>
+    </a>
+    <a class="item">
+      <i class="icon text-darkgray">&#xe677;</i>
+      <div class="label">&amp;#xe677;</div>
+    </a>
+    <a class="item">
+      <i class="icon text-darkgray">&#xe6a0;</i>
+      <div class="label">&amp;#xe6a0;</div>
+    </a>
+    <a class="item">
+      <i class="icon text-darkgray">&#xe60d;</i>
+      <div class="label">&amp;#xe60d;</div>
+    </a>
+    <a class="item">
+      <i class="icon text-darkgray">&#xe629;</i>
+      <div class="label">&amp;#xe629;</div>
+    </a>
+    <a class="item">
+      <i class="icon text-darkgray">&#xe627;</i>
+      <div class="label">&amp;#xe627;</div>
+    </a>
+    <a class="item">
+      <i class="icon text-darkgray">&#xe624;</i>
+      <div class="label">&amp;#xe624;</div>
+    </a>
+    <a class="item">
+      <i class="icon text-darkgray">&#xe616;</i>
+      <div class="label">&amp;#xe616;</div>
+    </a>
+    <a class="item">
+      <i class="icon text-darkgray">&#xe62d;</i>
+      <div class="label">&amp;#xe62d;</div>
+    </a>
+    <a class="item">
+      <i class="icon text-darkgray">&#xe619;</i>
+      <div class="label">&amp;#xe619;</div>
+    </a>
+    <a class="item">
+      <i class="icon text-darkgray">&#xe61e;</i>
+      <div class="label">&amp;#xe61e;</div>
+    </a>
+    <a class="item">
+      <i class="icon text-darkgray">&#xe61d;</i>
+      <div class="label">&amp;#xe61d;</div>
+    </a>
+    <a class="item">
+      <i class="icon text-darkgray">&#xe61c;</i>
+      <div class="label">&amp;#xe61c;</div>
+    </a>
+    <a class="item">
+      <i class="icon text-darkgray">&#xe601;</i>
+      <div class="label">&amp;#xe601;</div>
+    </a>
+    <a class="item">
+      <i class="icon text-darkgray">&#xe60a;</i>
+      <div class="label">&amp;#xe60a;</div>
+    </a>
+    <a class="item">
+      <i class="icon text-darkgray">&#xe61f;</i>
+      <div class="label">&amp;#xe61f;</div>
+    </a>
+    <a class="item">
+      <i class="icon text-darkgray">&#xe61b;</i>
+      <div class="label">&amp;#xe61b;</div>
+    </a>
+    <a class="item">
+      <i class="icon text-darkgray">&#xe61a;</i>
+      <div class="label">&amp;#xe61a;</div>
+    </a>
+    <a class="item">
+      <i class="icon text-darkgray">&#xe618;</i>
+      <div class="label">&amp;#xe618;</div>
+    </a>
+    <a class="item">
+      <i class="icon text-darkgray">&#xe60e;</i>
+      <div class="label">&amp;#xe60e;</div>
+    </a>
+    <a class="item">
+      <i class="icon text-darkgray">&#xe60b;</i>
+      <div class="label">&amp;#xe60b;</div>
+    </a>
+    <a class="item">
+      <i class="icon text-darkgray">&#xe606;</i>
+      <div class="label">&amp;#xe606;</div>
+    </a>
+    <a class="item">
+      <i class="icon text-darkgray">&#xe62c;</i>
+      <div class="label">&amp;#xe62c;</div>
+    </a>
+    <a class="item">
+      <i class="icon text-darkgray">&#xe62a;</i>
+      <div class="label">&amp;#xe62a;</div>
+    </a>
   </div>
   
   <footer class="vspace">
     <div class="text-center text-sm">
-      <a class="link" href="javascript:history.back();"><i class="icon">&#xe60e;</i>返回</a>
+      <a class="link" href="javascript:history.back();"><img width="90" src="./images/footer.png" /></a>
     </div>
   </footer>
 </div></script>
@@ -1884,13 +1974,12 @@
       <div class="extra">其他信息</div>
       <i class="icon">&#xe61a;</i>
     </a>
-    <div class="item-divider">左侧带图标的列表项</div>
+    <div class="item-divider">左侧带图标的列表项 <i class="text-driving">(自由设置图片大小)</i></div>
     <a class="item" href="javascript:;">
       <div class="avatar">
         <img width="16" src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" />
       </div>
       <div class="text">标题文字</div>
-      <div class="extra">16px</div>
       <i class="icon">&#xe61a;</i>
     </a>
     <a class="item" href="javascript:;">
@@ -1898,7 +1987,6 @@
         <img width="24" src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" />
       </div>
       <div class="text">标题文字</div>
-      <div class="extra">24px</div>
       <i class="icon">&#xe61a;</i>
     </a>
     <a class="item" href="javascript:;">
@@ -1906,7 +1994,6 @@
         <img width="32" src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" />
       </div>
       <div class="text">标题文字</div>
-      <div class="extra">32px</div>
       <i class="icon">&#xe61a;</i>
     </a>
     <a class="item" href="javascript:;">
@@ -1914,7 +2001,6 @@
         <img width="48" src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" />
       </div>
       <div class="text">标题文字</div>
-      <div class="extra">可以自由设置</div>
       <i class="icon">&#xe61a;</i>
     </a>
     <div class="item-divider">补充信息</div>
@@ -1974,7 +2060,7 @@
   
   <footer class="vspace">
     <div class="text-center text-sm">
-      <a class="link" href="javascript:history.back();"><i class="icon">&#xe60e;</i>返回</a>
+      <a class="link" href="javascript:history.back();"><img width="90" src="./images/footer.png" /></a>
     </div>
   </footer>
 </div></script>
@@ -2004,9 +2090,9 @@
     </div>
   </div>
   
-  <footer class="vspace">
+  <footer class="vspace btm-fixed">
     <div class="text-center text-sm">
-      <a class="link" href="javascript:history.back();"><i class="icon">&#xe60e;</i>返回</a>
+      <a class="link" href="javascript:history.back();"><img width="90" src="./images/footer.png" /></a>
     </div>
   </footer>
 </div></script>
@@ -2024,64 +2110,64 @@
     <button class="button default" data-modal="#modalConfirm3">Confirm: 弹窗嵌套</button>
   </div>
 
-  <div id="modals">
+  <div style="display: none">
 
-    <div id="modalAlert1" class="modal-layer">
+    <div id="modalAlert1">
       <div class="modal">
         <h3 class="title">温馨提示</h3>
         <div class="content">本商品销售范围不支持您所在的社区或库存不足</div>
         <footer class="footer">
           <div class="button-group nesting compact">
-            <a class="button square text-primary text-strong submit">确定</a>
+            <a class="button square text-primary text-strong submit" data-dismiss="true">确定</a>
           </div>
         </footer>
       </div>
     </div>
 
-    <div id="modalAlert2" class="modal-layer">
+    <div id="modalAlert2">
       <div class="modal">
         <div class="content">本商品销售范围不支持您所在的社区或库存不足</div>
         <footer class="footer">
           <div class="button-group nesting compact">
-            <a class="button square text-primary text-strong submit">知道了</a>
+            <a class="button square text-primary text-strong submit" data-dismiss="true">知道了</a>
           </div>
         </footer>
       </div>
     </div>
 
-    <div id="modalConfirm1" class="modal-layer">
+    <div id="modalConfirm1">
       <div class="modal">
         <h3 class="title">温馨提示</h3>
         <div class="content">本商品销售范围不支持您所在的社区或库存不足</div>
         <footer class="footer">
           <div class="button-group compact nesting">
-            <a class="button square text-primary cancel">取消</a>
-            <a class="button square text-primary text-strong submit">确定</a>
+            <a class="button square text-primary cancel" data-dismiss="true">取消</a>
+            <a class="button square text-primary text-strong submit" data-dismiss="true">确定</a>
           </div>
         </footer>
       </div>
     </div>
 
-    <div id="modalConfirm2" class="modal-layer">
+    <div id="modalConfirm2">
       <div class="modal">
         <div class="content">本商品销售范围不支持您所在的社区或库存不足</div>
         <footer class="footer">
           <div class="button-group compact nesting">
-            <a class="button square text-primary cancel">放弃</a>
-            <a class="button square text-primary text-strong submit">去完善</a>
+            <a class="button square text-primary cancel" data-dismiss="true">放弃</a>
+            <a class="button square text-primary text-strong submit" data-dismiss="true">去完善</a>
           </div>
         </footer>
       </div>
     </div>
 
-    <div id="modalConfirm3" class="modal-layer">
+    <div id="modalConfirm3">
       <div class="modal" data-nested="true">
         <h3 class="title">温馨提示</h3>
         <div class="content">这是一个弹窗嵌套实现范例，用于展示弹窗层叠状况</div>
         <footer class="footer">
           <div class="button-group compact nesting">
-            <a class="button square text-primary cancel">取消</a>
-            <a class="button square text-primary text-strong submit">查看</a>
+            <a class="button square text-primary cancel" data-dismiss="true">取消</a>
+            <a class="button square text-primary text-strong submit" data-modal="#modalAlert1">查看</a>
           </div>
         </footer>
       </div>
@@ -2089,43 +2175,16 @@
 
   </div>
 
-  <footer class="vspace">
+  <footer class="vspace btm-fixed">
     <div class="text-center text-sm">
-      <a class="link" href="javascript:history.back();"><i class="icon">&#xe60e;</i>返回</a>
+      <a class="link" href="javascript:history.back();"><img width="90" src="./images/footer.png" /></a>
     </div>
   </footer>
 </div>
 <script type="text/javascript">
-
-  function buildModal(selector) {
-    var frag = $(selector).html();
-    return $(frag);
-  }
-
-  $(document).off('click', 'button[data-modal]').on('click', 'button[data-modal]', function() {
+  $(document).off('click', 'button[data-modal]').on('click', '.button[data-modal]', function() {
     var selector = $(this).data('modal');
-    var modal = buildModal(selector).addClass('modal-in');
-    $('<div class="modal-layer modal-layer-in" />').append(modal).appendTo('body');
-  });
-
-  $(document).off('click', '.modal > .footer .button').on('click', '.modal > .footer .button', function() {
-    var button = $(this);
-    var modal = button.closest('.modal');
-    var layer = modal.parent();
-    modal.removeClass('modal-in').addClass('modal-out').on('animationend webkitAnimationEnd', function() {
-      $(this).remove();
-    });
-    
-    // 弹窗嵌套
-    if (modal.data('nested')) {
-      layer.append($($('#modalAlert1').html()).addClass('modal-in'));  
-    }
-    // 无嵌套关闭
-    else {
-      layer.removeClass('modal-layer-in').addClass('modal-layer-out').on('transitionend webkitTransitionEnd', function() {
-        $(this).remove();
-      });
-    }
+    widgetManager.show($(selector).html());
   });
 </script></script>
 <script type="text/exui-templates" id="exui_navbar"><div class="ex-page">
@@ -2160,6 +2219,12 @@
     <a class="item" href="javascript:;">标签二</a>
     <a class="item" href="javascript:;">标签三</a>
   </div>
+
+  <footer class="vspace btm-fixed">
+    <div class="text-center text-sm">
+      <a class="link" href="javascript:history.back();"><img width="90" src="./images/footer.png" /></a>
+    </div>
+  </footer>
   
 </div>
 <script type="text/javascript">
@@ -2179,9 +2244,9 @@
     <button class="button default" data-picker="#picker3">时间选择器</button>
   </div>
   
-  <div id="pickers">
+  <div style="display: none">
 
-    <div id="picker1" class="picker-layer" data-dismiss="true">
+    <div id="picker1">
       <div class="picker">
         <div class="header">
           <a class="menu text-gray" data-dismiss="true">关闭</a>
@@ -2207,7 +2272,7 @@
       </div>
     </div>
 
-    <div id="picker2" class="picker-layer" data-dismiss="true">
+    <div id="picker2">
       <div class="picker">
         <div class="header">
           <a class="menu text-gray" data-dismiss="true">关闭</a>
@@ -2257,7 +2322,7 @@
       </div>
     </div>
 
-    <div id="picker3" class="picker-layer" data-dismiss="true">
+    <div id="picker3">
       <div class="picker">
         <div class="header">
           <a class="menu text-gray" data-dismiss="true">关闭</a>
@@ -2343,10 +2408,9 @@
 
   </div>
   
-  
-  <footer class="vspace">
+  <footer class="vspace btm-fixed">
     <div class="text-center text-sm">
-      <a class="link" href="javascript:history.back();"><i class="icon">&#xe60e;</i>返回</a>
+      <a class="link" href="javascript:history.back();"><img width="90" src="./images/footer.png" /></a>
     </div>
   </footer>
 </div>
@@ -2354,15 +2418,127 @@
 <script type="text/javascript">
   $(document).off('click', '.button[data-picker]').on('click', '.button[data-picker]', function() {
     var selector = $(this).data('picker');
-    $(selector).addClass('picker-layer-in');
+    widgetManager.show($(selector).html(), {
+      dismiss: true
+    });
   });
-  $(document).off('click', '.picker-layer').on('click', '.picker-layer', function(e) {
-    if ($(e.target).is('[data-dismiss="true"]')) {
-      var picker = $(this).closest('.picker-layer');
-      picker.removeClass('picker-layer-in').addClass('picker-layer-out').on('animationend webkitAnimationEnd', function() {
-        $(this).removeClass('picker-layer-out');
-      });
-    }
+</script></script>
+<script type="text/exui-templates" id="exui_progress"><div class="ex-page">
+  <div class="page-header">
+    <h4>Progress</h4>
+    <p class="text-gray text-sm">进度条</p>
+  </div>
+  
+  <div class="hspace">
+    <div class="progress">
+      <div class="shadow">
+        <div class="percent" style="width: 10%;"></div>
+      </div>
+      <a class="action">
+        <i class="icon text-warning text-xl">&#xe61d;</i>
+      </a>
+    </div>
+
+    <div class="vspace"></div>
+
+    <div class="progress">
+      <div class="shadow">
+        <div class="percent" style="width: 30%;"></div>
+      </div>
+      <a class="action">
+        <i class="icon text-warning text-xl">&#xe61d;</i>
+      </a>
+    </div>
+
+    <div class="vspace"></div>
+    
+    <div class="progress">
+      <div class="shadow">
+        <div class="percent" style="width: 50%;"></div>
+      </div>
+      <a class="action">
+        <i class="icon text-warning text-xl">&#xe61d;</i>
+      </a>
+    </div>
+  </div>
+
+  <div class="vspace hspace">
+    <a class="button success" id="uploadDemo">上传</a>
+  </div>
+  
+  <footer class="vspace btm-fixed">
+    <div class="text-center text-sm">
+      <a class="link" href="javascript:history.back();"><img width="90" src="./images/footer.png" /></a>
+    </div>
+  </footer>
+</div>
+
+<script type="text/javascript">
+  $(document).off('click', '#uploadDemo').on('click', '#uploadDemo', function() {
+    $('.progress .percent').css('width', '100%');
+  });
+
+  $(document).off('click', '.progress .action').on('click', '.progress .action', function() {
+    $(this).closest('.progress').find('.percent').css('width', '0%');
+  });
+</script></script>
+<script type="text/exui-templates" id="exui_search"><div class="ex-page">
+  <div class="page-header">
+    <h4>Search</h4>
+    <p class="text-gray text-sm">搜索栏</p>
+  </div>
+  
+  <div class="vspace">
+    <div class="list compact">
+      <div class="item" ui-mode="0px">
+        <div class="text">
+          <form class="search" onsubmit="return false">
+            <label class="trigger">
+              <i class="icon text-gray">&#xe60a;</i>
+              <input type="search" class="input" placeholder="搜索" required />
+              <i class="icon text-gray clear">&#xe61d;</i>
+            </label>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div id="searchResults" class="list compact" style="display: none">
+      <div class="item">
+        <div class="text">
+          <p>实时搜索文本</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="text">
+          <p>实时搜索文本</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="text">
+          <p>实时搜索文本</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="text">
+          <p>实时搜索文本</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <footer class="vspace btm-fixed">
+    <div class="text-center text-sm">
+      <a class="link" href="javascript:history.back();"><img width="90" src="./images/footer.png" /></a>
+    </div>
+  </footer>
+</div>
+
+<script type="text/javascript">
+  $(document).off('input', 'form.search .input').on('input', 'form.search  .input', function() {
+    $('#searchResults').css('display', $(this).val() ? 'block' : 'none');
+  });
+  $(document).off('click', 'form.search .clear').on('click', 'form.search  .clear', function() {
+    $(this).siblings('.input').val('').trigger('input');
   });
 </script></script>
 <script type="text/exui-templates" id="exui_switch"><div class="ex-page">
@@ -2392,9 +2568,9 @@
     </div>
   </div>
   
-  <footer class="vspace">
+  <footer class="vspace btm-fixed">
     <div class="text-center text-sm">
-      <a class="link" href="javascript:history.back();"><i class="icon">&#xe60e;</i>返回</a>
+      <a class="link" href="javascript:history.back();"><img width="90" src="./images/footer.png" /></a>
     </div>
   </footer>
 </div></script>
@@ -2493,66 +2669,67 @@
     <button class="button default" data-toast="#toast6">自定义图片</button>
   </div>
 
-  <div id="toasts">
+  <div style="display: none;">
 
-    <div id="toast1" class="toast-layer">
+    <div id="toast1">
       <div class="toast">
         <i class="icon waiting"></i>
         <span class="text">载入中</span>
       </div>
     </div>
 
-    <div id="toast2" class="toast-layer">
+    <div id="toast2">
       <div class="toast">
         <i class="icon">&#xe61d;</i>
         <span class="text">操作失败</span>
       </div>
     </div>
 
-    <div id="toast3" class="toast-layer">
+    <div id="toast3">
       <div class="toast">
         <i class="icon">&#xe616;</i>
         <span class="text">操作失败</span>
       </div>
     </div>
 
-    <div id="toast4" class="toast-layer">
+    <div id="toast4">
       <div class="toast">
         <i class="icon">&#xe61c;</i>
         <span class="text">操作成功</span>
       </div>
     </div>
 
-    <div id="toast5" class="toast-layer">
+    <div id="toast5">
       <div class="toast">
         <i class="icon">&#xe624;</i>
         <span class="text">操作成功</span>
       </div>
     </div>
 
-    <div id="toast6" class="toast-layer">
+    <div id="toast6">
       <div class="toast">
-        <i class="icon"><img src="./images/icon_intro.png" /></i>
+        <i class="icon"><img src="./images/question.png" /></i>
         <span class="text">自定义图片</span>
       </div>
     </div>
 
   </div>
 
-  <footer class="vspace">
+  <footer class="vspace btm-fixed">
     <div class="text-center text-sm">
-      <a class="link" href="javascript:history.back();"><i class="icon">&#xe60e;</i>返回</a>
+      <a class="link" href="javascript:history.back();"><img width="90" src="./images/footer.png" /></a>
     </div>
   </footer>
 </div>
 <script type="text/javascript">
   $(document).off('click', '.button[data-toast]').on('click', '.button[data-toast]', function() {
     var selector = $(this).data('toast');
-    var toast = $(selector).addClass('toast-layer-in');
+    widgetManager.show($(selector).html(), {
+      clazz: 'transparent',
+    });
+
     setTimeout(function() {
-      toast.removeClass('toast-layer-in').addClass('toast-layer-out').on('animationend webkitAnimationEnd', function() {
-        $(this).removeClass('toast-layer-out');
-      });
+      widgetManager.hide();
     }, 2500);
   });
 </script></script>

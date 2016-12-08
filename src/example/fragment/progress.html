@@ -1,0 +1,59 @@
+<div class="ex-page">
+  <div class="page-header">
+    <h4>Progress</h4>
+    <p class="text-gray text-sm">进度条</p>
+  </div>
+  
+  <div class="hspace">
+    <div class="progress">
+      <div class="shadow">
+        <div class="percent" style="width: 10%;"></div>
+      </div>
+      <a class="action">
+        <i class="icon text-warning text-xl">&#xe61d;</i>
+      </a>
+    </div>
+
+    <div class="vspace"></div>
+
+    <div class="progress">
+      <div class="shadow">
+        <div class="percent" style="width: 30%;"></div>
+      </div>
+      <a class="action">
+        <i class="icon text-warning text-xl">&#xe61d;</i>
+      </a>
+    </div>
+
+    <div class="vspace"></div>
+    
+    <div class="progress">
+      <div class="shadow">
+        <div class="percent" style="width: 50%;"></div>
+      </div>
+      <a class="action">
+        <i class="icon text-warning text-xl">&#xe61d;</i>
+      </a>
+    </div>
+  </div>
+
+  <div class="vspace hspace">
+    <a class="button success" id="uploadDemo">上传</a>
+  </div>
+  
+  <footer class="vspace btm-fixed">
+    <div class="text-center text-sm">
+      <a class="link" href="javascript:history.back();"><img width="90" src="./images/footer.png" /></a>
+    </div>
+  </footer>
+</div>
+
+<script type="text/javascript">
+  $(document).off('click', '#uploadDemo').on('click', '#uploadDemo', function() {
+    $('.progress .percent').css('width', '100%');
+  });
+
+  $(document).off('click', '.progress .action').on('click', '.progress .action', function() {
+    $(this).closest('.progress').find('.percent').css('width', '0%');
+  });
+</script>

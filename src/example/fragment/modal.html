@@ -12,64 +12,64 @@
     <button class="button default" data-modal="#modalConfirm3">Confirm: 弹窗嵌套</button>
   </div>
 
-  <div id="modals">
+  <div style="display: none">
 
-    <div id="modalAlert1" class="modal-layer">
+    <div id="modalAlert1">
       <div class="modal">
         <h3 class="title">温馨提示</h3>
         <div class="content">本商品销售范围不支持您所在的社区或库存不足</div>
         <footer class="footer">
           <div class="button-group nesting compact">
-            <a class="button square text-primary text-strong submit">确定</a>
+            <a class="button square text-primary text-strong submit" data-dismiss="true">确定</a>
           </div>
         </footer>
       </div>
     </div>
 
-    <div id="modalAlert2" class="modal-layer">
+    <div id="modalAlert2">
       <div class="modal">
         <div class="content">本商品销售范围不支持您所在的社区或库存不足</div>
         <footer class="footer">
           <div class="button-group nesting compact">
-            <a class="button square text-primary text-strong submit">知道了</a>
+            <a class="button square text-primary text-strong submit" data-dismiss="true">知道了</a>
           </div>
         </footer>
       </div>
     </div>
 
-    <div id="modalConfirm1" class="modal-layer">
+    <div id="modalConfirm1">
       <div class="modal">
         <h3 class="title">温馨提示</h3>
         <div class="content">本商品销售范围不支持您所在的社区或库存不足</div>
         <footer class="footer">
           <div class="button-group compact nesting">
-            <a class="button square text-primary cancel">取消</a>
-            <a class="button square text-primary text-strong submit">确定</a>
+            <a class="button square text-primary cancel" data-dismiss="true">取消</a>
+            <a class="button square text-primary text-strong submit" data-dismiss="true">确定</a>
           </div>
         </footer>
       </div>
     </div>
 
-    <div id="modalConfirm2" class="modal-layer">
+    <div id="modalConfirm2">
       <div class="modal">
         <div class="content">本商品销售范围不支持您所在的社区或库存不足</div>
         <footer class="footer">
           <div class="button-group compact nesting">
-            <a class="button square text-primary cancel">放弃</a>
-            <a class="button square text-primary text-strong submit">去完善</a>
+            <a class="button square text-primary cancel" data-dismiss="true">放弃</a>
+            <a class="button square text-primary text-strong submit" data-dismiss="true">去完善</a>
           </div>
         </footer>
       </div>
     </div>
 
-    <div id="modalConfirm3" class="modal-layer">
+    <div id="modalConfirm3">
       <div class="modal" data-nested="true">
         <h3 class="title">温馨提示</h3>
         <div class="content">这是一个弹窗嵌套实现范例，用于展示弹窗层叠状况</div>
         <footer class="footer">
           <div class="button-group compact nesting">
-            <a class="button square text-primary cancel">取消</a>
-            <a class="button square text-primary text-strong submit">查看</a>
+            <a class="button square text-primary cancel" data-dismiss="true">取消</a>
+            <a class="button square text-primary text-strong submit" data-modal="#modalAlert1">查看</a>
           </div>
         </footer>
       </div>
@@ -77,42 +77,15 @@
 
   </div>
 
-  <footer class="vspace">
+  <footer class="vspace btm-fixed">
     <div class="text-center text-sm">
-      <a class="link" href="javascript:history.back();"><i class="icon">&#xe60e;</i>返回</a>
+      <a class="link" href="javascript:history.back();"><img width="90" src="./images/footer.png" /></a>
     </div>
   </footer>
 </div>
 <script type="text/javascript">
-
-  function buildModal(selector) {
-    var frag = $(selector).html();
-    return $(frag);
-  }
-
-  $(document).off('click', 'button[data-modal]').on('click', 'button[data-modal]', function() {
+  $(document).off('click', 'button[data-modal]').on('click', '.button[data-modal]', function() {
     var selector = $(this).data('modal');
-    var modal = buildModal(selector).addClass('modal-in');
-    $('<div class="modal-layer modal-layer-in" />').append(modal).appendTo('body');
-  });
-
-  $(document).off('click', '.modal > .footer .button').on('click', '.modal > .footer .button', function() {
-    var button = $(this);
-    var modal = button.closest('.modal');
-    var layer = modal.parent();
-    modal.removeClass('modal-in').addClass('modal-out').on('animationend webkitAnimationEnd', function() {
-      $(this).remove();
-    });
-    
-    // 弹窗嵌套
-    if (modal.data('nested')) {
-      layer.append($($('#modalAlert1').html()).addClass('modal-in'));  
-    }
-    // 无嵌套关闭
-    else {
-      layer.removeClass('modal-layer-in').addClass('modal-layer-out').on('transitionend webkitTransitionEnd', function() {
-        $(this).remove();
-      });
-    }
+    widgetManager.show($(selector).html());
   });
 </script>

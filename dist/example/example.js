@@ -27,7 +27,6 @@ Router.prototype = {
       history.replaceState({
         index: this.routes.length,
       }, name || 'index', location.href);
-      console.log(JSON.stringify(history.state))
     }
     // 后退
     else {
@@ -41,9 +40,10 @@ Router.prototype = {
     var page = $('#exui_' + name)
     if (page.length) {
       var view = $(page.html()).appendTo('body');
-      return view.addClass('ex-view-in').on('animationend webkitAnimationEnd', function () {
+      view.addClass('ex-view-in').on('animationend webkitAnimationEnd', function () {
         view.removeClass('ex-view-in');
       });
+      return view;
     }
   },
 
@@ -58,3 +58,163 @@ Router.prototype = {
 };
 
 var router = new Router();
+
+// // // // // // // // // // // // // // // // // // // // // // // // // // 
+
+// WidgetManager
+// 工具类，浮层切换动画
+function WidgetManager() {
+  this.wrapper = null;
+  this.widgets = [];
+}
+
+WidgetManager.prototype = {
+
+  // 私有
+  _dismiss: function (e) {
+    if ($(e.target).is('.ex-widget-layer')) {
+      e.data && e.data.hide();
+    }
+  },
+
+  // 填充
+  fill: function (templ, opts) {
+    var self = this;
+    if (!this.wrapper) {
+      this.wrapper = $('<div class="ex-widget-layer" />').appendTo('body');
+      this.wrapper.on('click', '[data-dismiss="true"]', function () {
+        self.hide();
+      });
+    }
+
+    opts = opts || {};
+
+    // 重置背景
+    this.wrapper.attr('class', 'ex-widget-layer').toggleClass(opts.clazz, opts.clazz);
+
+    // 点击空白
+    this.wrapper.off('click', this._dismiss);
+    if (opts.dismiss === true) {
+      this.wrapper.on('click', self, this._dismiss);
+    }
+
+    // 移除上个组件
+    this.popup();
+    // 构建当前组件
+    var widget = $(templ).addClass('ex-widget-in');
+    this.widgets.push(widget);
+    // 故意为之 不然不会触发animation
+    this.wrapper[0].offsetHeight;
+    this.wrapper.append(widget).addClass('ex-widget-in');
+    return widget;
+  },
+
+  // 显示
+  show: function (templ, opts, fn) {
+    if (templ) {
+      this.fill(templ, opts).on('animationend webkitAnimationEnd', function () {
+        fn && fn();
+      });
+    }
+  },
+
+  // 隐藏
+  hide: function (fn) {
+    var self = this;
+    if (!self.wrapper) {
+      return false;
+    }
+    self.wrapper.removeClass('ex-widget-in').addClass('ex-widget-out').on('animationend webkitAnimationEnd transitionend webkitTransitionEnd', function () {
+      // 由于样式表不同，可能触发两次事件
+      // 一次Animate,一次transistion 要看背景Layer是否做透明渐变 因此这里做个兼容处理
+      self.wrapper && self.wrapper.remove();
+      self.wrapper = null;
+      self.widget = [];
+      fn && fn();
+    });
+  },
+
+  // 交替 (永远只保留一个组件)
+  popup: function () {
+    var widget = this.widgets.pop();
+    if (!widget) {
+      return false;
+    }
+    var self = this;
+    widget.removeClass('ex-widget-in').addClass('ex-widget-out').on('animationend webkitAnimationEnd', function () {
+      widget.remove();
+    });
+  },
+
+};
+
+var widgetManager = new WidgetManager();
+
+// // // // // // // // // // // // // // // // // // // // // // // // // // 
+
+// fastclick 改写自weui,现在支持事件代理和多事件绑定
+(function () {
+  // 是否支持touch
+  var supported = (function () {
+    try {
+      document.createEvent("TouchEvent");
+      return true;
+    }
+    catch (e) {
+      return false;
+    }
+  })();
+
+  // 原始方法
+  var _onfn = $.fn.on;
+
+  // 代理改写
+  $.fn.on = function () {
+    var args = arguments;
+    var callback = args[args.length - 1];
+
+    // 截取arguments
+    var slice = function (o, i, j) {
+      return Array.prototype.slice.call(o, i, j || o.length);
+    };
+
+    // 包含CLICK && 支持TOUCH && 注册了CALLBACK
+    if (/\bclick\b/i.test(args[0]) && supported && typeof callback === 'function') {
+      var startY = 0;
+
+      // 插入除回调外的初始参数
+      var insertArgs = function (ev, fn) {
+        return [ev].concat(slice(args, 1, args.length - 1)).concat(fn);
+      };
+
+      // 记录触发点
+      _onfn.apply(this, insertArgs('touchstart', function __$delegate(e) {
+        startY = e.changedTouches[0].pageY;
+      }));
+
+      // 判断结尾点
+      _onfn.apply(this, insertArgs('touchend', function __$delegate(e) {
+        var endY = touchY = e.changedTouches[0].pageY;
+        // 如果移动不触发点击
+        if (Math.abs(endY - startY) > 10) {
+          return;
+        }
+        callback.apply(this, [e].concat(slice(args, 1)));
+        // 300ms穿透问题
+        e.preventDefault();
+      }));
+
+      // 预防多事件绑定
+      var events = args[0].replace(/\bclick\b/gi, '').trim();
+      if (events) {
+        _onfn.apply(this, [events].concat(slice(args, 1)));
+      }
+    }
+    // 不包含CLICK
+    else {
+      _onfn.apply(this, args);
+    }
+  };
+
+  /** 注意: 未处理 off click **/
+})();

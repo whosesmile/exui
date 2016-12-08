@@ -3,71 +3,73 @@
     <h4>ActionSheet</h4>
     <p class="text-gray text-sm">弹出式菜单</p>
   </div>
-
+  
   <div class="vspace hspace">
-    <button class="button default" data-sheet="#sheet1">弹出式菜单1</button>
-    <button class="button default" data-sheet="#sheet2">弹出式菜单2</button>
-    <button class="button default" data-sheet="#sheet3">弹出式菜单3</button>
+    <button class="button default" data-sheet="#sheet1">标准菜单</button>
+    <button class="button default" data-sheet="#sheet2">标题菜单</button>
+    <button class="button default" data-sheet="#sheet3">标题+描述</button>
   </div>
   
-  <div id="sheet1" class="sheet-layer">
-    <div class="actionsheet">
-      <div class="menus">
-        <div class="item">操作选项</div>
-        <div class="item">操作选项</div>
-        <div class="item">操作选项</div>
-      </div>
-      <div class="menus">
-        <div class="item" data-dismiss="true">取消</div>
-      </div>
-    </div>
-  </div>
-
-  <div id="sheet2" class="sheet-layer">
-    <div class="actionsheet">
-      <div class="menus">
-        <div class="item label">请选择</div>
-        <div class="item text-driving">Apple Pay</div>
-        <div class="item text-primary">支付宝</div>
-        <div class="item text-success">微信支付</div>
-      </div>
-      <div class="menus">
-        <div class="item text-gray" data-dismiss="true">取消</div>
-      </div>
-    </div>
-  </div>
-  
-  <div id="sheet3" class="sheet-layer">
-    <div class="actionsheet">
-      <div class="menus">
-        <div class="item label">
-          <h4>我是标题</h4>
-          这里可以补充描述信息
+  <div style="display: none">
+    <div id="sheet1">
+      <div class="actionsheet">
+        <div class="menus">
+          <div class="item text-primary">操作选项</div>
+          <div class="item text-primary">操作选项</div>
         </div>
-        <div class="item text-warning">满仓</div>
-        <div class="item text-success">空仓</div>
+        <div class="menus">
+          <div class="item text-gray" data-dismiss="true">取消</div>
+        </div>
       </div>
-      <div class="menus">
-        <div class="item text-gray" data-dismiss="true">取消</div>
+    </div>
+    
+    <div id="sheet2">
+      <div class="actionsheet">
+        <div class="menus">
+          <div class="item label">请选择</div>
+          <div class="item text-driving">Apple Pay</div>
+          <div class="item text-primary">支付宝</div>
+          <div class="item text-success">微信支付</div>
+        </div>
+        <div class="menus">
+          <div class="item text-gray" data-dismiss="true">取消</div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="sheet3">
+      <div class="actionsheet">
+        <div class="menus">
+          <div class="item label">
+            <h4>我是标题</h4>
+            这里可以补充描述信息
+          </div>
+          <div class="item">
+            <button class="button plain-success">空仓</button>
+          </div>
+          <div class="item">
+            <button class="button plain-driving">满仓</button>
+          </div>
+        </div>
+        <div class="menus">
+          <div class="item text-gray" data-dismiss="true">取消</div>
+        </div>
       </div>
     </div>
   </div>
-
-  <footer class="vspace">
+  
+  <footer class="vspace btm-fixed">
     <div class="text-center text-sm">
-      <a class="link" href="javascript:history.back();"><i class="icon">&#xe60e;</i>返回</a>
+      <a class="link" href="javascript:history.back();"><img width="90" src="./images/footer.png" /></a>
     </div>
   </footer>
 </div>
 
 <script type="text/javascript">
   $(document).off('click', '.button[data-sheet]').on('click', '.button[data-sheet]', function() {
-    var selctor = $(this).data('sheet');
-    $(selctor).addClass('sheet-layer-in');
-  });
-  $(document).off('click', '.sheet-layer [data-dismiss="true"]').on('click', '.sheet-layer [data-dismiss="true"]', function() {
-    $(this).closest('.sheet-layer').removeClass('sheet-layer-in').addClass('sheet-layer-out').on('animationend webkitAnimationEnd', function() {
-      $(this).removeClass('sheet-layer-out');
+    var selector = $(this).data('sheet');
+    widgetManager.show($(selector).html(), {
+      dismiss: true,
     });
   });
 </script>

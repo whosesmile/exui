@@ -1,0 +1,24 @@
+// widget父层 不同组件切换时的遮罩
+.ex-widget-layer {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  visibility: hidden;
+  background-color: rgba(0, 0, 0, 0);
+  transition-property: background-color;
+  transition-duration: 300ms;
+
+  &.ex-widget-in {
+    visibility: visible;
+  }
+  &:not(.transparent).ex-widget-in {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  &.ex-widget-out {
+    visibility: visible;
+    background-color: rgba(0, 0, 0, 0);
+  }
+}

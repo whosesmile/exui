@@ -74,7 +74,7 @@
         display: block;
       }
     }
-    // 调整间距
+    // 调整间距 土办法学自AntUI
     &[ui-mode^="0px"] {
       padding-top: 0;
       padding-bottom: 0;
@@ -82,6 +82,14 @@
     &[ui-mode$="0px"] {
       padding-left: 0;
       padding-right: 0;
+    }
+    &[ui-mode^="10px"] {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    &[ui-mode$="10px"] {
+      padding-left: 10px;
+      padding-right: 10px;
     }
     &[ui-mode^="15px"] {
       padding-top: 15px;
@@ -92,11 +100,12 @@
       padding-right: 15px;
     }
   }
-  // 仅默认设置为灰色 这样写可以继承父元素设置的颜色
+  // 仅默认ICON设置为灰色 这样写可以继承父元素定制的颜色
   > [class="item"] > [class="icon"]:last-child {
     color: @textColorGray;
   }
-  > .item[href], > label.item {
+  // 具有交互功能
+  > .item[href], > .item.tapable {
     .setTapColor();
     color: inherit;
 

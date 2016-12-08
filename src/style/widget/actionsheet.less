@@ -1,82 +1,59 @@
-.sheet-layer {
-  position: fixed;
-  z-index: 1000;
-  top: 0;
-  right: 0;
-  left: 0;
+.actionsheet {
+  position: absolute;
   bottom: 0;
-  visibility: hidden;
-  background-color: rgba(0, 0, 0, 0);
-  transition-property: background-color;
-  transition-duration: 400ms;
+  width: 100%;
 
-  .actionsheet {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+  & > .menus {
+    margin: 10px;
 
-    & > .menus {
-      margin: 10px;
+    &  > .item {
+      position: relative;
+      text-align: center;
+      line-height: 44px;
+      font-size: 18px;
+      background-color: #fff;
 
-      &  > .item {
-        position: relative;
-        text-align: center;
-        line-height: 44px;
+      & > .button {
+        border-radius: 0;
         font-size: 18px;
-        background-color: #fff;
 
-        & > .button {
-          border-radius: 0;
-          font-size: 18px;
+        &:after {
+          content: none;
+        }
+      }
+      & > [class="button"] {
+        color: inherit;
+      }
+      &:first-child {
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+      }
+      &:last-child {
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+      &:not(.label) {
+        cursor: pointer;
 
-          &:after {
-            content: none;
-          }
+        &:active {
+          background-color: @tapColor;
         }
-        & > [class="button"] {
-          color: inherit;
-        }
-        &:first-child {
-          border-top-left-radius: 5px;
-          border-top-right-radius: 5px;
-        }
-        &:last-child {
-          border-bottom-left-radius: 5px;
-          border-bottom-right-radius: 5px;
-        }
-        &:not(.label) {
-          cursor: pointer;
-
-          &:active {
-            background-color: @tapColor;
-          }
-        }
-        + .item:before {
-          .setTopLine();
-        }
-        &.label {
-          padding: 10px 15px;
-          line-height: 24px;
-          font-size: 14px;
-          color: @textColorGray;
-        }
+      }
+      + .item:before {
+        .setTopLine();
+      }
+      &.label {
+        padding: 10px 15px;
+        line-height: 24px;
+        font-size: 14px;
+        color: @textColorGray;
       }
     }
   }
-  &.sheet-layer-in {
-    visibility: visible;
-    background-color: rgba(0, 0, 0, 0.6);
-
-    .actionsheet {
-      animation: ex-kf-slide-in-up ease .3s forwards;
-    }
-  }
-  &.sheet-layer-out {
-    visibility: visible;
-    background-color: rgba(0, 0, 0, 0);
-
-    .actionsheet {
-      animation: ex-kf-slide-in-down ease .3s forwards;
-    }
-  }
+}
+.ex-widget-layer.ex-widget-in .actionsheet, .ex-widget-layer .actionsheet.ex-widget-in {
+  animation: ex-kf-slide-in-up ease .3s forwards;
+}
+.ex-widget-layer.ex-widget-out .actionsheet, .ex-widget-layer .actionsheet.ex-widget-out {
+  animation: ex-kf-slide-in-down ease .3s forwards;
 }

@@ -13,66 +13,67 @@
     <button class="button default" data-toast="#toast6">自定义图片</button>
   </div>
 
-  <div id="toasts">
+  <div style="display: none;">
 
-    <div id="toast1" class="toast-layer">
+    <div id="toast1">
       <div class="toast">
         <i class="icon waiting"></i>
         <span class="text">载入中</span>
       </div>
     </div>
 
-    <div id="toast2" class="toast-layer">
+    <div id="toast2">
       <div class="toast">
         <i class="icon">&#xe61d;</i>
         <span class="text">操作失败</span>
       </div>
     </div>
 
-    <div id="toast3" class="toast-layer">
+    <div id="toast3">
       <div class="toast">
         <i class="icon">&#xe616;</i>
         <span class="text">操作失败</span>
       </div>
     </div>
 
-    <div id="toast4" class="toast-layer">
+    <div id="toast4">
       <div class="toast">
         <i class="icon">&#xe61c;</i>
         <span class="text">操作成功</span>
       </div>
     </div>
 
-    <div id="toast5" class="toast-layer">
+    <div id="toast5">
       <div class="toast">
         <i class="icon">&#xe624;</i>
         <span class="text">操作成功</span>
       </div>
     </div>
 
-    <div id="toast6" class="toast-layer">
+    <div id="toast6">
       <div class="toast">
-        <i class="icon"><img src="./images/icon_intro.png" /></i>
+        <i class="icon"><img src="./images/question.png" /></i>
         <span class="text">自定义图片</span>
       </div>
     </div>
 
   </div>
 
-  <footer class="vspace">
+  <footer class="vspace btm-fixed">
     <div class="text-center text-sm">
-      <a class="link" href="javascript:history.back();"><i class="icon">&#xe60e;</i>返回</a>
+      <a class="link" href="javascript:history.back();"><img width="90" src="./images/footer.png" /></a>
     </div>
   </footer>
 </div>
 <script type="text/javascript">
   $(document).off('click', '.button[data-toast]').on('click', '.button[data-toast]', function() {
     var selector = $(this).data('toast');
-    var toast = $(selector).addClass('toast-layer-in');
+    widgetManager.show($(selector).html(), {
+      clazz: 'transparent',
+    });
+
     setTimeout(function() {
-      toast.removeClass('toast-layer-in').addClass('toast-layer-out').on('animationend webkitAnimationEnd', function() {
-        $(this).removeClass('toast-layer-out');
-      });
+      widgetManager.hide();
     }, 2500);
   });
 </script>

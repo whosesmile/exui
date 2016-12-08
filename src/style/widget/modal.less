@@ -1,67 +1,46 @@
-.modal-layer {
+.modal {
   position: fixed;
-  z-index: 1000;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  visibility: hidden;
-  background-color: rgba(0, 0, 0, 0);
-  transition-property: background-color;
-  transition-duration: 400ms;
+  z-index: 5000;
+  width: 80%;
+  max-width: 300px;
+  top: 50%;
+  left: 50%;
+  // APP STATUS + BAR
+  margin-top: -58px;
+  background-color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  overflow: hidden;
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 0;
 
-  .modal {
-    position: fixed;
-    z-index: 5000;
-    width: 80%;
-    max-width: 300px;
-    top: 50%;
-    left: 50%;
-    // APP STATUS + BAR
-    margin-top: -58px;
-    background-color: #fff;
-    text-align: center;
-    border-radius: 5px;
-    overflow: hidden;
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 0;
+  > .title {
+    padding: 20px 0 0;
+    font-size: 17px;
+    line-height: 1;
+    font-weight: 400;
+    -webkit-text-stroke: 0.2px;
 
-    > .title {
-      padding: 20px 0 0;
-      font-size: 17px;
-      line-height: 1;
-      font-weight: 400;
-      -webkit-text-stroke: 0.2px;
-
-      + .content {
-        padding-top: 10px;
-      }
-    }
-    > .content {
-      padding: 20px 15px 15px;
-      word-wrap: break-word;
-      word-break: break-all;
-    }
-    > .footer {
-      position: relative;
-
-      &:after {
-        .setTopLine();
-      }
+    + .content {
+      padding-top: 10px;
     }
   }
-  &.modal-layer-in {
-    visibility: visible;
-    background-color: rgba(0, 0, 0, 0.6);
+  > .content {
+    padding: 20px 15px 15px;
+    word-wrap: break-word;
+    word-break: break-all;
   }
-  &.modal-layer-out {
-    visibility: visible;
-    background-color: rgba(0, 0, 0, 0);
+  > .footer {
+    position: relative;
+
+    &:after {
+      .setTopLine();
+    }
   }
-  .modal.modal-in {
-    animation: ex-kf-blow-in ease .4s forwards;
-  }
-  .modal.modal-out {
-    animation: ex-kf-blow-out ease .4s forwards;
-  }
+}
+.ex-widget-layer.ex-widget-in .modal, .ex-widget-layer .modal.ex-widget-in {
+  animation: ex-kf-blow-in ease .3s forwards;
+}
+.ex-widget-layer.ex-widget-out .modal, .ex-widget-layer .modal.ex-widget-out {
+  animation: ex-kf-blow-out ease .3s forwards;
 }
