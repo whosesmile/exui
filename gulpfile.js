@@ -4,6 +4,7 @@ var pkg = require('./package.json');
 var gulp = require('gulp');
 var less = require('gulp-less');
 var rename = require('gulp-rename');
+var replace = require('gulp-replace');
 var cssnano = require('gulp-cssnano');
 var concat = require('gulp-concat-util');
 // gulp-autoprefixer has a bug on sourcemaps, so should use postcss to replace it
@@ -61,7 +62,9 @@ gulp.task('build:less', function () {
     .pipe(rename({
       suffix: '.min',
     }))
-    .pipe(gulp.dest(dist));
+    .pipe(gulp.dest(dist))
+    // 线上文档使用
+    .pipe(gulp.dest(path.join(dist, 'example')));
 });
 
 // 编译范例样式
@@ -81,7 +84,13 @@ gulp.task('build:example:html', function () {
     templates.push(`<script type="text/exui-templates" id="exui_${id}">${content}</script>`);
   });
   gulp.src('src/example/index.html', option)
-    .pipe(concat.footer(templates.join('\n')))
+    .pipe(replace(/(<\/body>)/i, templates.join('\n') + '$1'))
+    .pipe(gulp.dest(dist))
+    // 线上文档使用
+    .pipe(replace('../style/exui.css', './style/exui.min.css'))
+    .pipe(rename({
+      basename: 'home',
+    }))
     .pipe(gulp.dest(dist))
     .pipe(browserSync.stream());
 });
