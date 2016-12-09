@@ -12,7 +12,8 @@
             <label class="trigger">
               <i class="icon text-gray">&#xe60a;</i>
               <input type="search" class="input" placeholder="搜索" required />
-              <i class="icon text-gray clear">&#xe61d;</i>
+              <i class="icon text-gray">&#xe61d;</i>
+              <a class="button literal">取消</a>
             </label>
           </form>
         </div>
@@ -53,7 +54,14 @@
   $(document).off('input', 'form.search .input').on('input', 'form.search  .input', function() {
     $('#searchResults').css('display', $(this).val() ? 'block' : 'none');
   });
-  $(document).off('click', 'form.search .clear').on('click', 'form.search  .clear', function() {
+  $(document).off('click', 'form.search .input + .icon').on('click', 'form.search .input + .icon', function() {
     $(this).siblings('.input').val('').trigger('input');
+  });
+  $(document).off('click', 'form.search .input ~ .button').on('click', 'form.search .input ~ .button', function(e) {
+    var input = $(this).siblings('.input').val('').trigger('input');
+    // 取消聚焦
+    setTimeout(function() {
+      input.blur();
+    });
   });
 </script>

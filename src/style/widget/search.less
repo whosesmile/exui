@@ -5,46 +5,61 @@ input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-s
 .list > .item {
   .search {
     position: relative;
-    background-color: #EFEFF4;
-    padding: 8px;
+    background-color: @searchBg;
+    padding: @searchGap;
 
     .trigger {
       position: relative;
       background-color: #fff;
-      border-radius: 3px;
+      border-radius: @searchBorderRadius;
       .setFlex();
       justify-content: center;
 
       & > .icon:first-child {
-        margin: 0 8px;
+        margin: 0 @searchGap;
       }
       & > input[type="search"] {
-        height: 28px;
-        height: 28px;
+        height: @searchHeight;
         width: 3em;
-        border-radius: 3px;
         transition-property: width;
-        transition-duration: 200ms;
-      }
-      & > .button {
-        background-color: transparent;
-        margin: 0;
-        white-space: nowrap;
-        padding-right: 10px;
-        padding-left: 10px;
-        color: #0ae;
-        line-height: 28px;
-        display: none;
-      }
-      & > input:focus, & > input:valid {
-        width: 100%;
-      }
-      & > .clear {
-        display: none;
-        margin-right: 10px;
-      }
-      & > input:valid + .clear {
-        display: block;
+        transition-duration: 300ms;
+
+        &:focus, &:valid {
+          width: 100%;
+        }
+        & + .icon {
+          margin: 0 @searchControlGap;
+          display: none;
+        }
+        &:valid + .icon {
+          display: block;
+        }
+        & ~ .button {
+          width: auto;
+          border-radius: 0;
+          display: none;
+          font-size: 16px;
+          margin-right: -@searchGap;
+          color: @textColorGreen;
+          background-color: @searchBg;
+          padding-right: @searchControlGap;
+          padding-left: @searchControlGap + @searchBorderRadius;
+          line-height: @searchHeight;
+
+          &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            background-color: #fff;
+            width: @searchBorderRadius;
+            border-radius: 0 @searchBorderRadius @searchBorderRadius 0;
+          }
+        }
+        &:focus ~ .button, &:valid ~ .button {
+          display: inline;
+        }
       }
     }
   }
