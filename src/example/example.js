@@ -225,7 +225,6 @@ var widgetManager = new WidgetManager();
 
     // 包含CLICK && 支持TOUCH && 注册了CALLBACK
     if (/\bclick\b/i.test(args[0]) && supported) {
-      console.log(['touchstart'].concat(slice(args, 1)))
       _offfn.apply(this, ['touchstart'].concat(slice(args, 1)));
       _offfn.apply(this, ['touchend'].concat(slice(args, 1)));
 
