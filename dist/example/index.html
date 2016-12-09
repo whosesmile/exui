@@ -2224,7 +2224,7 @@
   </footer>
 </div>
 <script type="text/javascript">
-  $(document).off('click', 'button[data-modal]').on('click', '.button[data-modal]', function() {
+  $(document).off('click', '.button[data-modal]').on('click', '.button[data-modal]', function() {
     var selector = $(this).data('modal');
     widgetManager.show($(selector).html());
   });

@@ -168,15 +168,15 @@ var widgetManager = new WidgetManager();
   // 原始方法
   var _onfn = $.fn.on;
 
+  // 截取arguments
+  var slice = function (o, i, j) {
+    return Array.prototype.slice.call(o, i, j || o.length);
+  };
+
   // 代理改写
   $.fn.on = function () {
     var args = arguments;
     var callback = args[args.length - 1];
-
-    // 截取arguments
-    var slice = function (o, i, j) {
-      return Array.prototype.slice.call(o, i, j || o.length);
-    };
 
     // 包含CLICK && 支持TOUCH && 注册了CALLBACK
     if (/\bclick\b/i.test(args[0]) && supported && typeof callback === 'function') {
@@ -214,7 +214,31 @@ var widgetManager = new WidgetManager();
     else {
       _onfn.apply(this, args);
     }
+
+    return this;
   };
 
-  /** 注意: 未处理 off click **/
+  /** 注意: off click 偷懒处理 会误伤touchstart和touchend **/
+  var _offfn = $.fn.off;
+  $.fn.off = function () {
+    var args = arguments;
+
+    // 包含CLICK && 支持TOUCH && 注册了CALLBACK
+    if (/\bclick\b/i.test(args[0]) && supported) {
+      console.log(['touchstart'].concat(slice(args, 1)))
+      _offfn.apply(this, ['touchstart'].concat(slice(args, 1)));
+      _offfn.apply(this, ['touchend'].concat(slice(args, 1)));
+
+      // 预防多事件解绑 貌似zepto不支持这个 以防万一
+      var events = args[0].replace(/\bclick\b/gi, '').trim();
+      if (events) {
+        _offfn.apply(this, [events].concat(slice(args, 1)));
+      }
+    }
+    else {
+      _offfn.apply(this, args);
+    }
+
+    return this;
+  };
 })();
