@@ -3,12 +3,39 @@
   bottom: 0;
   width: 100%;
 
+  // header
+  & > .header {
+    position: relative;
+    text-align: center;
+    line-height: 24px;
+    font-size: 14px;
+    background-color: #fff;
+    margin: 0 10px;
+    padding: 10px 15px;
+    border-radius: 5px 5px 0 0;
+    color: @textColorGray;
+
+    &:after {
+      .setBottomLine();
+    }
+    & + .menus {
+      margin-top: 0;
+
+      & > .item:first-child {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+      }
+    }
+  }
+
+  // menus
   & > .menus {
     margin: 10px;
 
     &  > .item {
       position: relative;
       text-align: center;
+      cursor: pointer;
       line-height: 44px;
       font-size: 18px;
       background-color: #fff;
@@ -32,25 +59,16 @@
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
       }
-      &:not(.label) {
-        cursor: pointer;
-
-        &:active {
-          background-color: @tapColor;
-        }
+      &:active {
+        background-color: @tapColor;
       }
       + .item:before {
         .setTopLine();
       }
-      &.label {
-        padding: 10px 15px;
-        line-height: 24px;
-        font-size: 14px;
-        color: @textColorGray;
-      }
     }
   }
 }
+
 .ex-widget-layer.ex-widget-in .actionsheet, .ex-widget-layer .actionsheet.ex-widget-in {
   animation: ex-kf-slide-in-up ease .3s forwards;
 }

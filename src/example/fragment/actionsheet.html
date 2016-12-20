@@ -3,13 +3,13 @@
     <h4>ActionSheet</h4>
     <p class="text-gray text-sm">弹出式菜单</p>
   </div>
-  
+
   <div class="vspace hspace">
     <button class="button default" data-sheet="#sheet1">标准菜单</button>
     <button class="button default" data-sheet="#sheet2">标题菜单</button>
     <button class="button default" data-sheet="#sheet3">标题+描述</button>
   </div>
-  
+
   <div style="display: none">
     <div id="sheet1">
       <div class="actionsheet">
@@ -22,11 +22,11 @@
         </div>
       </div>
     </div>
-    
+
     <div id="sheet2">
       <div class="actionsheet">
+        <div class="header">请选择</div>
         <div class="menus">
-          <div class="item label">请选择</div>
           <div class="item text-driving">Apple Pay</div>
           <div class="item text-primary">支付宝</div>
           <div class="item text-success">微信支付</div>
@@ -36,14 +36,14 @@
         </div>
       </div>
     </div>
-    
+
     <div id="sheet3">
       <div class="actionsheet">
+        <div class="header">
+          <h4>我是标题</h4>
+          这里可以补充描述信息
+        </div>
         <div class="menus">
-          <div class="item label">
-            <h4>我是标题</h4>
-            这里可以补充描述信息
-          </div>
           <div class="item">
             <button class="button plain-success">空仓</button>
           </div>
@@ -57,7 +57,7 @@
       </div>
     </div>
   </div>
-  
+
   <footer class="vspace btm-fixed">
     <div class="text-center text-sm">
       <a class="link" href="javascript:history.back();"><img width="90" src="./images/footer.png" /></a>
