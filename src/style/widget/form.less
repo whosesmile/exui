@@ -128,6 +128,10 @@
     &:after {
       .setLeftLine();
     }
+    &.narrow:after {
+      top: @listItemGapV;
+      bottom: @listItemGapV;
+    }
   }
   > .interact img.captcha {
     display: block;
