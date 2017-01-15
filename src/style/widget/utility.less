@@ -82,3 +82,23 @@
   font-size: 0;
   height: 0;
 }
+// 居中
+.center-block {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+}
+// 图片占位
+.autofix {
+  position: relative;
+  display: block;
+  overflow: hidden;
+
+  & > img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+  }
+}

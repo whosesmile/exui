@@ -1,7 +1,6 @@
 @import "../base/fn";
 
 .list > .item {
-
   // 文本框
   input.input {
     width: 100%;
@@ -33,7 +32,6 @@
     text-align: right;
     color: @textColorGray;
   }
-
   // 表单标签
   > .label {
     display: block;
@@ -55,7 +53,6 @@
   > .label[ui-mode="112px"] {
     min-width: 112px;
   }
-
   // 下拉选择
   select.select {
     width: 100%;
@@ -67,7 +64,6 @@
     font-size: inherit;
     color: inherit;
   }
-
   // 模拟箭头
   .select-arrow {
     position: relative;
@@ -113,7 +109,6 @@
       .setRightLine();
     }
   }
-
   // 交互区 如验证码
   > .interact {
     position: relative;
@@ -151,14 +146,26 @@
       background-color: @tapColor;
     }
   }
-
   // 调整后置间距
   > input.radio:last-child, > input.checkbox:last-child {
     margin-right: 0;
     margin-left: @listWidgetGap;
   }
-}
+  // 关闭ICON
+  .input-widget {
+    width: 100%;
+    display: flex;
+    align-items: center;
 
+    .input + .icon {
+      display: none;
+      margin-left: @listWidgetGap;
+    }
+    .input:valid + .icon {
+      display: block;
+    }
+  }
+}
 // 单选框
 input.radio {
   position: relative;
@@ -223,7 +230,6 @@ input.radio {
     background-color: @inputChoiceDisabledColor;
   }
 }
-
 // 复选框
 input.checkbox {
   position: relative;
@@ -291,7 +297,6 @@ input.checkbox {
     background-color: @inputChoiceDisabledColor;
   }
 }
-
 // switch
 .switch {
   position: relative;

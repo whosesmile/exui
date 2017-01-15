@@ -48,6 +48,17 @@
         }
       }
     }
+    &.split > .text {
+      text-align: center;
+
+      & + .text {
+        position: relative;
+
+        &:before {
+          .setLeftLine();
+        }
+      }
+    }
     > .extra {
       text-align: right;
       color: @textColorGray;
