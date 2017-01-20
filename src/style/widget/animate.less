@@ -25,124 +25,26 @@
     transform: translate3d(0, 0, 0);
   }
 }
-@keyframes ex-kf-fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes ex-kf-fade-out {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@keyframes ex-kf-view-in {
-  0% {
-    transform: translate3d(100%, 0, 0);
-    opacity: 0;
-  }
-  100% {
-    transform: translate3d(0, 0, 0);
-    opacity: 1;
-  }
-}
-@keyframes ex-kf-view-out {
-  0% {
-    transform: translate3d(0, 0, 0);
-    opacity: 1;
-  }
-  100% {
-    transform: translate3d(100%, 0, 0);
-    opacity: 0;
-  }
-}
-@keyframes ex-kf-blow-in {
-  0% {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(1.185);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-  }
-}
-@keyframes ex-kf-blow-out {
-  0% {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-  }
-  100% {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0.815);
-  }
-}
-@keyframes ex-kf-slide-in-up {
-  0% {
-    transform: translate3d(0, 100%, 0);
-  }
-  100% {
-    transform: translate3d(0, 0, 0);
-  }
-}
-@keyframes ex-kf-slide-in-down {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-  100% {
-    transform: translate3d(0, 100%, 0);
-  }
-}
-@keyframes ex-kf-slide-in-right {
-  0% {
-    transform: translate3d(100%, 0, 0);
-  }
-  100% {
-    transform: translate3d(0, 0, 0);
-  }
-}
-@keyframes ex-kf-slide-out-right {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-  100% {
-    transform: translate3d(100%, 0, 0);
-  }
-}
 .ex-bounce {
   animation: ex-kf-bounce ease .3s forwards;
 }
-.ex-fade-in {
-  animation: ex-kf-fade-in ease .3s forwards;
+// 页入
+.ex-view-enter {
+  opacity: 0;
+  transform: translate3d(100%, 0, 0);
+
+  &.ex-view-enter-active {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
 }
-.ex-fade-out {
-  animation: ex-kf-fade-out ease .3s forwards;
-}
-.ex-view-in {
-  animation: ex-kf-view-in ease .3s forwards;
-}
-.ex-view-out {
-  animation: ex-kf-view-out ease .3s forwards;
-}
-.ex-blow-in {
-  animation: ex-kf-blow-in ease .3s forwards;
-}
-.ex-blow-out {
-  animation: ex-kf-blow-out ease .3s forwards;
-}
-.ex-slide-in-up {
-  animation: ex-kf-slide-in-up ease .3s forwards;
-}
-.ex-slide-in-down {
-  animation: ex-kf-slide-in-down ease .3s forwards;
-}
-.ex-slide-in-right {
-  animation: ex-kf-slide-in-right ease .3s forwards;
-}
-.ex-slide-out-right {
-  animation: ex-kf-slide-out-right ease .3s forwards;
+// 页出
+.ex-view-leave {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+
+  &.ex-view-leave-active {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
 }

@@ -10,10 +10,11 @@
   text-align: center;
   border-radius: 10px;
   overflow: hidden;
-  transform: translate(-50%, -50%) scale(1);
-  opacity: 0;
   padding: 25px 10px;
   color: #fff;
+  transform: translate(-50%, -50%) scale(1);
+  transition-property: opacity, transform;
+  transition-duration: .3s;
 
   .icon {
     display: block;
@@ -43,9 +44,28 @@
     line-height: 1.5;
   }
 }
-.ex-widget-layer.ex-widget-in .toast, .ex-widget-layer .toast.ex-widget-in {
-  animation: ex-kf-blow-in ease .3s forwards;
+// animate
+.ex-widget-enter {
+  .toast {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.185);
+  }
+  &.ex-widget-enter-active {
+    .toast {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
 }
-.ex-widget-layer.ex-widget-out .toast, .ex-widget-layer .toast.ex-widget-out {
-  animation: ex-kf-blow-out ease .3s forwards;
+.ex-widget-leave {
+  .toast {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  &.ex-widget-leave-active {
+    .toast {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.85);
+    }
+  }
 }

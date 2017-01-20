@@ -3,6 +3,8 @@
   bottom: 0;
   width: 100%;
   background-color: #fff;
+  transition-property: transform;
+  transition-duration: .3s;
 
   & > .header {
     position: relative;
@@ -65,9 +67,24 @@
     }
   }
 }
-.ex-widget-layer.ex-widget-in .picker, .ex-widget-layer .picker.ex-widget-in {
-  animation: ex-kf-slide-in-up ease .3s forwards;
+// ActionSheet
+.ex-widget-enter {
+  .picker {
+    transform: translate3d(0, 100%, 0);
+  }
+  &.ex-widget-enter-active {
+    .picker {
+      transform: translate3d(0, 0, 0);
+    }
+  }
 }
-.ex-widget-layer.ex-widget-out .picker, .ex-widget-layer .picker.ex-widget-out {
-  animation: ex-kf-slide-in-down ease .3s forwards;
+.ex-widget-leave {
+  .picker {
+    transform: translate3d(0, 0, 0);
+  }
+  &.ex-widget-leave-active {
+    .picker {
+      transform: translate3d(0, 100%, 0);
+    }
+  }
 }
