@@ -13,9 +13,9 @@
   border: none;
   outline: 0;
   width: 100%;
-  padding: 0 15px;
   -webkit-appearance: none;
   background-color: transparent;
+  padding: 0 @buttonGap;
   font-size: @buttonFontSize;
   line-height: @buttonHeight;
   border-radius: @buttonBorderRadius;
@@ -269,12 +269,14 @@
   &.sm {
     display: inline-block;
     width: auto;
+    padding: 0 @buttonSmallGap;
     line-height: @buttonSmallHeight;
     font-size: @buttonSmallFontSize;
   }
   &.xs {
     display: inline-block;
     width: auto;
+    padding: 0 @buttonTinyGap;
     line-height: @buttonTinyHeight;
     font-size: @buttonTinyFontSize;
   }
