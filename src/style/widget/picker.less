@@ -35,6 +35,10 @@
       position: relative;
       height: 100%;
       flex: 1;
+      // 默认强制等分
+      &:not(.adapted) {
+        overflow: hidden;
+      }
 
       &:after {
         content: ' ';
