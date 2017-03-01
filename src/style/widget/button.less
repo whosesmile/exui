@@ -317,6 +317,10 @@
 .button-group {
   .setFlex();
 
+  > .button {
+    display: block;
+    flex: 1;
+  }
   > .button + .button {
     margin-top: 0 !important;
     margin-left: @buttonGroupGap;
