@@ -5,10 +5,10 @@
   overflow: hidden;
 
   &:before {
-    .setTopLine(@gridBorderColor);
+    .borderTop(@gridBorderColor);
   }
   &:after {
-    .setLeftLine(@gridBorderColor);
+    .borderLeft(@gridBorderColor);
   }
   > .item {
     position: relative;
@@ -19,10 +19,10 @@
     color: @gridTextColor;
 
     &:before {
-      .setRightLine(@gridBorderColor);
+      .borderRight(@gridBorderColor);
     }
     &:after {
-      .setBottomLine(@gridBorderColor);
+      .borderBottom(@gridBorderColor);
     }
     &:active {
       background-color: @tapColor;

@@ -10,11 +10,11 @@
   background-color: @navbarBgColor;
 
   &:before {
-    .setTopLine();
+    .borderTop();
     z-index: 10;
   }
   &:after {
-    .setBottomLine();
+    .borderBottom();
   }
   > .item {
     position: relative;
@@ -26,7 +26,7 @@
       background-color: @tapColor;
     }
     &:not(:first-child):after {
-      .setLeftLine();
+      .borderLeft();
     }
   }
   &.underline {

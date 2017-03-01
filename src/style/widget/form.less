@@ -106,7 +106,7 @@
   }
   > .label .select-arrow {
     &:before {
-      .setRightLine();
+      .borderRight();
     }
   }
   // 交互区 如验证码
@@ -121,7 +121,7 @@
     width: 112px;
 
     &:after {
-      .setLeftLine();
+      .borderLeft();
     }
     &.narrow:after {
       top: @listItemGapV;
@@ -158,6 +158,11 @@
     display: flex;
     align-items: center;
 
+    .input {
+      display: block;
+      flex: 1;
+      width: auto;
+    }
     .input + .icon {
       display: none;
       margin-left: @listWidgetGap;

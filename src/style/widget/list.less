@@ -21,7 +21,7 @@
     padding: @listItemGapV @listItemGapH;
 
     &:before {
-      .setTopLine(@listBorderColor);
+      .borderTop(@listBorderColor);
       left: @listItemGapH;
     }
     &.thread:before, &:first-child:before {
@@ -29,7 +29,7 @@
     }
     &:last-child {
       &:after {
-        .setBottomLine(@listBorderColor);
+        .borderBottom(@listBorderColor);
       }
     }
     > .text {
@@ -55,7 +55,7 @@
         position: relative;
 
         &:before {
-          .setLeftLine();
+          .borderLeft();
         }
       }
     }
@@ -64,7 +64,7 @@
       color: @textColorGray;
     }
     + .item-divider:before {
-      .setTopLine(@listBorderColor);
+      .borderTop(@listBorderColor);
     }
     > .icon:first-child {
       min-width: 1rem;
@@ -108,7 +108,7 @@
       left: 0;
     }
     + .item-divider:before {
-      .setTopLine(@listBorderColor);
+      .borderTop(@listBorderColor);
     }
   }
   > [class="item-divider"] {
