@@ -100,6 +100,7 @@
     }
   }
   > .item-divider {
+    .setFlex();
     position: relative;
     padding: @listItemGapV / 1.25 @listItemGapH;
     font-size: @listItemDividerFontSize;
@@ -109,6 +110,15 @@
     }
     + .item-divider:before {
       .borderTop(@listBorderColor);
+    }
+    >.text {
+      display: block;
+      flex: 1;
+      overflow: hidden;
+    }
+    > .extra {
+      text-align: right;
+      color: @textColorGray;
     }
   }
   > [class="item-divider"] {
