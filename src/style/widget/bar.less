@@ -8,6 +8,9 @@
   height: @barHeight;
   background-color: @navbarBgColor;
 
+  .button {
+    line-height: @barHeight;
+  }
   &:before {
     .borderTop();
   }
@@ -56,10 +59,6 @@
     & + .menu > .label {
       margin-left: -10px;
     }
-
-    /*> .icon + .label {
-      margin-left: 0;
-    }*/
     &:active {
       opacity: 0.5;
     }
