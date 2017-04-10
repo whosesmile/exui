@@ -1,18 +1,16 @@
 .toast {
-  position: fixed;
+  position: relative;
   z-index: 5000;
   width: 120px;    /*min-height: 120px;*/
-  top: 50%;
-  left: 50%;
   // APP STATUS + BAR
-  margin-top: -58px;
+  margin: -58px auto 0;
   background-color: rgba(0, 0, 0, 0.8);
   text-align: center;
   border-radius: 10px;
   overflow: hidden;
   padding: 25px 10px;
   color: #fff;
-  transform: translate(-50%, -50%) scale(1);
+  transform: scale(1);
   transition-property: opacity, transform;
   transition-duration: .3s;
 
@@ -48,24 +46,24 @@
 .ex-widget-enter {
   .toast {
     opacity: 0;
-    transform: translate(-50%, -50%) scale(1.185);
+    transform: scale(1.185);
   }
   &.ex-widget-enter-active {
     .toast {
       opacity: 1;
-      transform: translate(-50%, -50%) scale(1);
+      transform: scale(1);
     }
   }
 }
 .ex-widget-leave {
   .toast {
     opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
+    transform: scale(1);
   }
   &.ex-widget-leave-active {
     .toast {
       opacity: 0;
-      transform: translate(-50%, -50%) scale(0.85);
+      transform: scale(0.85);
     }
   }
 }
