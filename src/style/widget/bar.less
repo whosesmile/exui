@@ -64,6 +64,7 @@
     }
   }
   > .lace {
+    position: relative;
     padding: 0 20px;
     font-size: 12px;
     text-align: center;
@@ -72,6 +73,9 @@
     align-items: center;
     line-height: 1;
 
+    & + .lace:after {
+      .borderLeft();
+    }
     .icon + .label {
       display: block;
       margin-top: 2px;
