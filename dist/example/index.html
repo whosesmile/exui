@@ -1092,7 +1092,7 @@
 <script type="text/exui-templates" id="exui_nothing"><div class="ex-page">
   <div class="feedback">
     <div class="mark">
-      <img width="220" height="220" src="./images/feedback/1.png" alt="空白" />
+      <img width="197" height="98" src="//img1.qdingnet.com/c50aee1127e2b6a075250a6b26629bd2.png" alt="空白" />
     </div>
     <h3 class="title">提示文案</h3>
     <div class="describe">业务自定义其他文案，长度随意，业务自定义其他文案，长度随意，也可以<a class="link" href="javascript:;">添加链接</a></div>
@@ -1107,10 +1107,24 @@
 <script type="text/javascript">
   // 预设置了9张图
   (function () {
-    var index = 1;
+    var index = 0;
+    var images = [
+      '//img1.qdingnet.com/c50aee1127e2b6a075250a6b26629bd2.png',
+      '//img1.qdingnet.com/089e6f57d2d745f4818141459bae6b6e.png',
+      '//img1.qdingnet.com/c6e1523b5031a3cd65c65a1e266b95e6.png',
+      '//img1.qdingnet.com/f3fc7030abe23268bfbaa60bb863f783.png',
+      '//img1.qdingnet.com/c3d2df98fde6603670bda2f79f8cdba3.png',
+      '//img1.qdingnet.com/aac73ec7939a574fdd28f606473e6c82.png',
+      '//img1.qdingnet.com/61d2bb1ff45636111a59df1a79c26398.png',
+      '//img1.qdingnet.com/365922fa4bd97546a7c553c0a160f507.png',
+      '//img1.qdingnet.com/94490da13ac60b08fa1360a2c8796abc.png',
+      '//img1.qdingnet.com/a93623660fa443e00a6a2fbbf3578635.png',
+      '//img1.qdingnet.com/8468ff7a05ef3bbe5abaaced4b015f4f.png',
+      '//img1.qdingnet.com/c7d9f3cfe7556b8ea7150adecc520e3f.png',
+    ];
     $(document).off('click', '.turn-mark').on('click', '.turn-mark', function () {
-      index = ++index > 9 ? 1 : index;
-      $('.feedback .mark img').attr('src', './images/feedback/' + index +'.png');
+      index = ++index >= images.length ? 0 : index;
+      $('.feedback .mark img').attr('src', images[index]);
     });
   })();
 </script></script>
