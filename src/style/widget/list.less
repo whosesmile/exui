@@ -39,7 +39,7 @@
       left: @listItemGapH;
     }
 
-    &.thread:before, &:first-child:before {
+    &:first-child:before, &.thread:before, &.thread + .item:before {
       left: 0;
     }
 
@@ -222,6 +222,25 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
+  }
+
+}
+
+// 列表嵌套 (无法尽善尽美)
+.list > .list {
+  + .item:not(.thread):before {
+    left: 0;
+  }
+
+  &.compact {
+    > .item:last-child:after {
+      content: none;
+    }
+
+    > .item-divider:first-child:before {
+      .borderTop(@listBorderColor);
+    }
+
   }
 
 }
