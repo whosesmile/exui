@@ -17,13 +17,17 @@
       font-weight: 400;
       text-align: center;
     }
+
     .menu {
       padding: 10px 15px;
     }
+
     &:after {
       .borderBottom();
     }
+
   }
+
   & > .content {
     position: relative;
     overflow: hidden;
@@ -40,6 +44,7 @@
       &:not(.adapted) {
         overflow: hidden;
       }
+
       &:after {
         content: ' ';
         position: absolute;
@@ -53,6 +58,7 @@
         background-repeat: no-repeat;
         transform: translateZ(0);
       }
+
       .roller {
         width: 100%;
 
@@ -66,29 +72,42 @@
             color: #a9a9a9;
             pointer-events: none;
           }
+
         }
+
       }
+
     }
+
   }
+
 }
+
 // ActionSheet
 .ex-widget-enter {
   .picker {
     transform: translate3d(0, 100%, 0);
   }
+
   &.ex-widget-enter-active {
     .picker {
       transform: translate3d(0, 0, 0);
     }
+
   }
+
 }
+
 .ex-widget-leave {
   .picker {
     transform: translate3d(0, 0, 0);
   }
+
   &.ex-widget-leave-active {
     .picker {
       transform: translate3d(0, 100%, 0);
     }
+
   }
+
 }

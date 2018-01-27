@@ -23,42 +23,55 @@
     + .content {
       padding-top: 10px;
     }
+
   }
+
   > .content {
     padding: 20px 15px 15px;
     word-wrap: break-word;
     word-break: break-all;
   }
+
   > .footer {
     position: relative;
 
     &:after {
       .borderTop();
     }
+
   }
+
 }
+
 // animate
 .ex-widget-enter {
   .modal {
     opacity: 0;
     transform: scale(1.185);
   }
+
   &.ex-widget-enter-active {
     .modal {
       opacity: 1;
       transform: scale(1);
     }
+
   }
+
 }
+
 .ex-widget-leave {
   .modal {
     opacity: 1;
     transform: scale(1);
   }
+
   &.ex-widget-leave-active {
     .modal {
       opacity: 0;
       transform: scale(0.85);
     }
+
   }
+
 }

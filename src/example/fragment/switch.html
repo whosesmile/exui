@@ -3,28 +3,26 @@
     <h4>Switch</h4>
     <p class="text-gray text-sm">开关效果</p>
   </div>
-  
+
   <div class="list">
-    <div class="item-divider">( 添加nesting，以便保持item的高度 )</div>
-    <div class="item">
+    <div class="item" ui-mode="0px 15px">
       <div class="text">橙色开关</div>
-      <input class="switch nesting driving" type="checkbox" checked />
+      <input class="switch driving" type="checkbox" checked />
     </div>
-    <div class="item">
-      <div class="text">蓝色开关</div>
-      <input class="switch nesting primary" type="checkbox" checked />
-    </div>
-    <div class="item-divider">开关效果 ( 不添加nesting，item高度会撑高 )</div>
-    <div class="item">
+    <div class="item" ui-mode="0px 15px">
       <div class="text">红色开关</div>
-      <input class="switch warning" type="checkbox" checked />
+      <input class="switch warning" type="checkbox" />
     </div>
-    <div class="item">
+    <div class="item" ui-mode="0px 15px">
+      <div class="text">蓝色开关</div>
+      <input class="switch primary" type="checkbox" checked />
+    </div>
+    <div class="item" ui-mode="0px 15px">
       <div class="text">绿色开关</div>
-      <input class="switch success" type="checkbox" checked />
+      <input class="switch success" type="checkbox" />
     </div>
   </div>
-  
+
   <footer class="vspace btm-fixed">
     <div class="text-center text-sm">
       <a class="link" href="javascript:history.back();"><img width="90" src="./images/footer.png" /></a>

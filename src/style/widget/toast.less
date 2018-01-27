@@ -28,42 +28,55 @@
       height: 100%;
       margin: auto;
     }
+
     & + .text {
       margin-top: 10px;
     }
+
     &.waiting {
       background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAEEklEQVRoQ+2ai1EUQRCGuyNQIxAiUCIQIxAjECJQIxAiECJQIhAjECIQIhAiECNo61tnzr652Z2ZvT1urbKrru6xs7P997t7TmUiMrPnIvJCRHZEhM8Qn3ldi8h9+O0yfL9S1fjbaC509J0iYmb7IvJGRHiH0Va6EBEAnY8FMwqAmR2IyAcn6VbG0/Vo4lREzlqBNAEIEodxJJ7SryBNzAWpphTNCfPi/keZNR0QVT2plUg1ADP7KCLvko1h+jMvVYXxago+cygivFIw7PVaVW9LGxYBmNljEfmWmAuMo3KktbYjmhkg2M8DYd/3qoqAemkQQJASzAMi0jmamIJxz1UQ1LGIvE24PRoC0QsgwzxSh/FBiZRUXroeAgTP8NroBZEFkGH+RkQOamyyxGDN9fB8AkERRB+A787mkfzO1CZTApIBgU/spUJcAWBmOFO0Q5jfb40wJeZqr2dAXKvqnr9/CUCI8zhtJBA3hcda5mrXhQj1ya0/UVWcvaMUwA9XEiwtrH3gJtaZGSXHq7A3prQbTXoBIEF6o6qxINsET017mhlZHOFGWgjXA/DSf6mquXKg6cFTLjYzQiuFI7Rw6A5AiL1fwkXK3FytMyU/zXtltECWPo0AfOShBsHmZkeJFm5VdTcCiOZzp6pj6voHAZuJSLsaYi2JC6KxoLCaJYV66adj7ggAlMiUytBszScybWYEF1rXPwJPMi/xtViDb1M9ZkYSo6mCrgCwQKSqxf5gm8zz7JWI6QDMKnkNCSpogWBz6jUwy/hf0vh/ACUJbfq618BKrb3ph0+x/1IY/ReikMsHdIm3aSKbfR5wAOjRL9JSYnCEMYXKp9gjVKZo4DIWc7ZIzTOuhZz0ycYXtLsRQGzZ7lX1yRRS2uQeZkYp3VXNuYZm1mYUSmrsnwn536YeVCLylMOHdHSxSWm27m1m9C50Y13T5XtiX+XNsqwOpT/jzUXT5QEwwGUGhBbQBjOhtSfPrRLuWx+aGaTPIUjvXAi7is09M/+jqRhYd5/Qt9AtLo05c6NFP0SahUO7HmDFtHMAMCWanGdh/sKMaGvjRTcpp9zvIo+nofF6HG/jB1sB4Zi/C0PmFZ8cOuBguBUHvdyI+h5sWueYh8feCXnNEZM/aCCEna3rkKX7Q7JiUjLI/FIeGAhfDHmZS+ITEE5OIpl8ehGKNBjH1jkVOiz5X9UUIsRgxo9xuAoQYnHzwXROUGF/DlWYURFE0PJxTR6qAuCqQPwCbZDsIvGdyvBryTTS62bGzB9px2kgzoqZVs9mmwA4IDwQDXggXMZf4p85clkc6caTet7j8S2MI/HmE9BRABKNAAYp5v46MKQUmAYs2quWeFUeaDUF1oewh1TjK25D4RUdPobhrhkZ85z0nt8WdMz+U/1TNQAAAABJRU5ErkJggg==) 0 0 no-repeat;
       background-size: 100%;
       animation: ex-kf-rotate .8s linear infinite;
     }
+
   }
+
   .text {
     display: block;
     line-height: 1.5;
   }
+
 }
+
 // animate
 .ex-widget-enter {
   .toast {
     opacity: 0;
     transform: scale(1.185);
   }
+
   &.ex-widget-enter-active {
     .toast {
       opacity: 1;
       transform: scale(1);
     }
+
   }
+
 }
+
 .ex-widget-leave {
   .toast {
     opacity: 1;
     transform: scale(1);
   }
+
   &.ex-widget-leave-active {
     .toast {
       opacity: 0;
       transform: scale(0.85);
     }
+
   }
+
 }

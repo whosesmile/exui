@@ -10,15 +10,17 @@
     background-color: transparent;
     font-size: inherit;
     color: inherit;
-    height: @listItemLineHeight;
-    line-height: @listItemLineHeight;
+    height: @listLineHeight;
+    line-height: @listLineHeight;
 
     // hides the spin-button
     &::-webkit-outer-spin-button, &::-webkit-inner-spin-button {
       appearance: none;
       margin: 0;
     }
+
   }
+
   textarea.textarea {
     width: 100%;
     border: none;
@@ -28,31 +30,39 @@
     font-size: inherit;
     line-height: inherit;
   }
+
   .textarea-counter {
     text-align: right;
     color: @textColorGray;
   }
+
   // 表单标签
   > .label {
     display: block;
     margin-right: @listWidgetGap;
     min-width: 32px;
   }
+
   > .label[ui-mode="48px"] {
     min-width: 48px;
   }
+
   > .label[ui-mode="64px"] {
     min-width: 64px;
   }
+
   > .label[ui-mode="80px"] {
     min-width: 80px;
   }
+
   > .label[ui-mode="96px"] {
     min-width: 96px;
   }
+
   > .label[ui-mode="112px"] {
     min-width: 112px;
   }
+
   // 下拉选择
   select.select {
     width: 100%;
@@ -64,6 +74,7 @@
     font-size: inherit;
     color: inherit;
   }
+
   // 模拟箭头
   .select-arrow {
     position: relative;
@@ -75,6 +86,7 @@
       padding-left: @listItemGapH;
       padding-right: 45px;
     }
+
     &:after {
       content: ' ';
       .setArrow(bottom);
@@ -83,32 +95,42 @@
       right: 18px;
       margin-top: -8px;
     }
+
   }
+
   &:not([ui-mode$="0px"]) > .text > .select {
     height: 44px;
     margin-top: -@listItemGapV;
     margin-bottom: -@listItemGapV;
   }
+
   &[ui-mode$="0px"] > .label {
     margin-left: @listItemGapH;
 
     + .text .select-arrow .select {
       padding-left: 0;
     }
+
   }
+
   > .label:first-child .select-arrow {
     margin-left: -@listItemGapH;
   }
+
   > .text.select-arrow {
     &:after {
       right: 3px;
     }
+
   }
+
   > .label .select-arrow {
     &:before {
       .borderRight();
     }
+
   }
+
   // 交互区 如验证码
   > .interact {
     position: relative;
@@ -123,16 +145,20 @@
     &:after {
       .borderLeft();
     }
+
     &.narrow:after {
       top: @listItemGapV;
       bottom: @listItemGapV;
     }
+
   }
+
   > .interact img.captcha {
     display: block;
     width: 100%;
     height: @listItemHeight;
   }
+
   > .interact .button {
     font-size: inherit;
     border-radius: 0;
@@ -143,15 +169,19 @@
     &:after {
       content: none;
     }
+
     &:active {
       background-color: @tapColor;
     }
+
   }
+
   // 调整后置间距
   > input.radio:last-child, > input.checkbox:last-child {
     margin-right: 0;
     margin-left: @listWidgetGap;
   }
+
   // 关闭ICON
   .input-widget {
     width: 100%;
@@ -164,15 +194,20 @@
       flex: 1;
       width: auto;
     }
+
     .input + .icon {
       display: none;
       margin-left: @listWidgetGap;
     }
+
     .input:valid + .icon {
       display: block;
     }
+
   }
+
 }
+
 // 单选框
 input.radio {
   position: relative;
@@ -198,6 +233,7 @@ input.radio {
     background-color: @inputChoiceBg;
     border: 1px solid @inputChoiceDefaultColor;
   }
+
   &:after {
     content: ' ';
     opacity: 0;
@@ -211,32 +247,42 @@ input.radio {
     margin-left: -@radioPointSize / 2;
     background-color: @inputChoiceDefaultColor;
   }
+
   &.primary:before {
     border: 1px solid @inputChoicePrimaryColor;
   }
+
   &.primary:after {
     background-color: @inputChoicePrimaryColor;
   }
+
   &.success:before {
     border: 1px solid @inputChoiceSuccessColor;
   }
+
   &.success:after {
     background-color: @inputChoiceSuccessColor;
   }
+
   &:checked:after {
     opacity: 1;
   }
+
   &[disabled] {
     cursor: not-allowed;
     pointer-events: none;
   }
+
   &[disabled]:before {
     border-color: @inputChoiceDisabledColor;
   }
+
   &[disabled]:checked:after {
     background-color: @inputChoiceDisabledColor;
   }
+
 }
+
 // 复选框
 input.checkbox {
   position: relative;
@@ -262,6 +308,7 @@ input.checkbox {
     background-color: @inputChoiceBg;
     border: 1px solid @inputChoiceDefaultColor;
   }
+
   &:after {
     content: ' ';
     opacity: 0;
@@ -275,35 +322,46 @@ input.checkbox {
     left: percentage(round((@inputChoiceSize - @checkboxPointWidth) / 2 / @inputChoiceSize, 2));
     border-color: @checkboxPointColor;
   }
+
   &:checked:before {
     background-color: @inputChoiceDefaultColor;
   }
+
   &:checked:after {
     opacity: 1;
   }
+
   &.primary:before {
     border-color: @inputChoicePrimaryColor;
   }
+
   &.primary:checked:before {
     background-color: @inputChoicePrimaryColor;
   }
+
   &.success:before {
     border-color: @inputChoiceSuccessColor;
   }
+
   &.success:checked:before {
     background-color: @inputChoiceSuccessColor;
   }
+
   &[disabled] {
     cursor: not-allowed;
     pointer-events: none;
   }
+
   &[disabled]:before {
     border-color: @inputChoiceDisabledColor;
   }
+
   &[disabled]:checked:before {
     background-color: @inputChoiceDisabledColor;
   }
+
 }
+
 // switch
 .switch {
   position: relative;
@@ -312,15 +370,18 @@ input.checkbox {
   appearance: none;
   width: @switchWidth;
   height: @switchHeight;
+  overflow: hidden;
   border-radius: 16px;
   border: 1px solid #DFDFDF;
   background-color: #DFDFDF;
+  transform: translate3d(0, 0, 0);
   transition: background-color .1s, border .1s;
 
   &.nesting {
-    margin-top: (@listItemLineHeight - @switchHeight)/2;
-    margin-bottom: (@listItemLineHeight - @switchHeight)/2;
+    margin-top: (@listLineHeight - @switchHeight)/2;
+    margin-bottom: (@listLineHeight - @switchHeight)/2;
   }
+
   &:before {
     content: ' ';
     position: absolute;
@@ -332,6 +393,7 @@ input.checkbox {
     background-color: #FDFDFD;
     transition: transform .35s cubic-bezier(0.45, 1, 0.4, 1);
   }
+
   &:after {
     content: ' ';
     position: absolute;
@@ -344,6 +406,7 @@ input.checkbox {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
     transition: transform .35s cubic-bezier(0.4, 0.4, 0.25, 1.35);
   }
+
   &:checked {
     border-color: @textColorOrange;
     background-color: @textColorOrange;
@@ -352,19 +415,25 @@ input.checkbox {
       border-color: @textColorBlue;
       background-color: @textColorBlue;
     }
+
     &.warning {
       border-color: @textColorRed;
       background-color: @textColorRed;
     }
+
     &.success {
       border-color: @textColorGreen;
       background-color: @textColorGreen;
     }
+
     &:before {
       transform: scale(0);
     }
+
     &:after {
       transform: translateX(@switchWidth - @switchHeight);
     }
+
   }
+
 }

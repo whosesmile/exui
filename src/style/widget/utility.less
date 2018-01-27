@@ -8,13 +8,17 @@
   > label {
     display: table;
   }
+
   > label.center {
     margin: auto;
   }
+
   input.radio, input.check {
     top: -2px;
   }
+
 }
+
 // 文字并列 竖线分割
 .text-group {
   display: table;
@@ -28,14 +32,18 @@
     &:first-child {
       margin-left: 0;
     }
+
     &:not(:first-child):before {
       .borderLeft();
       left: -8px;
       top: 15%;
       bottom: 15%;
     }
+
   }
+
 }
+
 // 文字对齐
 .text-justify {
   .setFlex(stretch, value);
@@ -46,10 +54,13 @@
     text-align: justify;
     text-align-last: justify;
   }
+
   + .text-justify {
     margin-top: 6px;
   }
+
 }
+
 // 悬挂顶部
 .top-fixed {
   position: fixed;
@@ -57,6 +68,7 @@
   left: 0;
   width: 100%
 }
+
 // 悬挂底部
 .btm-fixed {
   position: fixed;
@@ -64,14 +76,17 @@
   left: 0;
   width: 100%
 }
+
 // 左浮动
 .pull-left {
   float: left;
 }
+
 // 右浮动
 .pull-right {
   float: right;
 }
+
 // 清除浮动
 .clearfix:after {
   content: '\0200';
@@ -81,12 +96,14 @@
   font-size: 0;
   height: 0;
 }
+
 // 居中
 .center-block {
   display: block;
   width: 100%;
   margin: 0 auto;
 }
+
 // 图片占位
 .autofix {
   position: relative;
@@ -100,4 +117,5 @@
     width: 100%;
     transform: translate(-50%, -50%);
   }
+
 }

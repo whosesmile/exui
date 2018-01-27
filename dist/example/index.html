@@ -418,11 +418,11 @@
   </div>
 
   <div class="bar">
-    <a class="menu text-dark" href="javascript:;">
+    <a class="menu text-dark">
       <i class="icon">&#xe60e;</i>
     </a>
     <h1 class="title"><b>顶部导航</b></h1>
-    <a class="menu text-dark" href="javascript:;">
+    <a class="menu text-dark">
       <i class="icon">&#xe618;</i>
     </a>
   </div>
@@ -430,12 +430,11 @@
   <div class="divider" ui-mode="20%">ICON+LABEL</div>
 
   <div class="bar">
-    <a class="menu text-driving" href="javascript:;">
+    <a class="menu text-driving">
       <i class="icon">&#xe60e;</i>
-      <span class="label">返回</span>
     </a>
     <h1 class="title"><b>顶部导航</b></h1>
-    <a class="menu text-success" href="javascript:;">
+    <a class="menu text-success">
       <i class="icon">&#xe60a;</i>
     </a>
   </div>
@@ -443,12 +442,11 @@
   <div class="divider" ui-mode="20%">双侧ICON+LABEL</div>
 
   <div class="bar">
-    <a class="menu text-primary" href="javascript:;">
+    <a class="menu text-primary">
       <i class="icon">&#xe60e;</i>
-      <span class="label">返回</span>
     </a>
     <h1 class="title"><b>顶部导航</b></h1>
-    <a class="menu text-primary" href="javascript:;">
+    <a class="menu text-primary">
       <span class="label">下一步</span>
       <i class="icon">&#xe61a;</i>
     </a>
@@ -457,14 +455,14 @@
   <div class="divider" ui-mode="20%">多个ICON</div>
 
   <div class="bar">
-    <a class="menu text-primary" href="javascript:;">
+    <a class="menu text-primary">
       <i class="icon">&#xe60e;</i>
     </a>
-    <a class="menu text-primary" href="javascript:;">
+    <a class="menu text-primary">
       <i class="icon">&#xe61f;</i>
     </a>
     <h1 class="title"><b>顶部导航</b></h1>
-    <a class="menu text-primary" href="javascript:;">
+    <a class="menu text-primary">
       <span class="label">下一步</span>
       <i class="icon">&#xe61a;</i>
     </a>
@@ -473,19 +471,19 @@
   <div class="divider" ui-mode="20%">多个LABEL</div>
 
   <div class="bar">
-    <a class="menu text-primary" href="javascript:;">
+    <a class="menu text-primary">
       <i class="icon">&#xe60e;</i>
       <span class="label">返回</span>
     </a>
-    <a class="menu text-primary" href="javascript:;">
+    <a class="menu text-primary">
       <span class="label">关闭</span>
     </a>
     <h1 class="title"><b>顶部导航</b></h1>
 
-    <a class="menu text-primary" href="javascript:;">
+    <a class="menu text-primary">
       <span class="label">放弃</span>
     </a>
-    <a class="menu text-primary" href="javascript:;">
+    <a class="menu text-primary">
       <span class="label">提交</span>
       <i class="icon">&#xe61a;</i>
     </a>
@@ -585,6 +583,8 @@
     <button class="button driving">引导按钮</button>
     <button class="button driving disabled">引导按钮 禁用</button>
 
+    <button class="button driving disabled" ui-mode="gray">灰度禁用</button>
+
     <div class="vspace" ui-mode="50px">
       <div class="divider" ui-mode="30%">以下为加载提示</div>
     </div>
@@ -640,38 +640,6 @@
     </div>
 
     <div class="vspace" ui-mode="50px">
-      <div class="divider" ui-mode="30%">以下为小按钮</div>
-    </div>
-
-    <div class="vspace text-center">
-      <button class="button primary sm">较小按钮</button>
-      <button class="button default sm">较小按钮</button>
-      <button class="button driving sm">较小按钮</button>
-    </div>
-
-    <div class="vspace text-center">
-      <button class="button plain-primary sm">较小按钮</button>
-      <button class="button plain-default sm">较小按钮</button>
-      <button class="button plain-driving sm">较小按钮</button>
-    </div>
-
-    <div class="vspace text-center">
-      <button class="button primary xs">特小按钮</button>
-      <button class="button default xs">特小按钮</button>
-      <button class="button success xs">特小按钮</button>
-    </div>
-
-    <div class="vspace" ui-mode="50px">
-      <div class="divider" ui-mode="10%">以下为50px高按钮 用于适配: .list > .item</div>
-    </div>
-
-    <div class="vspace text-center">
-      <button class="button primary up">适配按钮</button>
-      <button class="button default up">适配按钮</button>
-      <button class="button driving up">适配按钮</button>
-    </div>
-
-    <div class="vspace" ui-mode="50px">
       <div class="divider" ui-mode="30%">以下为按钮组合</div>
     </div>
 
@@ -711,6 +679,38 @@
       <button class="button plain-driving square">紧凑直角</button>
     </div>
 
+
+    <div class="vspace" ui-mode="50px">
+      <div class="divider" ui-mode="30%">以下为小按钮</div>
+    </div>
+
+    <div class="vspace text-center">
+      <button class="button primary sm">较小按钮</button>
+      <button class="button default sm">较小按钮</button>
+      <button class="button driving sm">较小按钮</button>
+    </div>
+
+    <div class="vspace text-center">
+      <button class="button plain-primary sm">较小按钮</button>
+      <button class="button plain-default sm">较小按钮</button>
+      <button class="button plain-driving sm">较小按钮</button>
+    </div>
+
+    <div class="vspace text-center">
+      <button class="button primary xs">特小按钮</button>
+      <button class="button default xs">特小按钮</button>
+      <button class="button success xs">特小按钮</button>
+    </div>
+
+    <div class="vspace" ui-mode="50px">
+      <div class="divider" ui-mode="10%">以下为50px高按钮 用于适配: .list > .item</div>
+    </div>
+
+    <div class="vspace text-center">
+      <button class="button primary up">适配按钮</button>
+      <button class="button default up">适配按钮</button>
+      <button class="button driving up">适配按钮</button>
+    </div>
   </div>
 
   <footer class="vspace">
@@ -2036,24 +2036,27 @@
   </div>
 
   <div class="list">
-    <div class="item-divider">列表项</div>
+    <div class="item-divider">缩进列表项</div>
+    <div class="item">
+      <div class="text">标题文字</div>
+    </div>
+    <div class="item">
+      <div class="text">标题文字</div>
+    </div>
     <div class="item">
       <div class="text">标题文字</div>
     </div>
     <div class="item">
       <div class="text text-ellipsis">可通过添加 text-ellipsis 来获得省略模式。比如这个很长很长很长很长很长很长很长很长很长很长的文字内容</div>
     </div>
-    <div class="item-divider">边框通栏列表项</div>
+    <div class="item-divider">通栏列表项</div>
     <div class="item thread">
       <div class="text">列表项分割线是通栏的</div>
     </div>
     <div class="item thread">
       <div class="text">列表项分割线是通栏的</div>
     </div>
-    <div class="item thread">
-      <div class="text">列表项分割线是通栏的</div>
-    </div>
-    <div class="item-divider">带说明列表项</div>
+    <div class="item-divider">说明示例</div>
     <div class="item">
       <div class="text">标题文字</div>
       <div class="extra">其他信息</div>
@@ -2062,7 +2065,7 @@
       <div class="text">标题文字</div>
       <div class="extra">其他信息</div>
     </div>
-    <div class="item-divider">左侧ICON</div>
+    <div class="item-divider">左侧图标</div>
     <div class="item">
       <i class="icon">&#xe61e;</i>
       <div class="text">标题文字</div>
@@ -2071,91 +2074,81 @@
       <i class="icon">&#xe61e;</i>
       <div class="text">标题文字</div>
     </div>
-    <div class="item-divider">右侧ICON</div>
-    <a class="item" href="javascript:;">
+    <div class="item-divider">右侧图标</div>
+    <div class="item tapable">
       <div class="text">标题文字</div>
-      <i class="icon">&#xe60a;</i>
-    </a>
-    <a class="item" href="javascript:;">
+      <i class="icon text-gray">&#xe60a;</i>
+    </div>
+    <div class="item tapable">
       <div class="text">标题文字</div>
-      <i class="icon">&#xe60a;</i>
-    </a>
-    <div class="item-divider">说明和跳转示意</div>
-    <a class="item" href="javascript:;">
-      <div class="text">标题文字</div>
-      <div class="extra">其他信息</div>
-      <i class="icon">&#xe61a;</i>
-    </a>
-    <a class="item" href="javascript:;">
-      <div class="text">标题文字</div>
-      <div class="extra">其他信息</div>
-      <i class="icon">&#xe61a;</i>
-    </a>
-    <div class="item-divider">带左右ICON以及说明列表项</div>
-    <a class="item" href="javascript:;">
-      <i class="icon">&#xe61e;</i>
-      <div class="text">标题文字</div>
-      <div class="extra">其他信息</div>
-      <i class="icon">&#xe61a;</i>
-    </a>
-    <a class="item" href="javascript:;">
-      <i class="icon">&#xe61e;</i>
+      <i class="icon text-gray">&#xe60a;</i>
+    </div>
+    <div class="item-divider">竖线分割</div>
+    <div class="item split">
+      <div class="text">非诚勿扰</div>
+      <div class="text">世纪佳缘</div>
+      <div class="text">娱乐到死</div>
+    </div>
+    <div class="item-divider">竖线拉通</div>
+    <div class="item split" ui-mode="0px">
+      <div class="text">非诚勿扰</div>
+      <div class="text">世纪佳缘</div>
+      <div class="text">娱乐到死</div>
+    </div>
+    <div class="item-divider">跳转示例</div>
+    <div class="item tapable">
       <div class="text">标题文字</div>
       <div class="extra">其他信息</div>
-      <i class="icon">&#xe61a;</i>
-    </a>
-    <div class="item-divider">左侧带图标的列表项 <i class="text-driving">(自由设置图片大小)</i></div>
-    <a class="item" href="javascript:;">
+      <i class="icon text-gray">&#xe61a;</i>
+    </div>
+    <div class="item tapable">
+      <div class="text">标题文字</div>
+      <div class="extra">其他信息</div>
+      <i class="icon text-gray">&#xe61a;</i>
+    </div>
+    <div class="item-divider">图片示例</div>
+    <div class="item tapable">
       <div class="avatar">
         <img width="16" src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" />
       </div>
       <div class="text">标题文字</div>
-      <i class="icon">&#xe61a;</i>
-    </a>
-    <a class="item" href="javascript:;">
+      <i class="icon text-gray">&#xe61a;</i>
+    </div>
+    <div class="item tapable">
       <div class="avatar">
         <img width="24" src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" />
       </div>
       <div class="text">标题文字</div>
-      <i class="icon">&#xe61a;</i>
-    </a>
-    <a class="item" href="javascript:;">
+      <i class="icon text-gray">&#xe61a;</i>
+    </div>
+    <div class="item tapable">
       <div class="avatar">
         <img width="32" src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" />
       </div>
       <div class="text">标题文字</div>
-      <i class="icon">&#xe61a;</i>
-    </a>
-    <a class="item" href="javascript:;">
+      <i class="icon text-gray">&#xe61a;</i>
+    </div>
+    <div class="item tapable">
       <div class="avatar">
         <img width="48" src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" />
       </div>
       <div class="text">标题文字</div>
-      <i class="icon">&#xe61a;</i>
-    </a>
+      <i class="icon text-gray">&#xe61a;</i>
+    </div>
     <div class="item-divider">补充信息</div>
     <div class="item">
       <div class="text">
-        普通标题
+        <h4>标题文字</h4>
         <div class="brief">这里是一些补充文字信息，它也许很长很长很长很长很长很长很长很长</div>
       </div>
     </div>
     <div class="item">
       <div class="text">
-        <h4>加粗标题</h4>
+        <h4>标题文字</h4>
         <div class="brief">这里是一些补充文字信息，它也许很长很长很长很长很长很长很长很长</div>
       </div>
     </div>
     <div class="item-divider">揉在一起</div>
-    <div class="item">
-      <div class="text">
-        星座3栋
-        <div class="brief text-ellipsis">面积60平米、卫生费、管理费、公摊费合计为物业费</div>
-      </div>
-      <div class="extra">
-        <p class="text-orange text-sm">本期物业费: ￥500</p>
-      </div>
-    </div>
     <div class="item">
       <span class="text">
         星座3栋
@@ -2166,26 +2159,50 @@
         <p class="text-orange text-sm">本期缴纳：￥500</p>
       </span>
     </div>
-    <a class="item" href="javascript:;">
+    <div class="item tapable">
       <div class="avatar">
-        <img width="46" src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" />
+        <img width="44" src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" />
       </div>
       <div class="text">
         <h4>少年时光</h4>
         <div class="brief text-ellipsis">少年时光，用大把时间彷徨，只用几个瞬间来成长</div>
       </div>
-      <i class="icon">&#xe61a;</i>
-    </a>
-    <a class="item" href="javascript:;">
-      <div class="avatar">
-        <img width="46" src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" />
+      <i class="icon text-gray">&#xe61a;</i>
+    </div>
+    <div class="item-divider">图片吸顶（默认居中,如上例）</div>
+    <div class="item tapable">
+      <div class="avatar" ui-mode="ceiling">
+        <img width="44" src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" />
       </div>
       <div class="text">
-        <h4>总是不安，只好强悍</h4>
-        <div class="brief">其实恰相反，平静往往才是最有穿透效果的力量。每个人都会跌倒，然后，爬起来，自我成长。</div>
+        <h4>少年时光</h4>
+        <div class="brief">少年时光，用大把时间彷徨，只用几个瞬间来成长</div>
       </div>
-      <i class="icon">&#xe61a;</i>
-    </a>
+      <i class="icon text-gray">&#xe61a;</i>
+    </div>
+    <div class="item-divider">间距处理</div>
+    <div class="item" ui-mode="0px">
+      <div class="text">padding: 0px</div>
+      <div class="extra">PS：min-height = 44px</div>
+    </div>
+    <div class="item" ui-mode="10px">
+      <div class="text">padding: 10px</div>
+    </div>
+    <div class="item" ui-mode="12px">
+      <div class="text">padding: 12px</div>
+      <div class="extra">24 + 12*2 = 48px</div>
+    </div>
+    <div class="item" ui-mode="15px">
+      <div class="text">padding: 15px</div>
+      <div class="extra">24 + 15*2 = 54px</div>
+    </div>
+    <div class="item-divider">间距组合</div>
+    <div class="item" ui-mode="10px 15px">
+      <div class="text">padding: 10px 15px</div>
+    </div>
+    <div class="item" ui-mode="12px 15px">
+      <div class="text">padding: 12px 15px</div>
+    </div>
   </div>
 
   <footer class="vspace">
@@ -2199,27 +2216,21 @@
     <h4>Loadmore</h4>
     <p class="text-gray text-sm">加载更多</p>
   </div>
-  
+
   <!-- 默认风格 -->
   <div class="loadmore">
     <i class="loading"></i>
     <span class="tips">正在加载</span>
   </div>
-  
+
+  <div class="divider">自定义颜色</div>
+
   <!-- 自定义颜色 -->
   <div class="loadmore">
     <i class="loading"></i>
     <span class="tips text-gray">正在加载</span>
   </div>
-  
-  <!-- 揉在一起 -->
-  <div class="divider">
-    <div class="loadmore">
-      <i class="loading"></i>
-      <span class="tips">正在加载</span>
-    </div>
-  </div>
-  
+
   <footer class="vspace btm-fixed">
     <div class="text-center text-sm">
       <a class="link" href="javascript:history.back();"><img width="90" src="./images/footer.png" /></a>
@@ -2684,28 +2695,26 @@
     <h4>Switch</h4>
     <p class="text-gray text-sm">开关效果</p>
   </div>
-  
+
   <div class="list">
-    <div class="item-divider">( 添加nesting，以便保持item的高度 )</div>
-    <div class="item">
+    <div class="item" ui-mode="0px 15px">
       <div class="text">橙色开关</div>
-      <input class="switch nesting driving" type="checkbox" checked />
+      <input class="switch driving" type="checkbox" checked />
     </div>
-    <div class="item">
-      <div class="text">蓝色开关</div>
-      <input class="switch nesting primary" type="checkbox" checked />
-    </div>
-    <div class="item-divider">开关效果 ( 不添加nesting，item高度会撑高 )</div>
-    <div class="item">
+    <div class="item" ui-mode="0px 15px">
       <div class="text">红色开关</div>
-      <input class="switch warning" type="checkbox" checked />
+      <input class="switch warning" type="checkbox" />
     </div>
-    <div class="item">
+    <div class="item" ui-mode="0px 15px">
+      <div class="text">蓝色开关</div>
+      <input class="switch primary" type="checkbox" checked />
+    </div>
+    <div class="item" ui-mode="0px 15px">
       <div class="text">绿色开关</div>
-      <input class="switch success" type="checkbox" checked />
+      <input class="switch success" type="checkbox" />
     </div>
   </div>
-  
+
   <footer class="vspace btm-fixed">
     <div class="text-center text-sm">
       <a class="link" href="javascript:history.back();"><img width="90" src="./images/footer.png" /></a>
@@ -2713,30 +2722,13 @@
   </footer>
 </div></script>
 <script type="text/exui-templates" id="exui_tabbar"><div class="ex-page">
-  
-  <div class="divider" ui-mode="20%">使用字体 (如果你有)</div>
-  
-  <div class="tabbar">
-    <div class="item active">
-      <i class="icon">&#xe61e;</i>
-      <span class="label">首页</span>
-    </div>
-    <div class="item">
-      <i class="icon">&#xe61e;</i>
-      <span class="label">管家</span>
-    </div>
-    <div class="item">
-      <i class="icon">&#xe61e;</i>
-      <span class="label">商城</span>
-    </div>
-    <div class="item">
-      <i class="icon">&#xe61e;</i>
-      <span class="label">我的</span>
-    </div>
+  <div class="page-header">
+    <h4>Tabbar</h4>
+    <p class="text-gray text-sm">tabbar</p>
   </div>
-  
-  <div class="divider">使用图片</div>
-  
+
+  <div class="divider" ui-mode="20%">图文混合</div>
+
   <div class="tabbar">
     <div class="item active">
       <i class="icon"><img src="./images/tabbar/ta-a.png" /></i>
@@ -2755,26 +2747,22 @@
       <span class="label">我的</span>
     </div>
   </div>
-  
-  <div class="divider" ui-mode="20%">以上为演示，正常为居底</div>
-  
+
+  <div class="divider" ui-mode="20%">仅有图片</div>
+
   <div class="tabbar">
-    <div class="item active">
-      <i class="icon"><img src="./images/tabbar/ta-a.png" /></i>
-      <span class="label">首页</span>
-    </div>
-    <div class="item">
-      <i class="icon"><img src="./images/tabbar/tc.png" /></i>
-      <span class="label">管家</span>
-    </div>
-    <div class="item">
-      <i class="icon"><img src="./images/tabbar/tb.png" /></i>
-      <span class="label">商城</span>
-    </div>
-    <div class="item">
-      <i class="icon"><img src="./images/tabbar/td.png" /></i>
-      <span class="label">我的</span>
-    </div>
+    <a class="item active">
+      <img width="48" src="//img1.qdingnet.com/bf358a4bd55d9713602e22a7050cedd5.png" />
+    </a>
+    <a class="item">
+      <img width="48" src="//img1.qdingnet.com/af3c3f5cde9735d227285083053cd77b.png" />
+    </a>
+    <a class="item">
+      <img width="48" src="//img1.qdingnet.com/315de08c6981e500f8a440b923c58d14.png" />
+    </a>
+    <a class="item">
+      <img width="48" src="//img1.qdingnet.com/9b844287c34d6313d99f7f5eccb60134.png" />
+    </a>
   </div>
 </div>
 <script type="text/javascript">

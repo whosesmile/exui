@@ -3,7 +3,6 @@
 .tabbar {
   .setFlex(center, item);
   width: 100%;
-  position: fixed;
   bottom: 0;
   text-align: center;
   background-color: @tabbarBgColor;
@@ -11,9 +10,11 @@
   &:before {
     .borderTop();
   }
+
   &:after {
     .borderBottom();
   }
+
   > .item {
     cursor: pointer;
     text-align: center;
@@ -24,9 +25,11 @@
     &:not(.active):active {
       opacity: 0.8;
     }
+
     &.active {
       color: @textColorOrange;
     }
+
     .icon {
       font-size: @tabIconSize;
 
@@ -36,11 +39,15 @@
         width: @tabIconSize;
         height: @tabIconSize;
       }
+
       & + .label {
         display: block;
         margin-top: 5px;
         font-size: @tabFontSize;
       }
+
     }
+
   }
+
 }

@@ -5,18 +5,22 @@
   width: 100%;
   font-size: 17px;
   position: relative;
+  transform: translate3d(0, 0, 0);
   height: @barHeight;
   background-color: @navbarBgColor;
 
   .button {
     line-height: @barHeight;
   }
+
   &:before {
     .borderTop();
   }
+
   &:after {
     .borderBottom();
   }
+
   > .title {
     display: block;
     flex: 1;
@@ -35,7 +39,9 @@
       line-height: @barHeight;
       .ellipsis();
     }
+
   }
+
   > .menu {
     .setFlex();
     width: auto;
@@ -45,6 +51,7 @@
     margin-left: 0 !important;
     z-index: 10;
     font-size: 16px;
+    line-height: @barHeight;
 
     & > .icon {
       min-width: 16px;
@@ -52,17 +59,23 @@
       & + .label {
         margin-left: 3px;
       }
+
     }
+
     & > .label + .icon {
       margin-left: 3px;
     }
+
     & + .menu > .label {
       margin-left: -10px;
     }
+
     &:active {
       opacity: 0.5;
     }
+
   }
+
   > .lace {
     position: relative;
     padding: 0 20px;
@@ -76,9 +89,12 @@
     & + .lace:after {
       .borderLeft(rgba(0, 0, 0, .2));
     }
+
     .icon + .label {
       display: block;
       margin-top: 2px;
     }
+
   }
+
 }

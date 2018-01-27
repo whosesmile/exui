@@ -16,27 +16,37 @@
   &:not(.transparent) {
     background-color: rgba(0, 0, 0, 0.6);
   }
+
 }
+
 // animate
 .ex-widget-enter {
   &.ex-widget-layer {
     background-color: rgba(0, 0, 0, 0);
   }
+
   &.ex-widget-enter-active {
     &.ex-widget-layer:not(.transparent) {
       background-color: rgba(0, 0, 0, 0.6);
     }
+
   }
+
 }
+
 .ex-widget-leave {
   &.ex-widget-layer {
     &:not(.transparent) {
       background-color: rgba(0, 0, 0, 0.6);
     }
+
   }
+
   &.ex-widget-leave-active {
     &.ex-widget-layer {
       background-color: rgba(0, 0, 0, 0);
     }
+
   }
+
 }

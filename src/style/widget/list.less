@@ -6,14 +6,27 @@
   margin-top: @listGap;
   margin-bottom: @listGap;
   font-size: @listFontSize;
-  line-height: @listItemLineHeight;
+  line-height: @listLineHeight;
 
   &.compact {
     margin-top: 0;
     margin-bottom: 0;
   }
+
+  &.overlap {
+    margin-top: -1;
+
+    & > .item:first-child:before {
+      content: none;
+    }
+
+  }
+
   > .item {
-    .setFlex();
+    display: block;
+    width: 100%;
+    display: flex;
+    align-items: center;
     position: relative;
     text-align: left;
     overflow: hidden;
@@ -25,14 +38,18 @@
       .borderTop(@listBorderColor);
       left: @listItemGapH;
     }
+
     &.thread:before, &:first-child:before {
       left: 0;
     }
+
     &:last-child {
       &:after {
         .borderBottom(@listBorderColor);
       }
+
     }
+
     > .text {
       display: block;
       flex: 1;
@@ -47,34 +64,53 @@
         + .brief {
           margin-top: @listItemGapV;
         }
+
       }
+
     }
-    &.split > .text {
-      text-align: center;
 
-      & + .text {
-        position: relative;
+    &.split {
+      align-items: stretch;
 
-        &:before {
-          .borderLeft();
+      & > .text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        & + .text {
+          position: relative;
+
+          &:before {
+            .borderLeft();
+          }
+
         }
+
       }
+
     }
+
     > .extra {
       text-align: right;
-      color: @textColorGray;
+      color: @listItemExtraColor;
     }
+
     + .item-divider:before {
       .borderTop(@listBorderColor);
     }
+
+    // ICON
     > .icon:first-child {
       min-width: 1rem;
       margin-right: @listWidgetGap;
     }
+
     > .icon:last-child {
       min-width: 1rem;
       margin-left: @listWidgetGap;
     }
+
     // 图像
     .avatar {
       position: relative;
@@ -82,16 +118,20 @@
       &:not(:last-child) {
         margin-right: @listWidgetGap;
       }
+
+      &[ui-mode~="ceiling"] {
+        align-self: flex-start;
+      }
+
       img {
         display: block;
       }
+
     }
+
   }
-  // 仅默认ICON设置为灰色 这样写可以继承父元素定制的颜色
-  > [class="item"] > [class="icon"]:last-child {
-    color: @textColorGray;
-  }
-  // 具有交互功能
+
+  // 交互
   > .item[href], > .item.tapable {
     .setTapColor();
     color: inherit;
@@ -99,9 +139,14 @@
     &:active {
       background-color: @tapColor;
     }
+
   }
+
   > .item-divider {
-    .setFlex();
+    display: block;
+    width: 100%;
+    display: flex;
+    align-items: center;
     position: relative;
     padding: @listItemGapV / 1.25 @listItemGapH;
     font-size: @listItemDividerFontSize;
@@ -109,50 +154,74 @@
     + .item:before {
       left: 0;
     }
+
     + .item-divider:before {
       .borderTop(@listBorderColor);
     }
+
     >.text {
       display: block;
       flex: 1;
       overflow: hidden;
     }
+
     > .extra {
       text-align: right;
       color: @textColorGray;
     }
+
   }
+
   > [class="item-divider"] {
     color: @textColorGray;
   }
+
   // 调整间距 土办法学自AntUI
   & > .item, & > .item-divider {
     &[ui-mode^="0px"] {
       padding-top: 0;
       padding-bottom: 0;
     }
+
     &[ui-mode$="0px"] {
       padding-left: 0;
       padding-right: 0;
     }
+
     &[ui-mode^="10px"] {
       padding-top: 10px;
       padding-bottom: 10px;
     }
+
     &[ui-mode$="10px"] {
       padding-left: 10px;
       padding-right: 10px;
     }
+
+    &[ui-mode^="12px"] {
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+
+    &[ui-mode$="12px"] {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+
     &[ui-mode^="15px"] {
       padding-top: 15px;
       padding-bottom: 15px;
     }
+
     &[ui-mode$="15px"] {
       padding-left: 15px;
       padding-right: 15px;
     }
+
   }
+
   h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
   }
+
 }

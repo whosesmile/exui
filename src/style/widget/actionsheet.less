@@ -20,6 +20,7 @@
     &:after {
       .borderBottom();
     }
+
     & + .menus {
       margin-top: 0;
 
@@ -27,8 +28,11 @@
         border-top-left-radius: 0;
         border-top-right-radius: 0;
       }
+
     }
+
   }
+
   // menus
   & > .menus {
     margin: 10px;
@@ -48,45 +52,62 @@
         &:after {
           content: none;
         }
+
       }
+
       & > [class="button"] {
         color: inherit;
       }
+
       &:first-child {
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
       }
+
       &:last-child {
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
       }
+
       &:active {
         background-color: @tapColor;
       }
+
       + .item:before {
         .borderTop();
       }
+
     }
+
   }
+
 }
+
 // ActionSheet
 .ex-widget-enter {
   .actionsheet {
     transform: translate3d(0, 100%, 0);
   }
+
   &.ex-widget-enter-active {
     .actionsheet {
       transform: translate3d(0, 0, 0);
     }
+
   }
+
 }
+
 .ex-widget-leave {
   .actionsheet {
     transform: translate3d(0, 0, 0);
   }
+
   &.ex-widget-leave-active {
     .actionsheet {
       transform: translate3d(0, 100%, 0);
     }
+
   }
+
 }
