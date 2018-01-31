@@ -2,14 +2,23 @@ html, body {
   height: 100%;
   -webkit-tap-highlight-color: transparent;
 }
+
 body {
   font-family: -apple-system-font, "Helvetica Neue", Helvetica, sans-serif;
   background-color: #f8f8f8;
   overflow-x: hidden;
 }
+
 ul {
   list-style: none;
 }
+
+.github {
+  position: fixed;
+  top: 38px;
+  right: 10px
+}
+
 .page-header {
   padding: 40px 40px 20px;
 
@@ -18,14 +27,18 @@ ul {
     font-weight: normal;
     margin-bottom: 15px;
   }
+
   .describe {
     color: #a9a9a9;
     font-size: 14px;
   }
+
   p + p {
     margin-top: 10px;
   }
+
 }
+
 .ex-group {
   overflow: hidden;
   border-radius: 3px;
@@ -41,34 +54,46 @@ ul {
       width: 30px;
       height: 30px;
     }
+
     &:before, &:after {
       content: none;
     }
+
   }
+
   .list:first-child + .list {
     display: none;
 
     & > .item:first-child:before {
       left: 15px;
     }
+
     & > .item:last-child:after {
       content: none;
     }
+
   }
+
   .list:first-child {
     .text, .icon {
       transition: .3s;
     }
+
   }
+
   &.active .list:first-child {
     .text, .icon {
       opacity: 0.5;
     }
+
     & + .list {
       display: block;
     }
+
   }
+
 }
+
 .container {
   position: absolute;
   top: 0;
@@ -99,14 +124,18 @@ ul {
     & + p {
       margin-top: 5px;
     }
+
   }
+
   .flex .item .holder {
     line-height: 35px;
     background-color: #ebebeb;
     color: #c0c0c0;
     text-align: center;
   }
+
   .tabbar:not(:last-child) {
     position: relative;
   }
+
 }

@@ -5,11 +5,11 @@
   </div>
 
   <div class="vspace hspace">
-    <button class="button default" data-toast="#toast1">载入中</button>
+    <button class="button default" data-toast="#toast1" modal="false">载入中(非模态)</button>
     <button class="button default" data-toast="#toast2">操作失败1</button>
-    <button class="button default" data-toast="#toast3">操作失败2</button>
+    <button class="button default" data-toast="#toast3" modal="false">操作失败2 (非模态)</button>
     <button class="button default" data-toast="#toast4">操作成功1</button>
-    <button class="button default" data-toast="#toast5">操作成功2</button>
+    <button class="button default" data-toast="#toast5" modal="false">操作成功2 (非模态)</button>
     <button class="button default" data-toast="#toast6">自定义图片</button>
   </div>
 
@@ -18,7 +18,6 @@
     <div id="toast1">
       <div class="toast">
         <i class="icon waiting"></i>
-        <span class="text">载入中</span>
       </div>
     </div>
 
@@ -66,14 +65,19 @@
   </footer>
 </div>
 <script type="text/javascript">
-  $(document).off('click', '.button[data-toast]').on('click', '.button[data-toast]', function() {
-    var selector = $(this).data('toast');
-    widgetManager.show($(selector).html(), {
-      clazz: 'transparent',
-    });
+  (function() {
+    var timer = null;
+    $(document).off('click', '.button[data-toast]').on('click', '.button[data-toast]', function() {
+      clearTimeout(timer);
+      var selector = $(this).data('toast');
+      widgetManager.show($(selector).html(), {
+        clazz: 'transparent',
+        modal: $(this).attr('modal') !== 'false',
+      });
 
-    setTimeout(function() {
-      widgetManager.hide();
-    }, 2500);
-  });
+      timer = setTimeout(function() {
+        widgetManager.hide();
+      }, 2500);
+    });
+  })();
 </script>

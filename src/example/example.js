@@ -51,9 +51,9 @@ Router.prototype = {
 
   destroyView: function(route) {
     if (route && route.view) {
-      route.view.addClass('ex-view-leave');
+      route.view.addClass('ex-view-exit');
       route.view[0].offsetHeight;
-      route.view.addClass('ex-view-leave-active').on('transitionend webkitTransitionEnd', function() {
+      route.view.addClass('ex-view-exit-active').on('transitionend webkitTransitionEnd', function() {
         $(this).remove();
       });
     }
@@ -79,7 +79,15 @@ WidgetManager.prototype = {
     this.popup();
 
     opts = opts || {};
-    var widget = $('<div class="ex-widget-layer" />').addClass(opts.clazz || '').append(templ);
+    var widget = null;
+    // 模态
+    if (opts.modal !== false) {
+      widget = $('<div class="ex-widget-layer" />').addClass(opts.clazz || '').append(templ);
+    }
+    // 非模态
+    else {
+      widget = $(templ);
+    }
 
     // 点击关闭
     widget.on('click', function(e) {
@@ -117,9 +125,9 @@ WidgetManager.prototype = {
     if (!widget) {
       return false;
     }
-    widget.addClass('ex-widget-leave');
+    widget.addClass('ex-widget-exit');
     widget[0].offsetHeight;
-    widget.addClass('ex-widget-leave-active').on('transitionend webkitTransitionEnd', function() {
+    widget.addClass('ex-widget-exit-active').on('transitionend webkitTransitionEnd', function() {
       widget.remove();
       fn && fn();
     });
