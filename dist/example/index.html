@@ -169,6 +169,10 @@
               <div class="text">Picker</div>
               <i class="icon">&#xe61a;</i>
             </a>
+            <a class="item" href="#popup">
+              <div class="text">Popup</div>
+              <i class="icon">&#xe61a;</i>
+            </a>
             <a class="item" href="#feedback">
               <div class="text">Feedback</div>
               <i class="icon">&#xe61a;</i>
@@ -1287,250 +1291,166 @@
     <h4>Form</h4>
     <p class="text-gray text-sm">表单输入</p>
   </div>
-
   <div class="list">
     <div class="item-divider">文本框</div>
-    <label class="item">
-      <div class="text">
-        <input class="input" type="text" placeholder="文本输入框" />
-      </div>
+    <label class="item" ui-mode="input">
+      <input class="input" type="text" placeholder="文本输入框" />
     </label>
-    <div class="item-divider">带ICON</div>
-    <label class="item">
-      <i class="icon text-primary">&#xe61e;</i>
-      <div class="text">
-        <input class="input" type="text" placeholder="请输入您的家庭住址" />
-      </div>
+    <div class="item-divider">ICON</div>
+    <label class="item" ui-mode="input">
+      <i class="icon text-darkgray">&#xe60d;</i>
+      <input class="input" type="text" placeholder="请输入您的家庭住址" value="" />
+      <i class="icon text-warning">&#xe61f;</i>
     </label>
-    <div class="item-divider">带关闭</div>
-    <label class="item">
-      <i class="icon text-primary">&#xe61e;</i>
-      <div class="input-widget">
-        <input class="input" type="text" required placeholder="请输入您的家庭住址" value="空值不显示删除提示" />
-        <i class="icon text-gray">&#xe61d;</i>
-      </div>
+    <label class="item" ui-mode="input">
+      <i class="icon text-darkgray">&#xe60d;</i>
+      <input class="input" type="text" placeholder="请输入您的家庭住址" value="月下踯躅 梦里徘徊" />
+      <i class="icon text-success">&#xe620;</i>
+    </label>
+    <div class="item-divider">带清除</div>
+    <label class="item" ui-mode="input">
+      <i class="icon text-darkgray">&#xe60d;</i>
+      <input class="input" type="text" placeholder="请输入您的家庭住址" required />
+      <i class="icon text-light" ui-mode="close">&#xe6a0;</i>
     </label>
     <div class="item-divider">文本域</div>
-    <label class="item">
-      <div class="text">
-        <textarea class="textarea" placeholder="文本域输入框"></textarea>
-        <div class="textarea-counter"><span>0</span>/200</div>
-      </div>
+    <label class="item" ui-mode="input">
+      <textarea class="textarea" rows="4" placeholder="文本域输入框"></textarea>
+      <div class="textarea-counter"><span>0</span>/200</div>
     </label>
-    <div class="item-divider">LABEL宽度: ui-mode="[16px * 3,4,5,6,7]"</div>
-    <label class="item">
+    <div class="item-divider">LABEL宽度: ui-mode="[16px * 2,3,4,5,6,7]"</div>
+    <label class="item" ui-mode="input">
       <span class="label" ui-mode="64px">姓名</span>
-      <div class="text">
-        <input class="input" type="text" placeholder="如果一组表单Label文字长度不定" />
-      </div>
+      <input class="input" type="text" placeholder="如果一组表单Label文字长度不定" />
     </label>
-    <label class="item">
+    <label class="item" ui-mode="input">
       <span class="label" ui-mode="64px">手机号</span>
-      <div class="text">
-        <input class="input" type="text" placeholder="可以通过预设宽度来实现对齐效果" />
-      </div>
+      <input class="input" type="text" placeholder="可以通过预设宽度来实现对齐效果" />
     </label>
-    <label class="item">
+    <label class="item" ui-mode="input">
       <span class="label" ui-mode="64px">联系地址</span>
-      <div class="text">
-        <input class="input" type="text" placeholder="默认情况下Label宽度是自适应的" />
-      </div>
+      <input class="input" type="text" placeholder="默认情况下Label宽度是自适应的" />
     </label>
-    <div class="item-divider">选择 <i class="text-success">(推荐方案：点击箭头可以触发)</i></div>
-    <label class="item" ui-mode="0px">
-      <div class="text">
-        <div class="select-arrow">
-          <select class="select">
-            <option selected value="1">中国</option>
-            <option value="2">台湾</option>
-            <option value="3">香港</option>
-          </select>
-        </div>
-      </div>
+    <div class="item-divider">下拉选择</div>
+    <label class="item" ui-mode="input">
+      <select class="select">
+        <option selected value="1">股票</option>
+        <option value="2">黄金</option>
+        <option value="3">外汇</option>
+      </select>
+      <i class="icon text-gray" ui-mode="arrow">&#xe60b;</i>
     </label>
-    <label class="item" ui-mode="0px">
+    <label class="item" ui-mode="input">
       <span class="label">国家/地区</span>
-      <div class="text">
-        <div class="select-arrow">
-          <select class="select">
-            <option selected value="1">股票</option>
-            <option value="2">黄金</option>
-            <option value="3">美元</option>
-          </select>
-        </div>
-      </div>
+      <select class="select">
+        <option selected value="1">中国</option>
+        <option value="2">台湾</option>
+        <option value="3">香港</option>
+      </select>
+      <i class="icon text-gray" ui-mode="arrow">&#xe60b;</i>
     </label>
-    <div class="item-divider">选择 (靠右对齐)</div>
-    <label class="item" ui-mode="0px">
+    <div class="item-divider">靠右对齐</div>
+    <label class="item" ui-mode="input">
       <span class="label">国家/地区</span>
-      <div class="text">
-        <div class="select-arrow">
-          <select class="select" dir="rtl">
-            <option selected value="1">股票</option>
-            <option value="2">黄金</option>
-            <option value="3">美元</option>
-          </select>
-        </div>
-      </div>
+      <select class="select" dir="rtl">
+        <option selected value="1">中国</option>
+        <option value="2">台湾</option>
+        <option value="3">香港</option>
+      </select>
+      <i class="icon text-gray" ui-mode="arrow">&#xe60b;</i>
     </label>
-    <div class="item-divider">选择 (常规方案)</div>
-    <label class="item">
-      <div class="text">
+    <label class="item" ui-mode="input">
+      <span class="label">理财</span>
+      <select class="select" dir="rtl">
+        <option selected value="1">股票</option>
+        <option value="2">黄金</option>
+        <option value="3">外汇</option>
+      </select>
+      <i class="icon text-gray" ui-mode="arrow">&#xe60b;</i>
+    </label>
+    <div class="item-divider">前置下拉</div>
+    <label class="item" ui-mode="input">
+      <div class="select-widget">
         <select class="select">
-          <option selected value="1">中国</option>
-          <option value="2">台湾</option>
-          <option value="3">香港</option>
+          <option value="1">京</option>
+          <option value="2">津</option>
+          <option value="3">冀</option>
+          <option value="4">豫</option>
         </select>
+        <i class="icon text-gray" ui-mode="arrow">&#xe60b;</i>
       </div>
-      <i class="icon">&#xe60b;</i>
+      <input class="input" type="tel" pattern="[0-9]*" placeholder="请输入您的车牌" />
     </label>
-    <label class="item">
-      <span class="label">国家/地区</span>
-      <div class="text">
+    <label class="item" ui-mode="input">
+      <div class="select-widget">
         <select class="select">
-          <option selected value="1">股票</option>
-          <option value="2">黄金</option>
-          <option value="3">美元</option>
+          <option value="1">+86</option>
+          <option value="2">+80</option>
+          <option value="3">+84</option>
+          <option value="4">+87</option>
         </select>
+        <i class="icon text-gray" ui-mode="arrow">&#xe60b;</i>
       </div>
-      <i class="icon">&#xe60b;</i>
-    </label>
-    <div class="item-divider">选择前置</div>
-    <label class="item" ui-mode="0px">
-      <span class="label" ui-mode="80px">
-        <div class="select-arrow">
-          <select class="select">
-            <option value="1">京</option>
-            <option value="2">津</option>
-            <option value="3">冀</option>
-            <option value="4">豫</option>
-          </select>
-        </div>
-      </span>
-      <div class="text">
-        <input class="input" type="tel" pattern="[0-9]*" placeholder="请输入您的车牌" />
-      </div>
-    </label>
-    <label class="item" ui-mode="0px">
-      <span class="label" ui-mode="80px">
-        <div class="select-arrow">
-          <select class="select">
-            <option value="1">+86</option>
-            <option value="2">+80</option>
-            <option value="3">+84</option>
-            <option value="4">+87</option>
-          </select>
-        </div>
-      </span>
-      <div class="text">
-        <input class="input" type="tel" pattern="[0-9]*" placeholder="请输入您的电话" />
-      </div>
+      <input class="input" type="tel" pattern="[0-9]*" placeholder="请输入您的电话" />
     </label>
     <div class="item-divider">验证码</div>
-    <label class="item">
+    <label class="item" ui-mode="input">
       <span class="label">手机号</span>
-      <div class="text">
-        <input class="input" type="tel" pattern="[0-9]*" placeholder="请输入您的电话" />
-      </div>
+      <input class="input" type="tel" pattern="[0-9]*" placeholder="请输入您的电话" />
       <div class="interact">
         <button class="button literal text-primary" type="button">发送验证码</button>
       </div>
     </label>
-    <label class="item">
+    <label class="item" ui-mode="input">
       <span class="label">验证码</span>
-      <div class="text">
-        <input class="input" type="number" pattern="[0-9]*" placeholder="请输入短信验证码" />
-      </div>
+      <input class="input" type="number" pattern="[0-9]*" placeholder="请输入短信验证码" />
       <div class="interact">
-        <button class="button literal text-primary" type="button" disabled>58秒后重发</button>
+        <button class="button literal text-primary" type="button" disabled>28秒后重发</button>
       </div>
     </label>
-    <label class="item">
+    <label class="item" ui-mode="input">
       <span class="label">验证码</span>
-      <div class="text">
-        <input class="input" type="text" placeholder="请输入图形验证码" />
-      </div>
+      <input class="input" type="text" placeholder="请输入图形验证码" />
       <div class="interact">
         <img class="captcha" src="./images/captcha.jpg" />
       </div>
     </label>
     <div class="item-divider">收窄边框</div>
-    <label class="item">
+    <label class="item" ui-mode="input">
       <span class="label">手机号</span>
-      <div class="text">
-        <input class="input" type="tel" pattern="[0-9]*" placeholder="请输入您的电话" />
-      </div>
-      <div class="interact narrow">
+      <input class="input" type="tel" pattern="[0-9]*" placeholder="请输入您的电话" />
+      <div class="interact" ui-mode="narrow">
         <button class="button literal text-success" type="button">兑换礼品</button>
       </div>
     </label>
-    <label class="item">
+    <label class="item" ui-mode="input">
       <span class="label">手机号</span>
-      <div class="text">
-        <input class="input" type="tel" pattern="[0-9]*" placeholder="请输入您的电话" />
-      </div>
-      <div class="interact narrow">
-        <button class="button literal text-primary" type="button">我要报名</button>
+      <input class="input" type="tel" pattern="[0-9]*" placeholder="请输入您的电话" />
+      <div class="interact" ui-mode="narrow">
+        <button class="button literal text-darkgray" type="button">我要报名</button>
       </div>
     </label>
     <div class="item-divider">表单组合</div>
-    <label class="item">
+    <label class="item" ui-mode="input">
       <span class="label">姓名</span>
-      <div class="text">
-        <input class="input" type="text" placeholder="请输入姓名" />
-      </div>
+      <input class="input" type="text" placeholder="请输入姓名" />
     </label>
-    <label class="item">
+    <label class="item" ui-mode="input">
       <span class="label">数字</span>
-      <div class="text">
-        <input class="input" type="number" pattern="[0-9]*" placeholder="请输入QQ号"/>
-      </div>
+      <input class="input" type="number" pattern="[0-9]*" placeholder="请输入QQ号" />
     </label>
-    <label class="item">
+    <label class="item" ui-mode="input">
       <span class="label">电话</span>
-      <div class="text">
-        <input class="input" type="tel" pattern="[0-9]*" placeholder="请输入您的电话" />
-      </div>
+      <input class="input" type="tel" pattern="[0-9]*" placeholder="请输入您的电话" />
     </label>
-    <label class="item">
+    <label class="item" ui-mode="input">
       <span class="label">日期</span>
-      <div class="text">
-        <input class="input" type="date" value="" />
-      </div>
+      <input class="input" type="date" value="" />
     </label>
-    <label class="item">
+    <label class="item" ui-mode="input">
       <span class="label">时间</span>
-      <div class="text">
-        <input class="input" type="datetime-local" value="" />
-      </div>
+      <input class="input" type="datetime-local" value="" />
     </label>
-    <div class="item-divider">红色</div>
-    <label class="item text-warning">
-      <span class="label">卡号</span>
-      <div class="text">
-        <input class="input" type="number" pattern="[0-9]*" placeholder="请输入卡号" value="666" />
-      </div>
-      <i class="icon text-xl">&#xe61d;</i>
-    </label>
-    <div class="item-divider">蓝色</div>
-    <label class="item text-primary">
-      <span class="label">身高</span>
-      <div class="text">
-        <input class="input" type="number" pattern="[0-9]*" placeholder="请输入身高" value="777" />
-      </div>
-      <i class="icon text-xl">&#xe61d;</i>
-    </label>
-    <div class="item-divider">绿色</div>
-    <label class="item text-success">
-      <span class="label">护照</span>
-      <div class="text">
-        <input class="input" type="number" pattern="[0-9]*" placeholder="请输入护照" value="888" />
-      </div>
-      <i class="icon text-xl">&#xe61d;</i>
-    </label>
-  </div>
-
-  <div class="list">
     <div class="item-divider">单选列表(橙色 / 默认)</div>
     <label class="item tapable">
       <input class="radio" type="radio" name="radio1" checked />
@@ -1640,14 +1560,12 @@
       <div class="text">微信支付</div>
     </label>
   </div>
-
   <div class="agree">
     <label>
       <input class="checkbox success" type="checkbox" />
       <span>阅读并同意<a class="link" href="javascript:;">《相关条款》</a></span>
     </label>
   </div>
-
   <div class="divider">协议居中</div>
   <div class="agree">
     <label class="center">
@@ -1655,11 +1573,9 @@
       <span>阅读并同意<a class="link" href="javascript:;">《相关条款》</a></span>
     </label>
   </div>
-
   <div class="vspace hspace">
     <button class="button success">确定</button>
   </div>
-
   <footer class="vspace">
     <div class="text-center text-sm">
       <a class="link" href="javascript:history.back();"><img width="90" src="./images/footer.png" /></a>
@@ -1919,6 +1835,18 @@
       <div class="label">&amp;#xe6a0;</div>
     </a>
     <a class="item">
+      <i class="icon text-darkgray">&#xe61c;</i>
+      <div class="label">&amp;#xe61c;</div>
+    </a>
+    <a class="item">
+      <i class="icon text-darkgray">&#xe601;</i>
+      <div class="label">&amp;#xe601;</div>
+    </a>
+    <a class="item">
+      <i class="icon text-darkgray">&#xe61d;</i>
+      <div class="label">&amp;#xe61d;</div>
+    </a>
+    <a class="item">
       <i class="icon text-darkgray">&#xe60d;</i>
       <div class="label">&amp;#xe60d;</div>
     </a>
@@ -1939,8 +1867,8 @@
       <div class="label">&amp;#xe616;</div>
     </a>
     <a class="item">
-      <i class="icon text-darkgray">&#xe62d;</i>
-      <div class="label">&amp;#xe62d;</div>
+      <i class="icon text-darkgray">&#xe61b;</i>
+      <div class="label">&amp;#xe61b;</div>
     </a>
     <a class="item">
       <i class="icon text-darkgray">&#xe619;</i>
@@ -1951,18 +1879,6 @@
       <div class="label">&amp;#xe61e;</div>
     </a>
     <a class="item">
-      <i class="icon text-darkgray">&#xe61d;</i>
-      <div class="label">&amp;#xe61d;</div>
-    </a>
-    <a class="item">
-      <i class="icon text-darkgray">&#xe61c;</i>
-      <div class="label">&amp;#xe61c;</div>
-    </a>
-    <a class="item">
-      <i class="icon text-darkgray">&#xe601;</i>
-      <div class="label">&amp;#xe601;</div>
-    </a>
-    <a class="item">
       <i class="icon text-darkgray">&#xe60a;</i>
       <div class="label">&amp;#xe60a;</div>
     </a>
@@ -1971,8 +1887,12 @@
       <div class="label">&amp;#xe61f;</div>
     </a>
     <a class="item">
-      <i class="icon text-darkgray">&#xe61b;</i>
-      <div class="label">&amp;#xe61b;</div>
+      <i class="icon text-darkgray">&#xe620;</i>
+      <div class="label">&amp;#xe620;</div>
+    </a>
+    <a class="item">
+      <i class="icon text-darkgray">&#xe62d;</i>
+      <div class="label">&amp;#xe62d;</div>
     </a>
     <a class="item">
       <i class="icon text-darkgray">&#xe61a;</i>
@@ -2002,8 +1922,12 @@
       <i class="icon text-darkgray">&#xe62a;</i>
       <div class="label">&amp;#xe62a;</div>
     </a>
+    <a class="item">
+      <i class="icon text-darkgray">&#xe62e;</i>
+      <div class="label">&amp;#xe62e;</div>
+    </a>
   </div>
-  
+
   <footer class="vspace">
     <div class="text-center text-sm">
       <a class="link" href="javascript:history.back();"><img width="90" src="./images/footer.png" /></a>
@@ -2241,7 +2165,7 @@
 <script type="text/exui-templates" id="exui_modal"><div class="ex-page">
   <div class="page-header">
     <h4>Modal</h4>
-    <p class="text-gray text-sm">对话框</p>
+    <p class="text-gray text-sm">模态框</p>
   </div>
 
   <div class="vspace hspace">
@@ -2563,6 +2487,171 @@
     widgetManager.show($(selector).html(), {
       dismiss: true
     });
+  });
+</script></script>
+<script type="text/exui-templates" id="exui_popup"><div class="ex-page">
+  <div class="page-header">
+    <h4>Popup</h4>
+    <p class="text-gray text-sm">浮窗</p>
+  </div>
+  <div class="vspace hspace">
+    <button class="button primary" data-popup="#popup1">标准浮窗</button>
+    <button class="button driving" data-popup="#popup2">木有标题</button>
+    <button class="button success" data-popup="#popup3">限定高度</button>
+  </div>
+  <div style="display: none">
+    <div id="popup1">
+      <div class="popup">
+        <div class="header">
+          <a class="button literal inline text-nm text-gray">取消</a>
+          <h4 class="title">我是浮窗</h4>
+          <a class="button literal inline text-nm text-driving">确定</a>
+        </div>
+        <div class="list compact overlap">
+          <div class="item tapable">
+            <div class="text">北京</div>
+            <i class="icon text-gray">&#xe61a;</i>
+          </div>
+          <div class="item tapable">
+            <div class="text">深圳</div>
+            <i class="icon text-gray">&#xe61a;</i>
+          </div>
+          <div class="item tapable">
+            <div class="text">广州</div>
+            <i class="icon text-gray">&#xe61a;</i>
+          </div>
+          <div class="item tapable">
+            <div class="text">上海</div>
+            <i class="icon text-gray">&#xe61a;</i>
+          </div>
+          <div class="item tapable">
+            <div class="text">杭州</div>
+            <i class="icon text-gray">&#xe61a;</i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="popup2">
+      <div class="popup">
+        <div class="header">
+          <a class="button literal inline text-nm text-gray">放弃</a>
+          <h4 class="title"></h4>
+          <a class="button literal inline text-nm text-driving">选择</a>
+        </div>
+        <div class="list compact overlap">
+          <div class="item tapable">
+            <div class="text">北京</div>
+            <i class="icon text-gray">&#xe61a;</i>
+          </div>
+          <div class="item tapable">
+            <div class="text">深圳</div>
+            <i class="icon text-gray">&#xe61a;</i>
+          </div>
+          <div class="item tapable">
+            <div class="text">广州</div>
+            <i class="icon text-gray">&#xe61a;</i>
+          </div>
+          <div class="item tapable">
+            <div class="text">上海</div>
+            <i class="icon text-gray">&#xe61a;</i>
+          </div>
+          <div class="item tapable">
+            <div class="text">杭州</div>
+            <i class="icon text-gray">&#xe61a;</i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="popup3">
+      <div class="popup">
+        <div class="header">
+          <a class="button literal inline text-nm text-gray">取消</a>
+          <h4 class="title">限制高度</h4>
+          <a class="button literal inline text-nm text-driving">确定</a>
+        </div>
+        <div class="content">
+          <div class="list compact overlap">
+            <div class="item tapable">
+              <div class="text">北京</div>
+              <i class="icon text-gray">&#xe61a;</i>
+            </div>
+            <div class="item tapable">
+              <div class="text">深圳</div>
+              <i class="icon text-gray">&#xe61a;</i>
+            </div>
+            <div class="item tapable">
+              <div class="text">广州</div>
+              <i class="icon text-gray">&#xe61a;</i>
+            </div>
+            <div class="item tapable">
+              <div class="text">上海</div>
+              <i class="icon text-gray">&#xe61a;</i>
+            </div>
+            <div class="item tapable">
+              <div class="text">杭州</div>
+              <i class="icon text-gray">&#xe61a;</i>
+            </div>
+            <div class="item tapable">
+              <div class="text">北京</div>
+              <i class="icon text-gray">&#xe61a;</i>
+            </div>
+            <div class="item tapable">
+              <div class="text">深圳</div>
+              <i class="icon text-gray">&#xe61a;</i>
+            </div>
+            <div class="item tapable">
+              <div class="text">广州</div>
+              <i class="icon text-gray">&#xe61a;</i>
+            </div>
+            <div class="item tapable">
+              <div class="text">上海</div>
+              <i class="icon text-gray">&#xe61a;</i>
+            </div>
+            <div class="item tapable">
+              <div class="text">杭州</div>
+              <i class="icon text-gray">&#xe61a;</i>
+            </div>
+            <div class="item tapable">
+              <div class="text">北京</div>
+              <i class="icon text-gray">&#xe61a;</i>
+            </div>
+            <div class="item tapable">
+              <div class="text">深圳</div>
+              <i class="icon text-gray">&#xe61a;</i>
+            </div>
+            <div class="item tapable">
+              <div class="text">广州</div>
+              <i class="icon text-gray">&#xe61a;</i>
+            </div>
+            <div class="item tapable">
+              <div class="text">上海</div>
+              <i class="icon text-gray">&#xe61a;</i>
+            </div>
+            <div class="item tapable">
+              <div class="text">杭州</div>
+              <i class="icon text-gray">&#xe61a;</i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="vspace btm-fixed">
+  <div class="text-center text-sm">
+    <a class="link" href="javascript:history.back();"><img width="90" src="./images/footer.png" /></a>
+  </div>
+</footer>
+</div>
+<script type="text/javascript">
+  $(document).off('click', '.button[data-popup]').on('click', '.button[data-popup]', function() {
+    var selector = $(this).data('popup');
+    widgetManager.show($(selector).html(), {
+      dismiss: true
+    });
+  });
+  $(document).off('click', '.popup>.header .button').on('click', '.popup>.header .button', function() {
+    widgetManager.hide();
   });
 </script></script>
 <script type="text/exui-templates" id="exui_progress"><div class="ex-page">

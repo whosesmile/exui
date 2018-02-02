@@ -1,0 +1,165 @@
+<div class="ex-page">
+  <div class="page-header">
+    <h4>Popup</h4>
+    <p class="text-gray text-sm">浮窗</p>
+  </div>
+  <div class="vspace hspace">
+    <button class="button primary" data-popup="#popup1">标准浮窗</button>
+    <button class="button driving" data-popup="#popup2">木有标题</button>
+    <button class="button success" data-popup="#popup3">限定高度</button>
+  </div>
+  <div style="display: none">
+    <div id="popup1">
+      <div class="popup">
+        <div class="header">
+          <a class="button literal inline text-nm text-gray">取消</a>
+          <h4 class="title">我是浮窗</h4>
+          <a class="button literal inline text-nm text-driving">确定</a>
+        </div>
+        <div class="list compact overlap">
+          <div class="item tapable">
+            <div class="text">北京</div>
+            <i class="icon text-gray">&#xe61a;</i>
+          </div>
+          <div class="item tapable">
+            <div class="text">深圳</div>
+            <i class="icon text-gray">&#xe61a;</i>
+          </div>
+          <div class="item tapable">
+            <div class="text">广州</div>
+            <i class="icon text-gray">&#xe61a;</i>
+          </div>
+          <div class="item tapable">
+            <div class="text">上海</div>
+            <i class="icon text-gray">&#xe61a;</i>
+          </div>
+          <div class="item tapable">
+            <div class="text">杭州</div>
+            <i class="icon text-gray">&#xe61a;</i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="popup2">
+      <div class="popup">
+        <div class="header">
+          <a class="button literal inline text-nm text-gray">放弃</a>
+          <h4 class="title"></h4>
+          <a class="button literal inline text-nm text-driving">选择</a>
+        </div>
+        <div class="list compact overlap">
+          <div class="item tapable">
+            <div class="text">北京</div>
+            <i class="icon text-gray">&#xe61a;</i>
+          </div>
+          <div class="item tapable">
+            <div class="text">深圳</div>
+            <i class="icon text-gray">&#xe61a;</i>
+          </div>
+          <div class="item tapable">
+            <div class="text">广州</div>
+            <i class="icon text-gray">&#xe61a;</i>
+          </div>
+          <div class="item tapable">
+            <div class="text">上海</div>
+            <i class="icon text-gray">&#xe61a;</i>
+          </div>
+          <div class="item tapable">
+            <div class="text">杭州</div>
+            <i class="icon text-gray">&#xe61a;</i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="popup3">
+      <div class="popup">
+        <div class="header">
+          <a class="button literal inline text-nm text-gray">取消</a>
+          <h4 class="title">限制高度</h4>
+          <a class="button literal inline text-nm text-driving">确定</a>
+        </div>
+        <div class="content">
+          <div class="list compact overlap">
+            <div class="item tapable">
+              <div class="text">北京</div>
+              <i class="icon text-gray">&#xe61a;</i>
+            </div>
+            <div class="item tapable">
+              <div class="text">深圳</div>
+              <i class="icon text-gray">&#xe61a;</i>
+            </div>
+            <div class="item tapable">
+              <div class="text">广州</div>
+              <i class="icon text-gray">&#xe61a;</i>
+            </div>
+            <div class="item tapable">
+              <div class="text">上海</div>
+              <i class="icon text-gray">&#xe61a;</i>
+            </div>
+            <div class="item tapable">
+              <div class="text">杭州</div>
+              <i class="icon text-gray">&#xe61a;</i>
+            </div>
+            <div class="item tapable">
+              <div class="text">北京</div>
+              <i class="icon text-gray">&#xe61a;</i>
+            </div>
+            <div class="item tapable">
+              <div class="text">深圳</div>
+              <i class="icon text-gray">&#xe61a;</i>
+            </div>
+            <div class="item tapable">
+              <div class="text">广州</div>
+              <i class="icon text-gray">&#xe61a;</i>
+            </div>
+            <div class="item tapable">
+              <div class="text">上海</div>
+              <i class="icon text-gray">&#xe61a;</i>
+            </div>
+            <div class="item tapable">
+              <div class="text">杭州</div>
+              <i class="icon text-gray">&#xe61a;</i>
+            </div>
+            <div class="item tapable">
+              <div class="text">北京</div>
+              <i class="icon text-gray">&#xe61a;</i>
+            </div>
+            <div class="item tapable">
+              <div class="text">深圳</div>
+              <i class="icon text-gray">&#xe61a;</i>
+            </div>
+            <div class="item tapable">
+              <div class="text">广州</div>
+              <i class="icon text-gray">&#xe61a;</i>
+            </div>
+            <div class="item tapable">
+              <div class="text">上海</div>
+              <i class="icon text-gray">&#xe61a;</i>
+            </div>
+            <div class="item tapable">
+              <div class="text">杭州</div>
+              <i class="icon text-gray">&#xe61a;</i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="vspace btm-fixed">
+  <div class="text-center text-sm">
+    <a class="link" href="javascript:history.back();"><img width="90" src="./images/footer.png" /></a>
+  </div>
+</footer>
+</div>
+<script type="text/javascript">
+  $(document).off('click', '.button[data-popup]').on('click', '.button[data-popup]', function() {
+    var selector = $(this).data('popup');
+    widgetManager.show($(selector).html(), {
+      dismiss: true
+    });
+  });
+  $(document).off('click', '.popup>.header .button').on('click', '.popup>.header .button', function() {
+    widgetManager.hide();
+  });
+</script>

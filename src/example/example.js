@@ -140,89 +140,89 @@ var widgetManager = new WidgetManager();
 // // // // // // // // // // // // // // // // // // // // // // // // // //
 
 // fastclick 改写自weui,现在支持事件代理和多事件绑定
-(function() {
-  // 是否支持touch
-  var supported = (function() {
-    try {
-      document.createEvent("TouchEvent");
-      return true;
-    } catch (e) {
-      return false;
-    }
-  })();
+// (function() {
+//   // 是否支持touch
+//   var supported = (function() {
+//     try {
+//       document.createEvent("TouchEvent");
+//       return true;
+//     } catch (e) {
+//       return false;
+//     }
+//   })();
 
-  // 原始方法
-  var _onfn = $.fn.on;
+//   // 原始方法
+//   var _onfn = $.fn.on;
 
-  // 截取arguments
-  var slice = function(o, i, j) {
-    return Array.prototype.slice.call(o, i, j || o.length);
-  };
+//   // 截取arguments
+//   var slice = function(o, i, j) {
+//     return Array.prototype.slice.call(o, i, j || o.length);
+//   };
 
-  // 代理改写
-  $.fn.on = function() {
-    var args = arguments;
-    var callback = args[args.length - 1];
+//   // 代理改写
+//   $.fn.on = function() {
+//     var args = arguments;
+//     var callback = args[args.length - 1];
 
-    // 包含CLICK && 支持TOUCH && 注册了CALLBACK
-    if (/\bclick\b/i.test(args[0]) && supported && typeof callback === 'function') {
-      var startY = 0;
+//     // 包含CLICK && 支持TOUCH && 注册了CALLBACK
+//     if (/\bclick\b/i.test(args[0]) && supported && typeof callback === 'function') {
+//       var startY = 0;
 
-      // 插入除回调外的初始参数
-      var insertArgs = function(ev, fn) {
-        return [ev].concat(slice(args, 1, args.length - 1)).concat(fn);
-      };
+//       // 插入除回调外的初始参数
+//       var insertArgs = function(ev, fn) {
+//         return [ev].concat(slice(args, 1, args.length - 1)).concat(fn);
+//       };
 
-      // 记录触发点
-      _onfn.apply(this, insertArgs('touchstart', function __$delegate(e) {
-        startY = e.changedTouches[0].pageY;
-      }));
+//       // 记录触发点
+//       _onfn.apply(this, insertArgs('touchstart', function __$delegate(e) {
+//         startY = e.changedTouches[0].pageY;
+//       }));
 
-      // 判断结尾点
-      _onfn.apply(this, insertArgs('touchend', function __$delegate(e) {
-        var endY = touchY = e.changedTouches[0].pageY;
-        // 如果移动不触发点击
-        if (Math.abs(endY - startY) > 10) {
-          return;
-        }
-        callback.apply(this, [e].concat(slice(args, 1)));
-        // 300ms穿透问题
-        e.preventDefault();
-      }));
+//       // 判断结尾点
+//       _onfn.apply(this, insertArgs('touchend', function __$delegate(e) {
+//         var endY = touchY = e.changedTouches[0].pageY;
+//         // 如果移动不触发点击
+//         if (Math.abs(endY - startY) > 10) {
+//           return;
+//         }
+//         callback.apply(this, [e].concat(slice(args, 1)));
+//         // 300ms穿透问题
+//         e.preventDefault();
+//       }));
 
-      // 预防多事件绑定
-      var events = args[0].replace(/\bclick\b/gi, '').trim();
-      if (events) {
-        _onfn.apply(this, [events].concat(slice(args, 1)));
-      }
-    }
-    // 不包含CLICK
-    else {
-      _onfn.apply(this, args);
-    }
+//       // 预防多事件绑定
+//       var events = args[0].replace(/\bclick\b/gi, '').trim();
+//       if (events) {
+//         _onfn.apply(this, [events].concat(slice(args, 1)));
+//       }
+//     }
+//     // 不包含CLICK
+//     else {
+//       _onfn.apply(this, args);
+//     }
 
-    return this;
-  };
+//     return this;
+//   };
 
-  /** 注意: off click 偷懒处理 会误伤touchstart和touchend **/
-  var _offfn = $.fn.off;
-  $.fn.off = function() {
-    var args = arguments;
+//   /** 注意: off click 偷懒处理 会误伤touchstart和touchend **/
+//   var _offfn = $.fn.off;
+//   $.fn.off = function() {
+//     var args = arguments;
 
-    // 包含CLICK && 支持TOUCH && 注册了CALLBACK
-    if (/\bclick\b/i.test(args[0]) && supported) {
-      _offfn.apply(this, ['touchstart'].concat(slice(args, 1)));
-      _offfn.apply(this, ['touchend'].concat(slice(args, 1)));
+//     // 包含CLICK && 支持TOUCH && 注册了CALLBACK
+//     if (/\bclick\b/i.test(args[0]) && supported) {
+//       _offfn.apply(this, ['touchstart'].concat(slice(args, 1)));
+//       _offfn.apply(this, ['touchend'].concat(slice(args, 1)));
 
-      // 预防多事件解绑 貌似zepto不支持这个 以防万一
-      var events = args[0].replace(/\bclick\b/gi, '').trim();
-      if (events) {
-        _offfn.apply(this, [events].concat(slice(args, 1)));
-      }
-    } else {
-      _offfn.apply(this, args);
-    }
+//       // 预防多事件解绑 貌似zepto不支持这个 以防万一
+//       var events = args[0].replace(/\bclick\b/gi, '').trim();
+//       if (events) {
+//         _offfn.apply(this, [events].concat(slice(args, 1)));
+//       }
+//     } else {
+//       _offfn.apply(this, args);
+//     }
 
-    return this;
-  };
-})();
+//     return this;
+//   };
+// })();

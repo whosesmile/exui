@@ -1,17 +1,53 @@
 @import "../base/fn";
 
-.list > .item {
+.list > .item[ui-mode~="input"] {
+  padding: 0;
+  align-items: stretch;
+  transform: translate3d(0, 0, 0);
+
+  > .icon:first-child, > .avatar:first-child {
+    margin: 0;
+    display: block;
+    padding: 0 @listWidgetGap 0 @listItemGapH;
+    line-height: @listItemHeight;
+  }
+
+  > .icon:last-child, > .avatar:last-child {
+    margin: 0;
+    display: block;
+    padding: 0 @listItemGapH 0 @listWidgetGap;
+    line-height: @listItemHeight;
+  }
+
+  > .avatar {
+    display: flex;
+    align-items: center;
+
+    img {
+      display: initial;
+    }
+
+  }
+
   // 文本框
   input.input {
+    flex: 1;
     width: 100%;
     border: none;
     outline: none;
     appearance: none;
-    background-color: transparent;
     font-size: inherit;
     color: inherit;
-    height: @listLineHeight;
+    background-color: transparent;
     line-height: @listLineHeight;
+
+    &:first-child {
+      padding-left: @listItemGapH;
+    }
+
+    &:last-child {
+      padding-right: @listItemGapH;
+    }
 
     // hides the spin-button
     &::-webkit-outer-spin-button, &::-webkit-inner-spin-button {
@@ -19,28 +55,28 @@
       margin: 0;
     }
 
-  }
+    & + [ui-mode~="close"] {
+      display: none;
+      margin-left: @listWidgetGap;
+    }
 
-  textarea.textarea {
-    width: 100%;
-    border: none;
-    outline: none;
-    resize: none;
-    color: inherit;
-    font-size: inherit;
-    line-height: inherit;
-  }
+    &:valid + .icon {
+      display: block;
+    }
 
-  .textarea-counter {
-    text-align: right;
-    color: @textColorGray;
   }
 
   // 表单标签
   > .label {
     display: block;
-    margin-right: @listWidgetGap;
     min-width: 32px;
+    line-height: @listItemHeight;
+    margin-right: @listWidgetGap;
+
+    &:first-child {
+      margin-left: @listItemGapH;
+    }
+
   }
 
   > .label[ui-mode="48px"] {
@@ -65,14 +101,46 @@
 
   // 下拉选择
   select.select {
+    flex: 1;
     width: 100%;
-    height: 100%;
     border: none;
     outline: none;
     appearance: none;
     background-color: transparent;
     font-size: inherit;
     color: inherit;
+    position: relative;
+    z-index: 10;
+    padding-right: 43px;
+
+    &:first-child {
+      padding-left: @listItemGapH;
+    }
+
+    & + [ui-mode~="arrow"] {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 43px;
+      height: 100%;
+      padding: 0 @listWidgetGap 0 @listItemGapH;
+      line-height: @listItemHeight;
+    }
+
+  }
+
+  // 嵌套组件
+  .select-widget {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    min-width: 96px;
+    margin-right: @listWidgetGap;
+
+    &:after {
+      .borderRight();
+    }
+
   }
 
   // 模拟箭头
@@ -131,47 +199,61 @@
 
   }
 
+  textarea.textarea {
+    width: 100%;
+    border: none;
+    outline: none;
+    resize: none;
+    color: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    padding: @listItemGapV @listItemGapH;
+  }
+
+  .textarea-counter {
+    position: absolute;
+    bottom: @listItemGapV;
+    right: @listItemGapH;
+    text-align: right;
+    color: @textColorGray;
+  }
+
   // 交互区 如验证码
   > .interact {
     position: relative;
-    box-sizing: content-box;
     text-align: center;
-    margin-right: -@listItemGapH;
-    margin-top: -@listItemGapV;
-    margin-bottom: -@listItemGapV;
-    min-height: @listItemHeight;
     width: 112px;
 
-    &:after {
+    &:before {
       .borderLeft();
     }
 
-    &.narrow:after {
+    &[ui-mode~="narrow"]:before {
       top: @listItemGapV;
       bottom: @listItemGapV;
     }
 
-  }
+    .button {
+      font-size: inherit;
+      border-radius: 0;
+      padding-left: 0;
+      padding-right: 0;
+      line-height: @listItemHeight;
 
-  > .interact img.captcha {
-    display: block;
-    width: 100%;
-    height: @listItemHeight;
-  }
+      &:after {
+        content: none;
+      }
 
-  > .interact .button {
-    font-size: inherit;
-    border-radius: 0;
-    padding-left: 0;
-    padding-right: 0;
-    line-height: @listItemHeight;
+      &:active {
+        background-color: @tapColor;
+      }
 
-    &:after {
-      content: none;
     }
 
-    &:active {
-      background-color: @tapColor;
+    .captcha {
+      display: block;
+      width: 100%;
+      height: @listItemHeight;
     }
 
   }
@@ -180,30 +262,6 @@
   > input.radio:last-child, > input.checkbox:last-child {
     margin-right: 0;
     margin-left: @listWidgetGap;
-  }
-
-  // 关闭ICON
-  .input-widget {
-    width: 100%;
-    flex: 1;
-    display: flex;
-    align-items: center;
-
-    .input {
-      display: block;
-      flex: 1;
-      width: auto;
-    }
-
-    .input + .icon {
-      display: none;
-      margin-left: @listWidgetGap;
-    }
-
-    .input:valid + .icon {
-      display: block;
-    }
-
   }
 
 }
