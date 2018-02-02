@@ -3,7 +3,6 @@
 .list > .item[ui-mode~="input"] {
   padding: 0;
   align-items: stretch;
-  transform: translate3d(0, 0, 0);
 
   > .icon:first-child, > .avatar:first-child {
     margin: 0;
@@ -434,11 +433,6 @@ input.checkbox {
   background-color: #DFDFDF;
   transform: translate3d(0, 0, 0);
   transition: background-color .1s, border .1s;
-
-  &.nesting {
-    margin-top: (@listLineHeight - @switchHeight)/2;
-    margin-bottom: (@listLineHeight - @switchHeight)/2;
-  }
 
   &:before {
     content: ' ';

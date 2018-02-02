@@ -12,7 +12,7 @@ ul {
   list-style: none;
 }
 .github {
-  position: fixed;
+  position: absolute;
   top: 38px;
   right: 10px;
 }

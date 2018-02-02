@@ -5,47 +5,36 @@
   width: 100%;
   bottom: 0;
   text-align: center;
+  transform: translate3d(0, 0, 0);
+  height: @tabbarHeight;
   background-color: @tabbarBgColor;
 
   &:before {
     .borderTop();
   }
 
-  &:after {
-    .borderBottom();
-  }
-
   > .item {
     cursor: pointer;
     text-align: center;
     line-height: 1;
-    padding: 6px 0 3px;
+    // padding: 6px 0 3px;
     color: @tabTextColor;
-
-    &:not(.active):active {
-      opacity: 0.8;
-    }
 
     &.active {
       color: @textColorOrange;
     }
 
     .icon {
+      display: block;
+      margin: 4px auto 6px;
       font-size: @tabIconSize;
+      width: @tabIconSize;
+      height: @tabIconSize;
+    }
 
-      img {
-        display: block;
-        margin: auto;
-        width: @tabIconSize;
-        height: @tabIconSize;
-      }
-
-      & + .label {
-        display: block;
-        margin-top: 5px;
-        font-size: @tabFontSize;
-      }
-
+    .label {
+      display: block;
+      font-size: @tabFontSize;
     }
 
   }

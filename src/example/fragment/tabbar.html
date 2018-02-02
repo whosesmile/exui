@@ -1,46 +1,29 @@
 <div class="ex-page">
   <div class="page-header">
     <h4>Tabbar</h4>
-    <p class="text-gray text-sm">tabbar</p>
+    <p class="text-gray text-sm">吸底Tab导航</p>
   </div>
 
-  <div class="divider" ui-mode="20%">图文混合</div>
-
-  <div class="tabbar">
-    <div class="item active">
-      <i class="icon"><img src="./images/tabbar/ta-a.png" /></i>
-      <span class="label">首页</span>
+  <footer class="bar btm-fixed">
+    <div class="tabbar">
+      <a class="item active">
+        <img class="icon" src="//img1.qdingnet.com/881f0984ac67e76d62543052f2e3088d.png" />
+        <span class="label">首页</span>
+      </a>
+      <a class="item">
+        <img class="icon" src="//img1.qdingnet.com/881f0984ac67e76d62543052f2e3088d.png" />
+        <span class="label">圈子</span>
+      </a>
+      <a class="item">
+        <img class="icon" src="//img1.qdingnet.com/881f0984ac67e76d62543052f2e3088d.png" />
+        <span class="label">发现</span>
+      </a>
+      <a class="item">
+        <img class="icon" src="//img1.qdingnet.com/881f0984ac67e76d62543052f2e3088d.png" />
+        <span class="label">我的</span>
+      </a>
     </div>
-    <div class="item">
-      <i class="icon"><img src="./images/tabbar/tc.png" /></i>
-      <span class="label">管家</span>
-    </div>
-    <div class="item">
-      <i class="icon"><img src="./images/tabbar/tb.png" /></i>
-      <span class="label">商城</span>
-    </div>
-    <div class="item">
-      <i class="icon"><img src="./images/tabbar/td.png" /></i>
-      <span class="label">我的</span>
-    </div>
-  </div>
-
-  <div class="divider" ui-mode="20%">仅有图片</div>
-
-  <div class="tabbar">
-    <a class="item active">
-      <img width="48" src="//img1.qdingnet.com/bf358a4bd55d9713602e22a7050cedd5.png" />
-    </a>
-    <a class="item">
-      <img width="48" src="//img1.qdingnet.com/af3c3f5cde9735d227285083053cd77b.png" />
-    </a>
-    <a class="item">
-      <img width="48" src="//img1.qdingnet.com/315de08c6981e500f8a440b923c58d14.png" />
-    </a>
-    <a class="item">
-      <img width="48" src="//img1.qdingnet.com/9b844287c34d6313d99f7f5eccb60134.png" />
-    </a>
-  </div>
+  </footer>
 </div>
 <script type="text/javascript">
   $(document).off('click', '.tabbar > .item').on('click', '.tabbar > .item', function () {
