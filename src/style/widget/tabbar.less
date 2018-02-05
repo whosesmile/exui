@@ -1,7 +1,7 @@
 @import "../base/fn";
 
 .tabbar {
-  .setFlex(center, item);
+  .setFlex(top, item);
   width: 100%;
   bottom: 0;
   text-align: center;
@@ -17,7 +17,7 @@
     cursor: pointer;
     text-align: center;
     line-height: 1;
-    // padding: 6px 0 3px;
+    padding: 6px 0 0;
     color: @tabTextColor;
 
     &.active {
@@ -26,7 +26,7 @@
 
     .icon {
       display: block;
-      margin: 4px auto 6px;
+      margin: 0 auto 5px;
       font-size: @tabIconSize;
       width: @tabIconSize;
       height: @tabIconSize;

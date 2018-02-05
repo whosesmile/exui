@@ -3,15 +3,10 @@
 .bar {
   .setFlex(center, text);
   width: 100%;
-  font-size: 17px;
   position: relative;
   transform: translate3d(0, 0, 0);
   min-height: @barHeight;
   background-color: @navbarBgColor;
-
-  .button {
-    line-height: @barHeight;
-  }
 
   &:before {
     .borderTop();
@@ -21,10 +16,20 @@
     .borderBottom();
   }
 
+  > .text {
+    flex: 1;
+    padding: 0 @listItemGapH;
+
+    + .button-group {
+      width: auto;
+    }
+
+  }
+
   > .title {
     display: block;
     flex: 1;
-    font-size: inherit;
+    font-size: 17px;
     font-weight: normal;
     text-align: center;
     height: 100%;
@@ -50,11 +55,10 @@
     margin-top: 0 !important;
     margin-left: 0 !important;
     z-index: 10;
-    font-size: 16px;
     line-height: @barHeight;
 
     & > .icon {
-      min-width: 16px;
+      min-width: 1em;
 
       & + .label {
         margin-left: 3px;
@@ -76,7 +80,7 @@
 
   }
 
-  > .lace {
+  > .cell {
     position: relative;
     padding: 0 20px;
     font-size: 12px;
@@ -86,15 +90,24 @@
     align-items: center;
     line-height: 1;
 
-    & + .lace:after {
-      .borderLeft(rgba(0, 0, 0, .2));
+    &:active {
+      opacity: 0.7;
     }
 
-    .icon + .label {
-      display: block;
-      margin-top: 2px;
+    & + .cell:after {
+      .borderLeft();
     }
 
+  }
+
+}
+
+footer.bar {
+  min-height: 50px;
+
+  button {
+    line-height: 50px;
+    min-width: 120px;
   }
 
 }
