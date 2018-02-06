@@ -74,7 +74,6 @@
   });
   $(document).off('click', 'form.search .input ~ .cancel').on('click', 'form.search .input ~ .cancel', function(e) {
     e.stopPropagation();
-    console.log(123);
     var input = $(this).siblings('.input').val('').trigger('input');
     // 取消聚焦
     setTimeout(function() {

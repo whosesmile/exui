@@ -37,8 +37,9 @@ input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-s
         }
 
         & + .icon {
-          margin: 0 @searchControlGap;
           display: none;
+          margin: 0 @searchControlGap;
+          line-height: @searchHeight;
         }
 
         &:valid + .icon {
@@ -58,44 +59,16 @@ input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-s
           padding-right: @searchControlGap;
           padding-left: @searchControlGap + @searchBorderRadius;
           line-height: @searchHeight;
-
-          &:before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            background-color: #fff;
-            width: @searchBorderRadius;
-            border-radius: 0 @searchBorderRadius @searchBorderRadius 0;
-          }
-
         }
 
         &:focus ~ .cancel, &:valid ~ .cancel {
           display: inline;
-          animation: ex-kf-search-cancel ease .3s;
         }
 
       }
 
     }
 
-  }
-
-}
-
-@keyframes ex-kf-search-cancel {
-  0% {
-    opacity: 0;
-  }
-
-  99% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
   }
 
 }
