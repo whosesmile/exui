@@ -5,26 +5,30 @@ input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-s
 
 .list > .item {
   .search {
+    flex: 1;
     position: relative;
     background-color: @searchBg;
     padding: @searchGap;
 
     .trigger {
+      .setFlex();
+      justify-content: center;
       position: relative;
       background-color: #fff;
       border-radius: @searchBorderRadius;
-      .setFlex();
-      justify-content: center;
 
       & > .icon:first-child {
         margin: 0 @searchGap;
       }
 
       & > input[type="search"] {
-        height: @searchHeight;
-        width: 3em;
+        outline: none;
+        font-size: inherit;
+        transform: translate3d(0, 0, 0);
         transition-property: width;
         transition-duration: 300ms;
+        width: 3em;
+        height: @searchHeight;
 
         &:focus, &:valid {
           width: 100%;
@@ -39,11 +43,13 @@ input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-s
           display: block;
         }
 
-        & ~ .button {
+        & ~ .cancel {
           width: auto;
           border-radius: 0;
           display: none;
-          font-size: 16px;
+          font-size: inherit;
+          white-space: nowrap;
+          word-break: keep-all;
           margin-right: -@searchGap;
           color: @textColorGreen;
           background-color: @searchBg;
@@ -64,14 +70,30 @@ input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-s
 
         }
 
-        &:focus ~ .button, &:valid ~ .button {
+        &:focus ~ .cancel, &:valid ~ .cancel {
           display: inline;
+          animation: ex-kf-search-cancel ease .3s;
         }
 
       }
 
     }
 
+  }
+
+}
+
+@keyframes ex-kf-search-cancel {
+  0% {
+    opacity: 0;
+  }
+
+  99% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 
 }

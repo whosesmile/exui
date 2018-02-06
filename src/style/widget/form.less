@@ -257,12 +257,6 @@
 
   }
 
-  // 调整后置间距
-  > input.radio:last-child, > input.checkbox:last-child {
-    margin-right: 0;
-    margin-left: @listWidgetGap;
-  }
-
 }
 
 // 单选框
@@ -415,6 +409,15 @@ input.checkbox {
 
   &[disabled]:checked:before {
     background-color: @inputChoiceDisabledColor;
+  }
+
+}
+
+.list > .item {
+  // 调整后置间距
+  > input.radio:last-child, > input.checkbox:last-child {
+    margin-right: 0;
+    margin-left: @listWidgetGap;
   }
 
 }
