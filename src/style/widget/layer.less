@@ -12,41 +12,23 @@
   transition-duration: 300ms;
   display: flex;
   align-items: center;
-
   &:not(.transparent) {
     background-color: rgba(0, 0, 0, 0.6);
   }
-
 }
 
 // animate
-.ex-widget-enter {
-  &.ex-widget-layer {
+.ex-widget-layer:not(.transparent) {
+  &.ex-widget-enter {
     background-color: rgba(0, 0, 0, 0);
   }
-
   &.ex-widget-enter-active {
-    &.ex-widget-layer:not(.transparent) {
-      background-color: rgba(0, 0, 0, 0.6);
-    }
-
+    background-color: rgba(0, 0, 0, 0.6);
   }
-
-}
-
-.ex-widget-exit {
-  &.ex-widget-layer {
-    &:not(.transparent) {
-      background-color: rgba(0, 0, 0, 0.6);
-    }
-
+  &.ex-widget-leave {
+    background-color: rgba(0, 0, 0, 0.6);
   }
-
-  &.ex-widget-exit-active {
-    &.ex-widget-layer {
-      background-color: rgba(0, 0, 0, 0);
-    }
-
+  &.ex-widget-leave-active {
+    background-color: rgba(0, 0, 0, 0);
   }
-
 }

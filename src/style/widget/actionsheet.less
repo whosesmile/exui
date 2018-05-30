@@ -5,7 +5,6 @@
   transform: translate3d(0, 0, 0);
   transition-property: transform;
   transition-duration: .3s;
-
   // header
   & > .header {
     position: relative;
@@ -17,71 +16,53 @@
     padding: 10px 15px;
     border-radius: 5px 5px 0 0;
     color: @textColorGray;
-
     &:after {
       .borderBottom();
     }
-
     & + .menus {
       margin-top: 0;
-
       & > .item:first-child {
         border-top-left-radius: 0;
         border-top-right-radius: 0;
       }
-
     }
-
   }
-
   // menus
   & > .menus {
     margin: 10px;
-
-    &  > .item {
+    & > .item {
       position: relative;
       text-align: center;
       cursor: pointer;
       line-height: 44px;
       font-size: 18px;
       background-color: #fff;
-
       & > .button {
         border-radius: 0;
         font-size: 18px;
-
         &:after {
           content: none;
         }
-
       }
-
       & > [class="button"] {
         color: inherit;
       }
-
       &:first-child {
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
       }
-
       &:last-child {
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
       }
-
       &:active {
         background-color: @tapColor;
       }
-
       + .item:before {
         .borderTop();
       }
-
     }
-
   }
-
 }
 
 // ActionSheet
@@ -89,26 +70,22 @@
   .actionsheet {
     transform: translate3d(0, 100%, 0);
   }
-
-  &.ex-widget-enter-active {
-    .actionsheet {
-      transform: translate3d(0, 0, 0);
-    }
-
-  }
-
 }
 
-.ex-widget-exit {
+.ex-widget-enter-active {
   .actionsheet {
     transform: translate3d(0, 0, 0);
   }
+}
 
-  &.ex-widget-exit-active {
-    .actionsheet {
-      transform: translate3d(0, 100%, 0);
-    }
-
+.ex-widget-leave {
+  .actionsheet {
+    transform: translate3d(0, 0, 0);
   }
+}
 
+.ex-widget-leave-active {
+  .actionsheet {
+    transform: translate3d(0, 100%, 0);
+  }
 }

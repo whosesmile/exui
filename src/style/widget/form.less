@@ -1,33 +1,26 @@
 @import "../base/fn";
-
 .list > .item[ui-mode~="input"] {
   padding: 0;
   align-items: stretch;
-
   > .icon:first-child, > .avatar:first-child {
     margin: 0;
     display: block;
     padding: 0 @listWidgetGap 0 @listItemGapH;
     line-height: @listItemHeight;
   }
-
   > .icon:last-child, > .avatar:last-child {
     margin: 0;
     display: block;
     padding: 0 @listItemGapH 0 @listWidgetGap;
     line-height: @listItemHeight;
   }
-
   > .avatar {
     display: flex;
     align-items: center;
-
     img {
       display: initial;
     }
-
   }
-
   // 文本框
   input.input {
     flex: 1;
@@ -39,65 +32,50 @@
     color: inherit;
     background-color: transparent;
     line-height: @listLineHeight;
-
     &:first-child {
       padding-left: @listItemGapH;
     }
-
     &:last-child {
       padding-right: @listItemGapH;
     }
-
     // hides the spin-button
     &::-webkit-outer-spin-button, &::-webkit-inner-spin-button {
       appearance: none;
       margin: 0;
     }
-
     & + [ui-mode~="close"] {
       display: none;
       margin-left: @listWidgetGap;
     }
-
     &:valid + .icon {
       display: block;
     }
-
   }
-
   // 表单标签
   > .label {
     display: block;
     min-width: 32px;
     line-height: @listItemHeight;
     margin-right: @listWidgetGap;
-
     &:first-child {
       margin-left: @listItemGapH;
     }
-
   }
-
   > .label[ui-mode="48px"] {
     min-width: 48px;
   }
-
   > .label[ui-mode="64px"] {
     min-width: 64px;
   }
-
   > .label[ui-mode="80px"] {
     min-width: 80px;
   }
-
   > .label[ui-mode="96px"] {
     min-width: 96px;
   }
-
   > .label[ui-mode="112px"] {
     min-width: 112px;
   }
-
   // 下拉选择
   select.select {
     flex: 1;
@@ -111,11 +89,9 @@
     position: relative;
     z-index: 10;
     padding-right: 43px;
-
     &:first-child {
       padding-left: @listItemGapH;
     }
-
     & + [ui-mode~="arrow"] {
       position: absolute;
       right: 0;
@@ -125,9 +101,7 @@
       padding: 0 @listWidgetGap 0 @listItemGapH;
       line-height: @listItemHeight;
     }
-
   }
-
   // 嵌套组件
   .select-widget {
     position: relative;
@@ -135,25 +109,20 @@
     align-items: stretch;
     min-width: 96px;
     margin-right: @listWidgetGap;
-
     &:after {
       .borderRight();
     }
-
   }
-
   // 模拟箭头
   .select-arrow {
     position: relative;
     height: @listItemHeight;
-
     .select {
       position: relative;
       z-index: 1;
       padding-left: @listItemGapH;
       padding-right: 45px;
     }
-
     &:after {
       content: ' ';
       .setArrow(bottom);
@@ -162,42 +131,31 @@
       right: 18px;
       margin-top: -8px;
     }
-
   }
-
   &:not([ui-mode$="0px"]) > .text > .select {
     height: 44px;
     margin-top: -@listItemGapV;
     margin-bottom: -@listItemGapV;
   }
-
   &[ui-mode$="0px"] > .label {
     margin-left: @listItemGapH;
-
     + .text .select-arrow .select {
       padding-left: 0;
     }
-
   }
-
   > .label:first-child .select-arrow {
     margin-left: -@listItemGapH;
   }
-
   > .text.select-arrow {
     &:after {
       right: 3px;
     }
-
   }
-
   > .label .select-arrow {
     &:before {
       .borderRight();
     }
-
   }
-
   textarea.textarea {
     width: 100%;
     border: none;
@@ -208,7 +166,6 @@
     line-height: inherit;
     padding: @listItemGapV @listItemGapH;
   }
-
   .textarea-counter {
     position: absolute;
     bottom: @listItemGapV;
@@ -216,47 +173,37 @@
     text-align: right;
     color: @textColorGray;
   }
-
   // 交互区 如验证码
   > .interact {
     position: relative;
     text-align: center;
     width: 112px;
-
     &:before {
       .borderLeft();
     }
-
     &[ui-mode~="narrow"]:before {
       top: @listItemGapV;
       bottom: @listItemGapV;
     }
-
     .button {
       font-size: inherit;
       border-radius: 0;
       padding-left: 0;
       padding-right: 0;
       line-height: @listItemHeight;
-
       &:after {
         content: none;
       }
-
       &:active {
         background-color: @tapColor;
       }
-
     }
-
     .captcha {
       display: block;
       width: 100%;
       height: @listItemHeight;
     }
-
   }
-
 }
 
 // 单选框
@@ -274,7 +221,6 @@ input.radio {
   margin-right: @listWidgetGap;
   width: @inputChoiceSize;
   height: @inputChoiceSize;
-
   &:before {
     content: ' ';
     display: table;
@@ -284,7 +230,6 @@ input.radio {
     background-color: @inputChoiceBg;
     border: 1px solid @inputChoiceDefaultColor;
   }
-
   &:after {
     content: ' ';
     opacity: 0;
@@ -298,40 +243,31 @@ input.radio {
     margin-left: -@radioPointSize / 2;
     background-color: @inputChoiceDefaultColor;
   }
-
   &.primary:before {
     border: 1px solid @inputChoicePrimaryColor;
   }
-
   &.primary:after {
     background-color: @inputChoicePrimaryColor;
   }
-
   &.success:before {
     border: 1px solid @inputChoiceSuccessColor;
   }
-
   &.success:after {
     background-color: @inputChoiceSuccessColor;
   }
-
   &:checked:after {
     opacity: 1;
   }
-
   &[disabled] {
     cursor: not-allowed;
     pointer-events: none;
   }
-
   &[disabled]:before {
     border-color: @inputChoiceDisabledColor;
   }
-
   &[disabled]:checked:after {
     background-color: @inputChoiceDisabledColor;
   }
-
 }
 
 // 复选框
@@ -349,7 +285,6 @@ input.checkbox {
   margin-right: @listWidgetGap;
   width: @inputChoiceSize;
   height: @inputChoiceSize;
-
   &:before {
     content: ' ';
     display: table;
@@ -359,7 +294,6 @@ input.checkbox {
     background-color: @inputChoiceBg;
     border: 1px solid @inputChoiceDefaultColor;
   }
-
   &:after {
     content: ' ';
     opacity: 0;
@@ -373,44 +307,34 @@ input.checkbox {
     left: percentage(round((@inputChoiceSize - @checkboxPointWidth) / 2 / @inputChoiceSize, 2));
     border-color: @checkboxPointColor;
   }
-
   &:checked:before {
     background-color: @inputChoiceDefaultColor;
   }
-
   &:checked:after {
     opacity: 1;
   }
-
   &.primary:before {
     border-color: @inputChoicePrimaryColor;
   }
-
   &.primary:checked:before {
     background-color: @inputChoicePrimaryColor;
   }
-
   &.success:before {
     border-color: @inputChoiceSuccessColor;
   }
-
   &.success:checked:before {
     background-color: @inputChoiceSuccessColor;
   }
-
   &[disabled] {
     cursor: not-allowed;
     pointer-events: none;
   }
-
   &[disabled]:before {
     border-color: @inputChoiceDisabledColor;
   }
-
   &[disabled]:checked:before {
     background-color: @inputChoiceDisabledColor;
   }
-
 }
 
 .list > .item {
@@ -419,7 +343,6 @@ input.checkbox {
     margin-right: 0;
     margin-left: @listWidgetGap;
   }
-
 }
 
 // switch
@@ -436,7 +359,6 @@ input.checkbox {
   background-color: #DFDFDF;
   transform: translate3d(0, 0, 0);
   transition: background-color .1s, border .1s;
-
   &:before {
     content: ' ';
     position: absolute;
@@ -448,7 +370,6 @@ input.checkbox {
     background-color: #FDFDFD;
     transition: transform .35s cubic-bezier(0.45, 1, 0.4, 1);
   }
-
   &:after {
     content: ' ';
     position: absolute;
@@ -461,34 +382,26 @@ input.checkbox {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
     transition: transform .35s cubic-bezier(0.4, 0.4, 0.25, 1.35);
   }
-
   &:checked {
     border-color: @textColorOrange;
     background-color: @textColorOrange;
-
     &.primary {
       border-color: @textColorBlue;
       background-color: @textColorBlue;
     }
-
     &.warning {
       border-color: @textColorRed;
       background-color: @textColorRed;
     }
-
     &.success {
       border-color: @textColorGreen;
       background-color: @textColorGreen;
     }
-
     &:before {
       transform: scale(0);
     }
-
     &:after {
       transform: translateX(@switchWidth - @switchHeight);
     }
-
   }
-
 }

@@ -1,18 +1,14 @@
 @import "../base/fn";
-
 .grid {
   position: relative;
   overflow: hidden;
   transform: translate3d(0, 0, 0);
-
   &:before {
     .borderTop(@gridBorderColor);
   }
-
   &:after {
     .borderLeft(@gridBorderColor);
   }
-
   > .item {
     position: relative;
     cursor: pointer;
@@ -20,19 +16,15 @@
     float: left;
     width: 100% / @gridColumnCount;
     color: @gridTextColor;
-
     &:before {
       .borderRight(@gridBorderColor);
     }
-
     &:after {
       .borderBottom(@gridBorderColor);
     }
-
     &:active {
       background-color: @tapColor;
     }
-
     > .icon {
       display: block;
       margin: 0 auto;
@@ -40,47 +32,35 @@
       height: @gridIconSize;
       line-height: @gridIconSize;
       font-size: @gridIconSize;
-
       > img {
         display: block;
         width: 100%;
         height: 100%;
       }
-
       + .label {
         margin-top: 8px;
       }
-
     }
-
     > .label {
       display: block;
       text-align: center;
       .ellipsis();
       font-size: @gridFontSize;
     }
-
   }
-
   &[ui-mode="2"] {
     > .item {
       width: 100% / 2;
     }
-
   }
-
   &[ui-mode="4"] {
     > .item {
       width: 100% / 4;
     }
-
   }
-
   &[ui-mode="5"] {
     > .item {
       width: 100% / 5;
     }
-
   }
-
 }

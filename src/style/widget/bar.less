@@ -1,5 +1,4 @@
 @import "../base/fn";
-
 .bar {
   .setFlex(center, text);
   width: 100%;
@@ -7,25 +6,19 @@
   transform: translate3d(0, 0, 0);
   min-height: @barHeight;
   background-color: @navbarBgColor;
-
   &:before {
     .borderTop();
   }
-
   &:after {
     .borderBottom();
   }
-
   > .text {
     flex: 1;
     padding: 0 @listItemGapH;
-
     + .button-group {
       width: auto;
     }
-
   }
-
   > .title {
     display: block;
     flex: 1;
@@ -33,7 +26,6 @@
     font-weight: normal;
     text-align: center;
     height: 100%;
-
     b {
       position: absolute;
       top: 0;
@@ -44,9 +36,7 @@
       line-height: @barHeight;
       .ellipsis();
     }
-
   }
-
   > .menu {
     .setFlex();
     width: auto;
@@ -55,31 +45,24 @@
     margin-top: 0 !important;
     margin-left: 0 !important;
     z-index: 10;
+    cursor: pointer;
     line-height: @barHeight;
-
     & > .icon {
       min-width: 1em;
-
       & + .label {
         margin-left: 3px;
       }
-
     }
-
     & > .label + .icon {
       margin-left: 3px;
     }
-
     & + .menu > .label {
       margin-left: -10px;
     }
-
     &:active {
       opacity: 0.5;
     }
-
   }
-
   > .cell {
     position: relative;
     padding: 0 20px;
@@ -89,25 +72,19 @@
     display: flex;
     align-items: center;
     line-height: 1;
-
     &:active {
       opacity: 0.7;
     }
-
     & + .cell:after {
       .borderLeft();
     }
-
   }
-
 }
 
 footer.bar {
   min-height: @footerBarHeight;
-
   button {
     line-height: @footerBarHeight;
     min-width: 120px;
   }
-
 }

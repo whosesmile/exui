@@ -9,18 +9,15 @@ input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-s
     position: relative;
     background-color: @searchBg;
     padding: @searchGap;
-
     .trigger {
       .setFlex();
       justify-content: center;
       position: relative;
       background-color: #fff;
       border-radius: @searchBorderRadius;
-
       & > .icon:first-child {
         margin: 0 @searchGap;
       }
-
       & > input[type="search"] {
         border: none;
         outline: none;
@@ -31,21 +28,17 @@ input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-s
         transition-duration: 300ms;
         width: 3em;
         height: @searchHeight;
-
         &:focus, &:valid {
           width: 100%;
         }
-
         & + .icon {
           display: none;
           margin: 0 @searchControlGap;
           line-height: @searchHeight;
         }
-
         &:valid + .icon {
           display: block;
         }
-
         & ~ .cancel {
           width: auto;
           border-radius: 0;
@@ -60,15 +53,10 @@ input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-s
           padding-left: @searchControlGap + @searchBorderRadius;
           line-height: @searchHeight;
         }
-
         &:focus ~ .cancel, &:valid ~ .cancel {
           display: inline;
         }
-
       }
-
     }
-
   }
-
 }

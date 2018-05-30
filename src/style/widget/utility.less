@@ -1,19 +1,15 @@
 @import "../base/fn";
-
 // 接受协议 对其Radio和Checkbox
 .agree {
   display: block;
   margin: @listItemGapH;
-
   > label {
     display: flex;
     align-items: center;
   }
-
   > label.center {
     justify-content: center;
   }
-
 }
 
 // 文字并列 竖线分割
@@ -21,41 +17,33 @@
   display: table;
   width: 100%;
   margin: 0 auto;
-
   > .item {
     position: relative;
     margin: 0 8px;
-
     &:first-child {
       margin-left: 0;
     }
-
     &:not(:first-child):before {
       .borderLeft();
       left: -8px;
       top: 15%;
       bottom: 15%;
     }
-
   }
-
 }
 
 // 文字对齐
 .text-justify {
   .setFlex(stretch, value);
-
   .label {
     margin-right: @listItemGapH;
     min-width: 4em;
     text-align: justify;
     text-align-last: justify;
   }
-
   + .text-justify {
     margin-top: 6px;
   }
-
 }
 
 // 悬挂顶部
@@ -64,11 +52,9 @@
   top: 0;
   left: 0;
   width: 100%;
-
   &:before {
     content: none;
   }
-
 }
 
 // 悬挂底部
@@ -77,11 +63,9 @@
   bottom: 0;
   left: 0;
   width: 100%;
-
   &:after {
     content: none;
   }
-
 }
 
 // 左浮动
@@ -116,7 +100,6 @@
   position: relative;
   display: block;
   overflow: hidden;
-
   & > img {
     position: absolute;
     top: 50%;
@@ -124,5 +107,4 @@
     width: 100%;
     transform: translate(-50%, -50%);
   }
-
 }

@@ -1,5 +1,5 @@
 // 显隐列表
-$(document).on('click', '.ex-group .list:first-child', function() {
+$(document).on('click', '.ex-group .list:first-child', function () {
   var selected = $(this).closest('.ex-group').toggleClass('active');
   $('.ex-group').not(selected).removeClass('active');
 });
@@ -13,7 +13,7 @@ function Router() {
 
 Router.prototype = {
 
-  handler: function() {
+  handler: function () {
     var state = history.state || {};
     // 新增 或 前进
     if (typeof state.index === 'undefined' || state.index > this.routes.length) {
@@ -36,24 +36,24 @@ Router.prototype = {
     }
   },
 
-  buildView: function(name) {
+  buildView: function (name) {
     var page = $('#exui_' + name)
     if (page.length) {
       var view = $(page.html()).appendTo('body');
       view.addClass('ex-view-enter');
       view[0].offsetHeight;
-      view.addClass('ex-view-enter-active').on('transitionend webkitTransitionEnd', function() {
+      view.addClass('ex-view-enter-active').on('transitionend webkitTransitionEnd', function () {
         view.removeClass('ex-view-enter ex-view-enter-active');
       });
       return view;
     }
   },
 
-  destroyView: function(route) {
+  destroyView: function (route) {
     if (route && route.view) {
-      route.view.addClass('ex-view-exit');
+      route.view.addClass('ex-view-leave');
       route.view[0].offsetHeight;
-      route.view.addClass('ex-view-exit-active').on('transitionend webkitTransitionEnd', function() {
+      route.view.addClass('ex-view-leave-active').on('transitionend webkitTransitionEnd', function () {
         $(this).remove();
       });
     }
@@ -74,7 +74,7 @@ function WidgetManager() {
 WidgetManager.prototype = {
 
   // 填充
-  fill: function(templ, opts) {
+  fill: function (templ, opts) {
     // 移除上个组件
     this.popup();
 
@@ -90,7 +90,7 @@ WidgetManager.prototype = {
     }
 
     // 点击关闭
-    widget.on('click', function(e) {
+    widget.on('click', function (e) {
       if (e.target.dataset.dismiss === 'true' || (opts.dismiss && $(e.target).is('.ex-widget-layer'))) {
         this.hide();
       }
@@ -106,28 +106,28 @@ WidgetManager.prototype = {
   },
 
   // 显示
-  show: function(templ, opts, fn) {
+  show: function (templ, opts, fn) {
     var widget = this.fill(templ, opts);
-    widget.on('transitionend webkitTransitionEnd', function() {
+    widget.on('transitionend webkitTransitionEnd', function () {
       widget.removeClass('ex-widget-enter ex-widget-enter-active');
       fn && fn();
     });
   },
 
   // 隐藏
-  hide: function(fn) {
+  hide: function (fn) {
     this.popup(fn);
   },
 
   // 交替 (永远只保留一个组件)
-  popup: function(fn) {
+  popup: function (fn) {
     var widget = this.widgets.pop();
     if (!widget) {
       return false;
     }
-    widget.addClass('ex-widget-exit');
+    widget.addClass('ex-widget-leave');
     widget[0].offsetHeight;
-    widget.addClass('ex-widget-exit-active').on('transitionend webkitTransitionEnd', function() {
+    widget.addClass('ex-widget-leave-active').on('transitionend webkitTransitionEnd', function () {
       widget.remove();
       fn && fn();
     });

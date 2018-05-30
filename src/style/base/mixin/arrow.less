@@ -1,7 +1,6 @@
 // rotate和matrix换算可以参考下面地址
 // http://www.zhangxinxu.com/study/201206/css3-transform-matrix-rotate.html
-
-._setArrow(@arrowsize:10px, @borderColor:#a9a9a9, @borderWidth:1px) {
+._setArrow(@arrowsize: 10px, @borderColor: #a9a9a9, @borderWidth: 1px) {
   display: inline-block;
   height: @arrowsize;
   width: @arrowsize;
@@ -9,22 +8,26 @@
   border-color: @borderColor;
   border-style: solid;
 }
-.setArrow(@direction, @arrowsize:10px, @borderColor:#a9a9a9, @borderWidth:1px) when (@direction = top) {
+
+.setArrow(@direction, @arrowsize: 10px, @borderColor: #a9a9a9, @borderWidth: 1px) when (@direction =top) {
   ._setArrow(@arrowsize, @borderColor, @borderWidth);
   transform: matrix(0.71, -0.71, 0.71, 0.71, 0, 0);
   // rotate(-45deg)
 }
-.setArrow(@direction, @arrowsize:10px, @borderColor:#a9a9a9, @borderWidth:1px) when (@direction = right) {
+
+.setArrow(@direction, @arrowsize: 10px, @borderColor: #a9a9a9, @borderWidth: 1px) when (@direction =right) {
   ._setArrow(@arrowsize, @borderColor, @borderWidth);
   transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
   // rotate(45deg);
 }
-.setArrow(@direction, @arrowsize:10px, @borderColor:#a9a9a9, @borderWidth:1px) when (@direction = bottom) {
+
+.setArrow(@direction, @arrowsize: 10px, @borderColor: #a9a9a9, @borderWidth: 1px) when (@direction =bottom) {
   ._setArrow(@arrowsize, @borderColor, @borderWidth);
   transform: matrix(-0.71, 0.71, -0.71, -0.71, 0, 0);
   // rotate(135deg);
 }
-.setArrow(@direction, @arrowsize:10px, @borderColor:#a9a9a9, @borderWidth:1px) when (@direction = left) {
+
+.setArrow(@direction, @arrowsize: 10px, @borderColor: #a9a9a9, @borderWidth: 1px) when (@direction =left) {
   ._setArrow(@arrowsize, @borderColor, @borderWidth);
   transform: matrix(-0.71, -0.71, 0.71, -0.71, 0, 0);
   // rotate(-135deg);

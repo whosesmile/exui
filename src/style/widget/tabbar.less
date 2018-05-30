@@ -1,5 +1,4 @@
 @import "../base/fn";
-
 .tabbar {
   .setFlex(top, item);
   width: 100%;
@@ -8,22 +7,18 @@
   transform: translate3d(0, 0, 0);
   height: @tabbarHeight;
   background-color: @tabbarBgColor;
-
   &:before {
     .borderTop();
   }
-
   > .item {
     cursor: pointer;
     text-align: center;
     line-height: 1;
     padding: 6px 0 0;
     color: @tabTextColor;
-
     &.active {
       color: @textColorOrange;
     }
-
     .icon {
       display: block;
       margin: 0 auto 5px;
@@ -31,12 +26,10 @@
       width: @tabIconSize;
       height: @tabIconSize;
     }
-
     .label {
       display: block;
+      font-weight: 300;
       font-size: @tabFontSize;
     }
-
   }
-
 }

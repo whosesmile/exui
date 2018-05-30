@@ -1,79 +1,60 @@
 @import "../base/fn";
-
 .article {
   padding: 20px 15px;
   font-size: 15px;
   line-height: 24px;
-
   section {
     margin-bottom: 20px;
   }
-
   h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
   }
-
   h1 {
     font-size: 18px;
     margin-bottom: 12px;
   }
-
   h2 {
     font-size: 16px;
     margin-bottom: 8px;
   }
-
   h3 {
     font-size: 15px;
     margin-bottom: 5px;
   }
-
   img {
     display: block;
     width: 100%;
     max-width: 100%;
-
     & + img {
       margin-top: 10px;
     }
-
   }
-
   p {
     margin-bottom: 10px;
   }
-
   table {
     width: 100%;
     margin-bottom: 10px;
-
     th, td {
       padding: 5px 3px;
       text-align: left;
       border-bottom: 1px solid #ddd;
     }
-
   }
-
   dl, ul, ol {
     margin: 0 0 15px;
   }
-
   ul, ol {
     list-style: none;
   }
-
   * {
     max-width: 100%;
     word-wrap: break-word;
   }
-
   a {
     color: @linkColor;
   }
-
   a:visited, a:active {
     color: @linkActiveColor;
   }
-
 }
