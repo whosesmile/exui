@@ -65,4 +65,10 @@
       border-color: @textColorGreen;
     }
   }
+  &[ui-mode="scroll"] {
+    overflow-x: scroll;
+    & > .item {
+      flex: 0 0 22%;
+    }
+  }
 }
