@@ -8,13 +8,7 @@
   transform: translate3d(0, 0, 0);
   height: @navbarHeight;
   background-color: @navbarBgColor;
-  &:before {
-    .borderTop();
-    z-index: 10;
-  }
-  &:after {
-    .borderBottom();
-  }
+  .hairline(1px, 0);
   > .item {
     position: relative;
     color: inherit;
@@ -23,8 +17,8 @@
     &.active, &:active {
       background-color: @tapColor;
     }
-    &:not(:first-child):after {
-      .borderLeft();
+    & + .item {
+      .hairline(0, 0, 0, 1px);
     }
   }
   &.underline {

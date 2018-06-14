@@ -42,16 +42,8 @@
     }
   }
   // 缩小一倍 以便让1px边线变得纤细
+  .hairline();
   &:after {
-    content: ' ';
-    width: 200%;
-    height: 200%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    border: 1px solid rgba(0, 0, 0, .2);
-    transform: scale(.5);
-    transform-origin: 0 0;
     border-radius: @buttonBorderRadius * 2;
   }
   &:active {
@@ -327,13 +319,13 @@
       border-bottom-right-radius: 0;
     }
     // 当按钮组嵌入有border的容器时，取消边框，新增分割线。例如 list > item, modal等
-    &.nesting > .button:after {
-      content: none;
-    }
-    &.nesting > .button + .button {
-      margin-left: 0;
-      &:before {
-        .borderLeft();
+    &.nesting > .button {
+      &:after {
+        content: none;
+      }
+      & + .button {
+        margin-left: 0;
+        .hairline(0, 0, 0, 1px);
       }
     }
   }

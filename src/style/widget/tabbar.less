@@ -7,9 +7,7 @@
   transform: translate3d(0, 0, 0);
   height: @tabbarHeight;
   background-color: @tabbarBgColor;
-  &:before {
-    .borderTop();
-  }
+  .hairline(1px, 0, 0, 0);
   > .item {
     cursor: pointer;
     text-align: center;

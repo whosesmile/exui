@@ -109,28 +109,7 @@
     align-items: stretch;
     min-width: 96px;
     margin-right: @listWidgetGap;
-    &:after {
-      .borderRight();
-    }
-  }
-  // 模拟箭头
-  .select-arrow {
-    position: relative;
-    height: @listItemHeight;
-    .select {
-      position: relative;
-      z-index: 1;
-      padding-left: @listItemGapH;
-      padding-right: 45px;
-    }
-    &:after {
-      content: ' ';
-      .setArrow(bottom);
-      position: absolute;
-      top: 50%;
-      right: 18px;
-      margin-top: -8px;
-    }
+    .hairline(0, 1px, 0, 0);
   }
   &:not([ui-mode$="0px"]) > .text > .select {
     height: 44px;
@@ -139,22 +118,6 @@
   }
   &[ui-mode$="0px"] > .label {
     margin-left: @listItemGapH;
-    + .text .select-arrow .select {
-      padding-left: 0;
-    }
-  }
-  > .label:first-child .select-arrow {
-    margin-left: -@listItemGapH;
-  }
-  > .text.select-arrow {
-    &:after {
-      right: 3px;
-    }
-  }
-  > .label .select-arrow {
-    &:before {
-      .borderRight();
-    }
   }
   textarea.textarea {
     width: 100%;
@@ -178,9 +141,7 @@
     position: relative;
     text-align: center;
     width: 112px;
-    &:before {
-      .borderLeft();
-    }
+    .hairline(0, 0, 0, 1px);
     &[ui-mode~="narrow"]:before {
       top: @listItemGapV;
       bottom: @listItemGapV;

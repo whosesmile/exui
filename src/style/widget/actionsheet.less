@@ -16,9 +16,7 @@
     padding: 10px 15px;
     border-radius: 5px 5px 0 0;
     color: @textColorGray;
-    &:after {
-      .borderBottom();
-    }
+    .hairline(0, 0, 1px, 0);
     & + .menus {
       margin-top: 0;
       & > .item:first-child {
@@ -58,8 +56,8 @@
       &:active {
         background-color: @tapColor;
       }
-      + .item:before {
-        .borderTop();
+      + .item {
+        .hairline(1px, 0, 0, 0);
       }
     }
   }

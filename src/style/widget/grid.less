@@ -3,12 +3,7 @@
   position: relative;
   overflow: hidden;
   transform: translate3d(0, 0, 0);
-  &:before {
-    .borderTop(@gridBorderColor);
-  }
-  &:after {
-    .borderLeft(@gridBorderColor);
-  }
+  .hairline(1px, 0);
   > .item {
     position: relative;
     cursor: pointer;
@@ -16,12 +11,7 @@
     float: left;
     width: 100% / @gridColumnCount;
     color: @gridTextColor;
-    &:before {
-      .borderRight(@gridBorderColor);
-    }
-    &:after {
-      .borderBottom(@gridBorderColor);
-    }
+    .hairline(0, 1px, 1px, 0);
     &:active {
       background-color: @tapColor;
     }

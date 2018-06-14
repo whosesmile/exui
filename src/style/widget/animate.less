@@ -26,6 +26,80 @@
   }
 }
 
+// 左侧进 left to center
+@keyframes moveltc {
+  from {
+    transform: translate3d(100%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+// 左侧出 center to left
+@keyframes movectl {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+// 右侧进 right to center
+@keyframes movertc {
+  from {
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+// 右侧出 center to right
+@keyframes movectr {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
+// 解决错位问题
+.absmix() {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+// 左侧进右侧出
+.ex-move-ltr-leave-active {
+  .absmix();
+  z-index: 100;
+  animation: movectl 0.3s ease-out both;
+}
+
+.ex-move-ltr-enter-active {
+  .absmix();
+  z-index: 200;
+  animation: moveltc 0.3s ease-out both;
+}
+
+// 右侧进左侧出
+.ex-move-rtl-leave-active {
+  .absmix();
+  z-index: 100;
+  animation: movectr 0.3s ease-out both;
+}
+
+.ex-move-rtl-enter-active {
+  .absmix();
+  z-index: 200;
+  animation: movertc 0.3s ease-out both;
+}
+
 .ex-bounce {
   animation: ex-kf-bounce ease .3s forwards;
 }
